@@ -136,3 +136,83 @@ button { font: inherit; color: inherit; }
 .tab.active { color: var(--accent); font-weight: 600; }
 
 .warning { background: var(--accent-soft); border-color: var(--accent); font-size: 14px; }
+
+/* ── 3단계: 문장 학습 ───────────────────────── */
+.screen-header.with-back h1 { flex: 1; font-size: 24px; }
+.header-right { flex-shrink: 0; }
+.link { color: var(--accent); font-weight: 600; }
+
+.chip {
+  min-height: 36px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--muted); font-size: 14px; cursor: pointer;
+}
+.chip.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+.segmented {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px;
+  background: var(--line); border-radius: 12px;
+}
+.segmented button {
+  min-height: 40px; border: 0; border-radius: 9px; background: transparent;
+  color: var(--muted); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.segmented button[aria-selected='true'] { background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgb(0 0 0 / 0.08); }
+
+.progress { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.progress-track { flex: 1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.progress-bar { height: 100%; background: var(--accent); transition: width 0.2s; }
+
+.study-card { display: flex; flex-direction: column; gap: 18px; }
+.scenario { margin: 0; font-size: 15px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.label {
+  display: inline-block; padding: 1px 8px; border-radius: 6px;
+  background: var(--bg); color: var(--muted); font-size: 12px; font-weight: 600;
+}
+.badge { padding: 1px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; }
+
+.block { display: flex; flex-direction: column; gap: 8px; }
+.block.staff { padding-top: 16px; border-top: 1px dashed var(--line); }
+.block-title { margin: 0; font-size: 14px; color: var(--muted); font-weight: 600; }
+
+.zh p { margin: 0; }
+.zh-text { font-family: 'PingFang SC', 'Noto Sans SC', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif; font-weight: 600; line-height: 1.35; line-break: strict; overflow-wrap: anywhere; }
+.zh-lg .zh-text { font-size: 28px; }
+.zh-md .zh-text { font-size: 21px; }
+.zh-pinyin { color: var(--accent); font-size: 17px; margin-top: 2px; }
+.zh-md .zh-pinyin { font-size: 15px; }
+
+.meaning { margin: 0; font-size: 17px; }
+.meaning.sm { font-size: 15px; color: var(--muted); }
+.prompt-ko { margin: 0; font-size: 22px; font-weight: 700; }
+.caution { margin: 0; font-size: 14px; color: var(--accent); }
+
+.reveal {
+  min-height: 52px; padding: 0 16px;
+  border: 1.5px dashed var(--accent); border-radius: 12px;
+  background: var(--accent-soft); color: var(--accent); font-size: 16px; font-weight: 600; cursor: pointer;
+}
+
+.more { border-top: 1px solid var(--line); padding-top: 12px; }
+.more summary { min-height: 32px; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--muted); }
+.variant { margin-top: 12px; display: flex; flex-direction: column; gap: 2px; }
+
+.pattern { margin: 0; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.pattern span[lang] { font-size: 19px; font-weight: 600; }
+
+.keywords { margin: 8px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.keywords div { display: flex; gap: 12px; align-items: baseline; }
+.keywords dt { min-width: 64px; font-size: 19px; font-weight: 600; }
+.keywords dd { margin: 0; font-size: 15px; }
+.kw-pinyin { color: var(--accent); margin-right: 4px; }
+
+.pager { display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; }
+.btn-secondary {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 52px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--surface); font-size: 17px; font-weight: 600; cursor: pointer;
+}
+.btn-secondary.strong { background: var(--text); color: var(--bg); border-color: var(--text); }
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
+
+.rescue-line { display: flex; flex-direction: column; gap: 6px; }

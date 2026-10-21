@@ -27,7 +27,7 @@ export default function Home() {
 
       <Link to="/rescue" className="card rescue">
         <strong>위기 탈출 카드</strong>
-        <span>못 알아들었을 때 바로 쓰는 5문장</span>
+        <span>못 알아들었을 때 바로 꺼내 쓰는 문장</span>
       </Link>
     </>
   )

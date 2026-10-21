@@ -5,6 +5,9 @@ import StudyHub from './screens/StudyHub'
 import Review from './screens/Review'
 import Settings from './screens/Settings'
 import Placeholder from './screens/Placeholder'
+import SentenceCategories from './screens/SentenceCategories'
+import SentenceStudy from './screens/SentenceStudy'
+import Rescue from './screens/Rescue'
 import { contentErrors } from './content'
 
 export default function App() {
@@ -19,9 +22,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/today" element={<Placeholder title="오늘의 학습" step={9} />} />
-          <Route path="/rescue" element={<Placeholder title="위기 탈출 카드" step={3} />} />
+          <Route path="/rescue" element={<Rescue />} />
           <Route path="/study" element={<StudyHub />} />
-          <Route path="/study/sentences" element={<Placeholder title="문장 학습" step={3} />} />
+          <Route path="/study/sentences" element={<SentenceCategories />} />
+          <Route path="/study/sentences/:categoryId" element={<SentenceStudy />} />
           <Route path="/study/listen" element={<Placeholder title="고객 질문 듣기" step={5} />} />
           <Route path="/study/speak" element={<Placeholder title="말하기 연습" step={6} />} />
           <Route path="/study/roleplay" element={<Placeholder title="상황별 역할극" step={7} />} />
