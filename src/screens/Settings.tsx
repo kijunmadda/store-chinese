@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import BackupSection from '../components/BackupSection'
+import InstallGuide from '../components/InstallGuide'
 import { contentErrors, contentStats } from '../content'
 import { setPrefs, usePrefs } from '../prefs'
 import { getChineseVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
@@ -115,6 +116,7 @@ export default function Settings() {
         </div>
       </section>
 
+      <InstallGuide />
       <BackupSection />
 
 

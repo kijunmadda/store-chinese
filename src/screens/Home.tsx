@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { daysSinceBackup } from '../backup'
 import { sentences } from '../content'
+import { isMobile, isStandalone } from '../install'
 import { computeStats, studyLink } from '../stats'
 import { today, useStudyState } from '../store'
 
@@ -38,6 +39,13 @@ export default function Home() {
         <Link to="/study/listen" className="shortcut">🎧<span>고객 질문 듣기</span></Link>
         <Link to="/study/roleplay" className="shortcut">💬<span>상황별 역할극</span></Link>
       </section>
+
+      {isMobile() && !isStandalone() && (
+        <Link to="/settings" className="card backup-alert">
+          <strong>📲 홈 화면에 추가해 주세요</strong>
+          <span>앱처럼 바로 열리고, 인터넷 없이도 학습할 수 있어요. 방법은 설정에서 안내해요.</span>
+        </Link>
+      )}
 
       {needBackup && (
         <Link to="/settings" className="card backup-alert">
