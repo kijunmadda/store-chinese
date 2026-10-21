@@ -55,7 +55,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B02",
@@ -70,9 +70,9 @@
     "responses": [
       {
         "id": "B02-A",
-        "chinese": "我给你看一下肩带。",
-        "pinyin": "Wǒ gěi nǐ kàn yíxià jiāndài.",
-        "korean": "스트랩을 보여 드릴게요."
+        "chinese": "我帮你确认一下这款能不能斜挎。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià zhè kuǎn néng bu néng xiékuà.",
+        "korean": "이 제품이 크로스로 멜 수 있는지 확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -82,9 +82,9 @@
         "meaning": "크로스로 메다"
       },
       {
-        "word": "肩带",
-        "pinyin": "jiāndài",
-        "meaning": "어깨끈, 스트랩"
+        "word": "能不能",
+        "pinyin": "néng bu néng",
+        "meaning": "되는지 안 되는지"
       }
     ],
     "learningModes": [
@@ -94,7 +94,9 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 질문에 직접 답하고 단정하지 않게(GPT)",
+    "pattern": "我帮你___一下"
   },
   {
     "id": "B03",
@@ -151,7 +153,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B04",
@@ -203,7 +205,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B05",
@@ -261,7 +263,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B06",
@@ -313,7 +315,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B07",
@@ -352,7 +354,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B08",
@@ -400,7 +402,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B09",
@@ -440,7 +442,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B10",
@@ -484,7 +486,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B11",
@@ -523,6 +525,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

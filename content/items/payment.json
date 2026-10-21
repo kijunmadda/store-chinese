@@ -44,7 +44,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y02",
@@ -102,7 +102,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y03",
@@ -117,10 +117,9 @@
     "responses": [
       {
         "id": "Y03-A",
-        "chinese": "麻烦给我看一下你的护照。",
-        "pinyin": "Máfan gěi wǒ kàn yíxià nǐ de hùzhào.",
-        "korean": "여권 좀 보여 주시겠어요?",
-        "note": "매장에서 택스리펀이 가능한 경우에만"
+        "chinese": "我帮你确认一下能不能退税，麻烦你给我看一下护照。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià néng bu néng tuìshuì, máfan nǐ gěi wǒ kàn yíxià hùzhào.",
+        "korean": "택스리펀이 되는지 확인해 드릴게요. 여권 좀 보여 주시겠어요?"
       }
     ],
     "keywords": [
@@ -142,7 +141,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 가능 여부를 단정하지 않게(GPT)"
   },
   {
     "id": "Y04",
@@ -172,7 +172,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y05",
@@ -200,7 +200,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y06",
@@ -223,9 +223,9 @@
     "responses": [
       {
         "id": "Y06-A",
-        "chinese": "我帮你确认一下包装方式。",
-        "pinyin": "Wǒ bāng nǐ quèrèn yíxià bāozhuāng fāngshì.",
-        "korean": "포장 방법을 확인해 드릴게요."
+        "chinese": "我帮你确认一下能不能做礼品包装。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià néng bu néng zuò lǐpǐn bāozhuāng.",
+        "korean": "선물 포장이 되는지 확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -248,7 +248,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 질문에 직접 답하게(GPT)"
   },
   {
     "id": "Y07",
@@ -276,7 +277,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y08",
@@ -309,7 +310,15 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "alternatives": [
+      {
+        "chinese": "这是你的卡和小票，请收好。",
+        "pinyin": "Zhè shì nǐ de kǎ hé xiǎopiào, qǐng shōuhǎo.",
+        "korean": "카드와 영수증입니다, 잘 보관하세요."
+      }
+    ],
+    "reviewNote": "v2: 카드 결제 후 대체 표현 추가(제미나이)"
   },
   {
     "id": "Y09",
@@ -348,6 +357,41 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
+  },
+  {
+    "id": "Y10",
+    "category": "payment",
+    "scenario": "포장을 원한다는 고객에게",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "需要，谢谢。",
+      "pinyin": "Xūyào, xièxie.",
+      "meaning": "네, 해 주세요. 감사합니다."
+    },
+    "responses": [
+      {
+        "id": "Y10-A",
+        "chinese": "好的，我帮你包装好。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ bāozhuāng hǎo.",
+        "korean": "네, 포장해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "需要",
+        "pinyin": "xūyào",
+        "meaning": "필요하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft",
+    "reviewNote": "v2 신규: RP4 흐름 보완(GPT 제안 문장)"
   }
 ]

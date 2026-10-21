@@ -168,6 +168,14 @@
                 "accept": [
                   "C04-A"
                 ]
+              },
+              {
+                "speaker": "staff",
+                "ref": "S04-A"
+              },
+              {
+                "speaker": "staff",
+                "ref": "C11-A"
               }
             ]
           },
@@ -180,6 +188,14 @@
                 "accept": [
                   "C05-A"
                 ]
+              },
+              {
+                "speaker": "staff",
+                "ref": "S04-A"
+              },
+              {
+                "speaker": "staff",
+                "ref": "C12-A"
               }
             ]
           }
@@ -187,11 +203,14 @@
       },
       {
         "speaker": "staff",
-        "ref": "S04-A"
+        "ref": "C06-A"
       },
       {
-        "speaker": "staff",
-        "ref": "C07-A"
+        "speaker": "customer",
+        "ref": "C13",
+        "accept": [
+          "C13-A"
+        ]
       }
     ],
     "reviewKeywords": [
@@ -199,7 +218,7 @@
       "有点___",
       "大一码 / 小一码"
     ],
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "RP4",
@@ -234,6 +253,13 @@
         "ref": "Y05-A"
       },
       {
+        "speaker": "customer",
+        "ref": "Y10",
+        "accept": [
+          "Y10-A"
+        ]
+      },
+      {
         "speaker": "staff",
         "ref": "Y08-A"
       },
@@ -247,7 +273,7 @@
       "签名",
       "小票"
     ],
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "RP5",
@@ -297,6 +323,6 @@
       "打折 / 折扣",
       "优惠"
     ],
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

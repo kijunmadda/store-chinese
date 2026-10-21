@@ -26,9 +26,9 @@
     "responses": [
       {
         "id": "R01-A",
-        "chinese": "价格在这里，我给你看一下。",
-        "pinyin": "Jiàgé zài zhèlǐ, wǒ gěi nǐ kàn yíxià.",
-        "korean": "가격은 여기 있어요, 보여 드릴게요."
+        "chinese": "我给你看一下价格。",
+        "pinyin": "Wǒ gěi nǐ kàn yíxià jiàgé.",
+        "korean": "가격 보여 드릴게요."
       }
     ],
     "keywords": [
@@ -55,7 +55,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 더 간결하게(GPT)"
   },
   {
     "id": "R02",
@@ -90,7 +91,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R03",
@@ -149,7 +150,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R04",
@@ -193,7 +194,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft",
+    "verificationStatus": "reviewed",
     "reviewNote": "중국식 할인 표현: 숫자는 \"내는 비율\" — 打八折 = 20% 할인"
   },
   {
@@ -247,7 +248,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R06",
@@ -286,7 +287,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R07",
@@ -325,6 +326,6 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

@@ -23,6 +23,7 @@ customPinyin({
   小一号: 'xiǎo yí hào', // '한 사이즈'(수량) → 一 변조. 라이브러리는 서수(1번)로 읽음
   大一号: 'dà yí hào',
   一号: 'yí hào',
+  谁: 'shéi', // 现代汉语词典: shéi(구어 기본음), shuí는 또 다른 읽기
 })
 
 interface Line { id?: string; chinese: string; pinyin: string }

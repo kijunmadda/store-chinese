@@ -49,7 +49,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N02",
@@ -72,9 +72,9 @@
     "responses": [
       {
         "id": "N02-A",
-        "chinese": "是送给男士还是女士？",
-        "pinyin": "Shì sòng gěi nánshì háishi nǚshì?",
-        "korean": "남성분께 드리는 건가요, 여성분께 드리는 건가요?"
+        "chinese": "请问是送给男士还是女士？",
+        "pinyin": "Qǐngwèn shì sòng gěi nánshì háishi nǚshì?",
+        "korean": "혹시 남성분께 드리는 건가요, 여성분께 드리는 건가요?"
       }
     ],
     "keywords": [
@@ -112,7 +112,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 请问 추가(제미나이)"
   },
   {
     "id": "N03",
@@ -122,9 +123,9 @@
     "responses": [
       {
         "id": "N03-A",
-        "chinese": "是自己用还是送人？",
-        "pinyin": "Shì zìjǐ yòng háishi sòng rén?",
-        "korean": "본인이 쓰실 건가요, 선물하실 건가요?"
+        "chinese": "请问是自己用还是送人？",
+        "pinyin": "Qǐngwèn shì zìjǐ yòng háishi sòng rén?",
+        "korean": "혹시 본인이 쓰실 건가요, 선물하실 건가요?"
       }
     ],
     "keywords": [
@@ -151,7 +152,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 请问 추가(제미나이)"
   },
   {
     "id": "N04",
@@ -198,7 +200,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N05",
@@ -221,9 +223,9 @@
     "responses": [
       {
         "id": "N05-A",
-        "chinese": "好的，送给什么人呢？",
-        "pinyin": "Hǎo de, sòng gěi shénme rén ne?",
-        "korean": "네, 어떤 분께 드리는 건가요?"
+        "chinese": "好的，是送给谁的呢？",
+        "pinyin": "Hǎo de, shì sòng gěi shéi de ne?",
+        "korean": "네, 누구에게 드리는 건가요?"
       }
     ],
     "keywords": [
@@ -233,9 +235,9 @@
         "meaning": "~에게 주다"
       },
       {
-        "word": "什么人",
-        "pinyin": "shénme rén",
-        "meaning": "어떤 사람"
+        "word": "谁",
+        "pinyin": "shéi",
+        "meaning": "누구"
       }
     ],
     "learningModes": [
@@ -245,7 +247,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 더 구어적인 표현(GPT·딥시크 공통)"
   },
   {
     "id": "N06",
@@ -292,7 +295,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N07",
@@ -339,7 +342,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N08",
@@ -362,9 +365,9 @@
     "responses": [
       {
         "id": "N08-A",
-        "chinese": "好的，我帮你看一下黑色的。",
-        "pinyin": "Hǎo de, wǒ bāng nǐ kàn yíxià hēisè de.",
-        "korean": "네, 검은색 확인해 드릴게요."
+        "chinese": "好的，我帮你确认一下有没有黑色的。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ quèrèn yíxià yǒu méiyǒu hēisè de.",
+        "korean": "네, 검은색이 있는지 확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -387,7 +390,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 재고를 단정하지 않게(GPT)"
   },
   {
     "id": "N09",
@@ -439,31 +443,31 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N10",
     "category": "needs",
-    "scenario": "예산을 물어볼 때",
+    "scenario": "원하는 가격대를 물어볼 때",
     "difficulty": "intermediate",
     "responses": [
       {
         "id": "N10-A",
-        "chinese": "请问你的预算大概是多少？",
-        "pinyin": "Qǐngwèn nǐ de yùsuàn dàgài shì duōshao?",
-        "korean": "예산은 대략 어느 정도세요?"
+        "chinese": "请问你大概想看什么价位的？",
+        "pinyin": "Qǐngwèn nǐ dàgài xiǎng kàn shénme jiàwèi de?",
+        "korean": "혹시 대략 어느 정도 가격대를 생각하세요?"
       }
     ],
     "keywords": [
       {
-        "word": "预算",
-        "pinyin": "yùsuàn",
-        "meaning": "예산"
-      },
-      {
         "word": "大概",
         "pinyin": "dàgài",
         "meaning": "대략"
+      },
+      {
+        "word": "价位",
+        "pinyin": "jiàwèi",
+        "meaning": "가격대"
       }
     ],
     "learningModes": [
@@ -472,7 +476,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft",
-    "reviewNote": "명품 매장에서 예산을 묻는 것이 실례가 아닌지 검토 필요"
+    "verificationStatus": "reviewed",
+    "reviewNote": "명품 매장에서 예산을 묻는 것이 실례가 아닌지 검토 필요 / v2: 예산 대신 가격대 — 3개 AI 공통 의견"
   }
 ]

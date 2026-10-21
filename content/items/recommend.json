@@ -30,7 +30,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M02",
@@ -58,7 +58,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M03",
@@ -110,7 +110,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M04",
@@ -133,9 +133,9 @@
     "responses": [
       {
         "id": "M04-A",
-        "chinese": "要看你平时怎么用。",
-        "pinyin": "Yào kàn nǐ píngshí zěnme yòng.",
-        "korean": "평소에 어떻게 쓰시는지에 따라 달라요."
+        "chinese": "这要看你平时怎么用。",
+        "pinyin": "Zhè yào kàn nǐ píngshí zěnme yòng.",
+        "korean": "그건 평소에 어떻게 쓰시는지에 따라 달라요."
       }
     ],
     "keywords": [
@@ -162,7 +162,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 这 추가(딥시크)"
   },
   {
     "id": "M05",
@@ -210,7 +211,15 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "alternatives": [
+      {
+        "chinese": "我可以给你介绍几款，你可以比较一下。",
+        "pinyin": "Wǒ kěyǐ gěi nǐ jièshào jǐ kuǎn, nǐ kěyǐ bǐjiào yíxià.",
+        "korean": "몇 가지 소개해 드릴 테니 비교해 보세요."
+      }
+    ],
+    "reviewNote": "v2: 인기 근거가 없을 때 쓸 대체 표현 추가(GPT)"
   },
   {
     "id": "M06",
@@ -254,7 +263,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M07",
@@ -277,9 +286,9 @@
     "responses": [
       {
         "id": "M07-A",
-        "chinese": "好的，你慢慢考虑。",
-        "pinyin": "Hǎo de, nǐ mànmàn kǎolǜ.",
-        "korean": "네, 천천히 생각해 보세요."
+        "chinese": "好的，不着急，你慢慢考虑。",
+        "pinyin": "Hǎo de, bù zháojí, nǐ mànmàn kǎolǜ.",
+        "korean": "네, 서두르지 마시고 천천히 생각해 보세요."
       }
     ],
     "keywords": [
@@ -292,6 +301,11 @@
         "word": "再",
         "pinyin": "zài",
         "meaning": "더, 다시"
+      },
+      {
+        "word": "不着急",
+        "pinyin": "bù zháojí",
+        "meaning": "서두르지 않다"
       }
     ],
     "learningModes": [
@@ -301,7 +315,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 不着急 추가(제미나이)"
   },
   {
     "id": "M08",
@@ -329,7 +344,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M09",
@@ -358,7 +373,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M10",
@@ -368,16 +383,16 @@
     "responses": [
       {
         "id": "M10-A",
-        "chinese": "要不要看看配套的钱包？",
-        "pinyin": "Yào bu yào kànkan pèitào de qiánbāo?",
-        "korean": "세트로 어울리는 지갑도 보시겠어요?"
+        "chinese": "要不要看看和这款包搭配的钱包？",
+        "pinyin": "Yào bu yào kànkan hé zhè kuǎn bāo dāpèi de qiánbāo?",
+        "korean": "이 가방과 어울리는 지갑도 보시겠어요?"
       }
     ],
     "keywords": [
       {
-        "word": "配套",
-        "pinyin": "pèitào",
-        "meaning": "세트로 맞추다"
+        "word": "搭配",
+        "pinyin": "dāpèi",
+        "meaning": "어울리게 맞추다"
       }
     ],
     "pattern": "要不要___？",
@@ -387,6 +402,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v2: 더 명확하게(GPT)"
   }
 ]
