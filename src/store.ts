@@ -143,12 +143,30 @@ function touch(draft: StudyState, id: string): SentenceProgress {
   return p
 }
 
-function schedule(p: SentenceProgress, rating: Rating) {
-  if (rating === 'again') p.box = 1
-  else if (rating === 'hard') p.box = Math.max(1, p.box)
-  else p.box = Math.min(5, p.box + 1)
+/**
+ * 간격 반복 일정
+ * - 몰랐음: 상자 1, 오늘 바로 다시 복습 대상
+ * - 헷갈림: 상자 유지(최소 1), 1일 뒤
+ * - 바로 떠오름: 상자 한 단계 올림(처음이어도 최소 2 → 3일 뒤), 상자별 간격만큼 뒤
+ */
+export function schedule(p: SentenceProgress, rating: Rating, on = today()) {
+  const base = new Date(`${on}T00:00:00`)
+  const after = (days: number) => {
+    const d = new Date(base)
+    d.setDate(d.getDate() + days)
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+  }
+  if (rating === 'again') {
+    p.box = 1
+    p.nextReviewAt = on
+  } else if (rating === 'hard') {
+    p.box = Math.max(1, p.box)
+    p.nextReviewAt = after(1)
+  } else {
+    p.box = Math.min(5, Math.max(2, p.box + 1))
+    p.nextReviewAt = after(INTERVAL_DAYS[p.box])
+  }
   p.lastRating = rating
-  p.nextReviewAt = today(INTERVAL_DAYS[p.box])
 }
 
 function logStep(draft: StudyState, step: string) {

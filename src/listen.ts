@@ -1,6 +1,7 @@
 // 고객 질문 듣기 훈련 — 문제 출제 규칙 (화면과 분리)
 import type { ContentItem, Difficulty, StaffLine } from './content/types'
 import { isDue, type StudyState } from './store'
+import { shuffle } from './util'
 
 export interface ListenEntry {
   /** 문장 ID (고객 질문 S01 또는 변형 S01-V1) */
@@ -36,15 +37,6 @@ export function buildPool(items: ContentItem[], difficulty: Difficulty | 'all'):
       { id: it.id, item: it, ...it.customer! },
       ...(it.variants ?? []).map((v) => ({ id: v.id, item: it, chinese: v.chinese, pinyin: v.pinyin, meaning: v.meaning })),
     ])
-}
-
-function shuffle<T>(list: T[], rand = Math.random): T[] {
-  const a = [...list]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
 }
 
 /**
