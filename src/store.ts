@@ -1,0 +1,229 @@
+// 학습 기록 저장소.
+// - 이 기기 브라우저의 IndexedDB에 저장한다 (서버 없음).
+// - 기록 전체를 하나의 묶음으로 메모리에 두고, 바뀔 때마다 통째로 저장한다 (문장 수백 개 규모라 충분히 가볍다).
+// - IndexedDB를 쓸 수 없는 환경(사생활 보호 모드 등)에서는 메모리에만 두고 경고를 띄운다.
+import { useSyncExternalStore } from 'react'
+
+export type Rating = 'again' | 'hard' | 'good'
+
+export interface SentenceProgress {
+  /** 본 횟수 (학습·듣기·말하기 합계) */
+  seen: number
+  lastStudiedAt?: string
+  /** 간격 반복 상자 1~5 (0 = 아직 평가 없음) */
+  box: number
+  /** 다음 복습 날짜 (YYYY-MM-DD) */
+  nextReviewAt?: string
+  lastRating?: Rating
+  listen: { correct: number; wrong: number }
+  speak: { again: number; hard: number; good: number }
+  /** 사용자가 직접 '복습에 추가'를 누른 문장 */
+  markedForReview: boolean
+  usedInStore: number
+}
+
+export interface DayLog {
+  steps: string[]
+  completed: boolean
+}
+
+export interface StudyState {
+  app: 'dept-store-chinese'
+  schemaVersion: 1
+  progress: Record<string, SentenceProgress>
+  days: Record<string, DayLog>
+  /** 듣기 문제에서 최근 낸 문장 (같은 문제 반복 방지) */
+  recentListen: string[]
+  lastBackupAt: string | null
+}
+
+/** 간격 반복: 상자 번호별 다음 복습까지 날짜 수 (근거: 설계서 4장) */
+export const INTERVAL_DAYS = [0, 1, 3, 7, 14, 30]
+
+export const emptyState = (): StudyState => ({
+  app: 'dept-store-chinese',
+  schemaVersion: 1,
+  progress: {},
+  days: {},
+  recentListen: [],
+  lastBackupAt: null,
+})
+
+const blankProgress = (): SentenceProgress => ({
+  seen: 0,
+  box: 0,
+  listen: { correct: 0, wrong: 0 },
+  speak: { again: 0, hard: 0, good: 0 },
+  markedForReview: false,
+  usedInStore: 0,
+})
+
+/** 기기 시간대 기준 날짜 (한국 시간) */
+export function today(offsetDays = 0): string {
+  const d = new Date()
+  d.setDate(d.getDate() + offsetDays)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+// ── IndexedDB ────────────────────────────────
+const DB_NAME = 'store-chinese'
+const STORE = 'kv'
+const KEY = 'state'
+
+function openDb(): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    if (!('indexedDB' in window)) return reject(new Error('IndexedDB 미지원'))
+    const req = indexedDB.open(DB_NAME, 1)
+    req.onupgradeneeded = () => req.result.createObjectStore(STORE)
+    req.onsuccess = () => resolve(req.result)
+    req.onerror = () => reject(req.error)
+    req.onblocked = () => reject(new Error('IndexedDB 차단됨'))
+  })
+}
+
+let db: IDBDatabase | null = null
+let state: StudyState = emptyState()
+let status: 'loading' | 'ready' | 'memory-only' = 'loading'
+const listeners = new Set<() => void>()
+const emit = () => listeners.forEach((l) => l())
+
+export async function initStore() {
+  try {
+    db = await openDb()
+    const saved = await new Promise<unknown>((resolve, reject) => {
+      const req = db!.transaction(STORE).objectStore(STORE).get(KEY)
+      req.onsuccess = () => resolve(req.result)
+      req.onerror = () => reject(req.error)
+    })
+    if (saved && typeof saved === 'object') state = { ...emptyState(), ...(saved as StudyState) }
+    status = 'ready'
+    // 브라우저가 저장 공간 정리 시 이 사이트 데이터를 지우지 않도록 요청 (허용 여부는 브라우저가 결정)
+    navigator.storage?.persist?.().catch(() => {})
+  } catch (e) {
+    console.error('학습 기록 저장소를 열 수 없습니다', e)
+    status = 'memory-only'
+  }
+  emit()
+}
+
+let saveTimer: ReturnType<typeof setTimeout> | undefined
+function persist() {
+  if (!db) return
+  clearTimeout(saveTimer)
+  // 연속 기록을 한 번에 묶어 저장
+  saveTimer = setTimeout(() => {
+    try {
+      const tx = db!.transaction(STORE, 'readwrite')
+      tx.objectStore(STORE).put(state, KEY)
+      tx.onerror = () => {
+        console.error('학습 기록 저장 실패', tx.error)
+        status = 'memory-only'
+        emit()
+      }
+    } catch (e) {
+      console.error('학습 기록 저장 실패', e)
+      status = 'memory-only'
+      emit()
+    }
+  }, 300)
+}
+
+function update(mutator: (draft: StudyState) => void) {
+  const next: StudyState = structuredClone(state)
+  mutator(next)
+  state = next
+  emit()
+  persist()
+}
+
+function touch(draft: StudyState, id: string): SentenceProgress {
+  const p = (draft.progress[id] ??= blankProgress())
+  p.seen += 1
+  p.lastStudiedAt = today()
+  return p
+}
+
+function schedule(p: SentenceProgress, rating: Rating) {
+  if (rating === 'again') p.box = 1
+  else if (rating === 'hard') p.box = Math.max(1, p.box)
+  else p.box = Math.min(5, p.box + 1)
+  p.lastRating = rating
+  p.nextReviewAt = today(INTERVAL_DAYS[p.box])
+}
+
+function logStep(draft: StudyState, step: string) {
+  const d = (draft.days[today()] ??= { steps: [], completed: false })
+  if (!d.steps.includes(step)) d.steps.push(step)
+}
+
+// ── 기록 함수 ─────────────────────────────
+export const record = {
+  /** 문장 학습 화면에서 문장을 봄 */
+  studied(id: string) {
+    update((s) => {
+      touch(s, id)
+      logStep(s, 'study')
+    })
+  },
+  /** 듣기 문제 결과 — 틀리면 자동으로 복습 대상 */
+  listened(id: string, correct: boolean) {
+    update((s) => {
+      const p = touch(s, id)
+      if (correct) p.listen.correct += 1
+      else p.listen.wrong += 1
+      schedule(p, correct ? 'good' : 'again')
+      s.recentListen = [id, ...s.recentListen.filter((x) => x !== id)].slice(0, 12)
+      logStep(s, 'listen')
+    })
+  },
+  /** 말하기 자기 평가: 몰랐음 / 헷갈림 / 바로 떠오름 */
+  spoke(id: string, rating: Rating) {
+    update((s) => {
+      const p = touch(s, id)
+      p.speak[rating] += 1
+      schedule(p, rating)
+      logStep(s, 'speak')
+    })
+  },
+  toggleReview(id: string) {
+    update((s) => {
+      const p = (s.progress[id] ??= blankProgress())
+      p.markedForReview = !p.markedForReview
+    })
+  },
+  step(step: string) {
+    update((s) => logStep(s, step))
+  },
+  /** 백업 복원 등으로 통째로 교체 (11단계) */
+  replaceAll(next: StudyState) {
+    update((s) => Object.assign(s, next))
+  },
+  resetAll() {
+    update((s) => Object.assign(s, emptyState()))
+  },
+}
+
+// ── 조회 ──────────────────────────────────
+export function getState() {
+  return state
+}
+
+export function useStudyState(): StudyState {
+  return useSyncExternalStore(subscribe, () => state)
+}
+
+export function useStoreStatus() {
+  return useSyncExternalStore(subscribe, () => status)
+}
+
+function subscribe(l: () => void) {
+  listeners.add(l)
+  return () => listeners.delete(l)
+}
+
+/** 복습이 필요한 문장인가: 틀렸거나 / 헷갈렸거나 / 직접 추가했거나 / 복습 날짜가 지남 */
+export function isDue(p: SentenceProgress | undefined, on = today()): boolean {
+  if (!p) return false
+  if (p.markedForReview) return true
+  return !!p.nextReviewAt && p.nextReviewAt <= on
+}
