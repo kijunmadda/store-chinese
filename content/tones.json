@@ -1,0 +1,76 @@
+{
+  "basics": [
+    { "word": "妈", "syllables": ["mā"], "meaning": "엄마 (1성: 높고 평평하게)" },
+    { "word": "麻", "syllables": ["má"], "meaning": "삼베 (2성: 아래에서 위로)" },
+    { "word": "马", "syllables": ["mǎ"], "meaning": "말 (3성: 낮게 내려갔다 올라옴)" },
+    { "word": "骂", "syllables": ["mà"], "meaning": "꾸짖다 (4성: 위에서 아래로 뚝)" }
+  ],
+  "words": [
+    { "word": "欢迎", "syllables": ["huān", "yíng"], "meaning": "환영하다" },
+    { "word": "黑色", "syllables": ["hēi", "sè"], "meaning": "검은색" },
+    { "word": "钱包", "syllables": ["qián", "bāo"], "meaning": "지갑" },
+    { "word": "颜色", "syllables": ["yán", "sè"], "meaning": "색상" },
+    { "word": "打折", "syllables": ["dǎ", "zhé"], "meaning": "할인하다" },
+    { "word": "尺码", "syllables": ["chǐ", "mǎ"], "meaning": "사이즈" },
+    { "word": "小票", "syllables": ["xiǎo", "piào"], "meaning": "영수증" },
+    { "word": "退税", "syllables": ["tuì", "shuì"], "meaning": "세금 환급" },
+    { "word": "护照", "syllables": ["hù", "zhào"], "meaning": "여권" },
+    { "word": "谢谢", "syllables": ["xiè", "xie"], "meaning": "감사합니다" },
+    { "word": "库存", "syllables": ["kù", "cún"], "meaning": "재고" },
+    { "word": "现货", "syllables": ["xiàn", "huò"], "meaning": "바로 살 수 있는 재고" },
+    { "word": "需要", "syllables": ["xū", "yào"], "meaning": "필요하다" },
+    { "word": "中文", "syllables": ["Zhōng", "wén"], "meaning": "중국어" },
+    { "word": "随时", "syllables": ["suí", "shí"], "meaning": "언제든지" },
+    { "word": "随便", "syllables": ["suí", "biàn"], "meaning": "편하게" },
+    { "word": "门店", "syllables": ["mén", "diàn"], "meaning": "매장, 지점" },
+    { "word": "同事", "syllables": ["tóng", "shì"], "meaning": "동료" },
+    { "word": "翻译", "syllables": ["fān", "yì"], "meaning": "번역" },
+    { "word": "规定", "syllables": ["guī", "dìng"], "meaning": "규정" },
+    { "word": "软件", "syllables": ["ruǎn", "jiàn"], "meaning": "앱, 소프트웨어" },
+    { "word": "问题", "syllables": ["wèn", "tí"], "meaning": "문제" },
+    { "word": "退款", "syllables": ["tuì", "kuǎn"], "meaning": "환불" },
+    { "word": "麻烦", "syllables": ["má", "fan"], "meaning": "번거롭게 하다" },
+    { "word": "明白", "syllables": ["míng", "bai"], "meaning": "알다, 이해하다" },
+    { "word": "可以", "syllables": ["kě", "yǐ"], "meaning": "~해도 된다" }
+  ],
+  "pairs": [
+    {
+      "kind": "tone",
+      "note": "성조만 다름",
+      "a": { "word": "买", "syllables": ["mǎi"], "meaning": "사다" },
+      "b": { "word": "卖", "syllables": ["mài"], "meaning": "팔다" }
+    },
+    {
+      "kind": "tone",
+      "note": "성조만 다름 — 打折(할인)의 打",
+      "a": { "word": "打", "syllables": ["dǎ"], "meaning": "치다 (打折의 打)" },
+      "b": { "word": "大", "syllables": ["dà"], "meaning": "크다" }
+    },
+    {
+      "kind": "tone",
+      "note": "성조만 다름",
+      "a": { "word": "换", "syllables": ["huàn"], "meaning": "교환하다" },
+      "b": { "word": "还", "syllables": ["huán"], "meaning": "돌려주다" }
+    },
+    {
+      "kind": "confusable",
+      "note": "가격 실수 위험 — s/sh와 성조가 모두 다름",
+      "a": { "word": "四", "syllables": ["sì"], "meaning": "4" },
+      "b": { "word": "十", "syllables": ["shí"], "meaning": "10" }
+    },
+    {
+      "kind": "confusable",
+      "note": "숫자 순서",
+      "a": { "word": "四十", "syllables": ["sì", "shí"], "meaning": "40" },
+      "b": { "word": "十四", "syllables": ["shí", "sì"], "meaning": "14" }
+    },
+    {
+      "kind": "confusable",
+      "note": "ü와 u",
+      "a": { "word": "绿", "syllables": ["lǜ"], "meaning": "초록" },
+      "b": { "word": "路", "syllables": ["lù"], "meaning": "길" }
+    }
+  ],
+  "verificationStatus": "verified",
+  "reviewNote": "단어는 모두 verified 콘텐츠(핵심 단어·성조 샘플 v2)에서 가져옴. 妈麻马骂는 표준 교재 예시."
+}

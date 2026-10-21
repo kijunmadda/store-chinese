@@ -6,7 +6,6 @@ import Home from './screens/Home'
 import StudyHub from './screens/StudyHub'
 import Review from './screens/Review'
 import Settings from './screens/Settings'
-import Placeholder from './screens/Placeholder'
 import SentenceCategories from './screens/SentenceCategories'
 import SentenceStudy from './screens/SentenceStudy'
 import Rescue from './screens/Rescue'
@@ -16,6 +15,7 @@ import RoleplayList from './screens/RoleplayList'
 import RoleplayPlayer from './screens/RoleplayPlayer'
 import ReviewSession from './screens/ReviewSession'
 import TodayFlow from './screens/TodayFlow'
+import ToneTrainer from './screens/ToneTrainer'
 import { contentErrors } from './content'
 
 export default function App() {
@@ -42,7 +42,7 @@ export default function App() {
           <Route path="/study/speak" element={<SpeakPractice />} />
           <Route path="/study/roleplay" element={<RoleplayList />} />
           <Route path="/study/roleplay/:id" element={<RoleplayPlayer />} />
-          <Route path="/study/tones" element={<Placeholder title="발음·성조" step={10} />} />
+          <Route path="/study/tones" element={<ToneTrainer />} />
           <Route path="/review" element={<Review />} />
           <Route path="/review/session" element={<ReviewSession />} />
           <Route path="/settings" element={<Settings />} />
