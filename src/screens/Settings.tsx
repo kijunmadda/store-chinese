@@ -1,3 +1,5 @@
+import { contentErrors, contentStats } from '../content'
+
 const items = [
   { title: '음성 선택·테스트', step: 4 },
   { title: '재생 속도', step: 4 },
@@ -23,6 +25,15 @@ export default function Settings() {
           </li>
         ))}
       </ul>
+      <section className="card" aria-label="콘텐츠 정보">
+        <strong>콘텐츠 정보</strong>
+        <p className="note">
+          상황 {contentStats.items}개 · 문장 {contentStats.sentences}개 · 역할극 {contentStats.roleplays}개
+          <br />
+          검증 완료 {contentStats.verified}/{contentStats.items}
+          {contentErrors.length > 0 && ` · 오류 ${contentErrors.length}개`}
+        </p>
+      </section>
       <p className="note">
         학습 기록은 이 기기의 브라우저에만 저장됩니다. 기기 변경이나 데이터 삭제에 대비해 정기적으로 백업해 주세요.
       </p>

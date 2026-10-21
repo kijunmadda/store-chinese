@@ -1,0 +1,169 @@
+[
+  {
+    "id": "G01",
+    "category": "greeting",
+    "scenario": "고객이 매장에 들어왔을 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G01-A", "chinese": "欢迎光临！", "pinyin": "Huānyíng guānglín!", "korean": "어서 오세요." }
+    ],
+    "keywords": [
+      { "word": "欢迎", "pinyin": "huānyíng", "meaning": "환영하다" },
+      { "word": "光临", "pinyin": "guānglín", "meaning": "방문하다(정중한 표현)" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G02",
+    "category": "greeting",
+    "scenario": "인사 후 편하게 둘러보도록 안내할 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G02-A", "chinese": "你好，可以随便看看。", "pinyin": "Nǐ hǎo, kěyǐ suíbiàn kànkan.", "korean": "안녕하세요, 편하게 둘러보세요." }
+    ],
+    "keywords": [
+      { "word": "随便", "pinyin": "suíbiàn", "meaning": "편하게, 마음대로" },
+      { "word": "看看", "pinyin": "kànkan", "meaning": "좀 보다" }
+    ],
+    "pattern": "可以___",
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G03",
+    "category": "greeting",
+    "scenario": "고객이 혼자 둘러볼 때 도움을 제안",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G03-A", "chinese": "有需要可以随时叫我。", "pinyin": "Yǒu xūyào kěyǐ suíshí jiào wǒ.", "korean": "필요하시면 언제든 불러 주세요." }
+    ],
+    "keywords": [
+      { "word": "需要", "pinyin": "xūyào", "meaning": "필요(하다)" },
+      { "word": "随时", "pinyin": "suíshí", "meaning": "언제든지" },
+      { "word": "叫", "pinyin": "jiào", "meaning": "부르다" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G04",
+    "category": "greeting",
+    "scenario": "응대를 시작할 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G04-A", "chinese": "有什么可以帮你的吗？", "pinyin": "Yǒu shénme kěyǐ bāng nǐ de ma?", "korean": "도와드릴 것 있으세요?" }
+    ],
+    "keywords": [
+      { "word": "帮", "pinyin": "bāng", "meaning": "돕다" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G05",
+    "category": "greeting",
+    "scenario": "고객이 진열 상품을 꺼내 보고 싶어 할 때",
+    "difficulty": "beginner",
+    "customer": { "chinese": "这个可以拿出来看看吗？", "pinyin": "Zhège kěyǐ ná chūlai kànkan ma?", "meaning": "이거 꺼내서 봐도 되나요?" },
+    "responses": [
+      { "id": "G05-A", "chinese": "可以的，我拿出来给你看。", "pinyin": "Kěyǐ de, wǒ ná chūlai gěi nǐ kàn.", "korean": "네, 꺼내서 보여 드릴게요." }
+    ],
+    "keywords": [
+      { "word": "拿出来", "pinyin": "ná chūlai", "meaning": "꺼내다" }
+    ],
+    "pattern": "可以___吗？",
+    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G06",
+    "category": "greeting",
+    "scenario": "고객을 안내할 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G06-A", "chinese": "这边请。", "pinyin": "Zhèbiān qǐng.", "korean": "이쪽으로 오세요." }
+    ],
+    "keywords": [
+      { "word": "这边", "pinyin": "zhèbiān", "meaning": "이쪽" },
+      { "word": "请", "pinyin": "qǐng", "meaning": "~하세요(정중한 권유)" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G07",
+    "category": "greeting",
+    "scenario": "고객의 요청을 이해했다고 답할 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G07-A", "chinese": "好的，明白了。", "pinyin": "Hǎo de, míngbai le.", "korean": "네, 알겠습니다." }
+    ],
+    "keywords": [
+      { "word": "明白", "pinyin": "míngbai", "meaning": "이해하다, 알다" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G08",
+    "category": "greeting",
+    "scenario": "고객이 중국어 가능 여부를 물을 때",
+    "difficulty": "beginner",
+    "customer": { "chinese": "你会说中文吗？", "pinyin": "Nǐ huì shuō Zhōngwén ma?", "meaning": "중국어 할 줄 아세요?" },
+    "responses": [
+      { "id": "G08-A", "chinese": "会一点。", "pinyin": "Huì yìdiǎn.", "korean": "조금 할 줄 알아요." }
+    ],
+    "keywords": [
+      { "word": "会", "pinyin": "huì", "meaning": "(배워서) 할 줄 알다" },
+      { "word": "一点", "pinyin": "yìdiǎn", "meaning": "조금" }
+    ],
+    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G09",
+    "category": "greeting",
+    "scenario": "고객이 혼자 둘러보겠다고 할 때",
+    "difficulty": "beginner",
+    "customer": { "chinese": "我就随便看看。", "pinyin": "Wǒ jiù suíbiàn kànkan.", "meaning": "그냥 좀 둘러볼게요." },
+    "variants": [
+      { "id": "G09-V1", "chinese": "我先看看。", "pinyin": "Wǒ xiān kànkan.", "meaning": "먼저 좀 볼게요." },
+      { "id": "G09-V2", "chinese": "我自己看看就好。", "pinyin": "Wǒ zìjǐ kànkan jiù hǎo.", "meaning": "혼자 볼게요." }
+    ],
+    "responses": [
+      { "id": "G09-A", "chinese": "好的，你慢慢看。", "pinyin": "Hǎo de, nǐ mànmàn kàn.", "korean": "네, 천천히 보세요." }
+    ],
+    "keywords": [
+      { "word": "就", "pinyin": "jiù", "meaning": "그냥, 단지" },
+      { "word": "慢慢", "pinyin": "mànmàn", "meaning": "천천히" }
+    ],
+    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "G10",
+    "category": "greeting",
+    "scenario": "고객을 배웅할 때",
+    "difficulty": "beginner",
+    "responses": [
+      { "id": "G10-A", "chinese": "谢谢光临，欢迎下次再来！", "pinyin": "Xièxie guānglín, huānyíng xià cì zài lái!", "korean": "감사합니다, 다음에 또 오세요!" }
+    ],
+    "keywords": [
+      { "word": "下次", "pinyin": "xià cì", "meaning": "다음번" },
+      { "word": "再来", "pinyin": "zài lái", "meaning": "다시 오다" }
+    ],
+    "learningModes": ["study", "speak", "roleplay"],
+    "policyDependent": false,
+    "verificationStatus": "verified"
+  }
+]

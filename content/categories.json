@@ -1,0 +1,11 @@
+[
+  { "id": "greeting", "order": 1, "name": "인사·응대" },
+  { "id": "needs", "order": 2, "name": "구매 목적·요청 파악" },
+  { "id": "bags", "order": 3, "name": "가방·지갑" },
+  { "id": "clothing", "order": 4, "name": "의류·착용" },
+  { "id": "price", "order": 5, "name": "가격·할인" },
+  { "id": "stock", "order": 6, "name": "재고·상품 확인" },
+  { "id": "recommend", "order": 7, "name": "추천·대화 이어가기" },
+  { "id": "payment", "order": 8, "name": "결제·마무리" },
+  { "id": "problem", "order": 9, "name": "문제 상황·예외 대응" }
+]

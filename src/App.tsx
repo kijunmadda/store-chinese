@@ -5,11 +5,17 @@ import StudyHub from './screens/StudyHub'
 import Review from './screens/Review'
 import Settings from './screens/Settings'
 import Placeholder from './screens/Placeholder'
+import { contentErrors } from './content'
 
 export default function App() {
   return (
     <div className="app">
       <main className="screen">
+        {contentErrors.length > 0 && (
+          <div className="card warning" role="alert">
+            일부 학습 콘텐츠에 오류가 있어 제외했습니다 ({contentErrors.length}건). 나머지는 정상적으로 학습할 수 있습니다.
+          </div>
+        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/today" element={<Placeholder title="오늘의 학습" step={9} />} />
