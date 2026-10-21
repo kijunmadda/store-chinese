@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { contentErrors, contentStats } from '../content'
 import { setPrefs, usePrefs } from '../prefs'
-import { getChineseVoices, speak, SpeechError, ttsSupported } from '../speech'
+import { getChineseVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
 
 const TEST_SENTENCE = '我帮你确认一下库存，请稍等。'
 const RATES = [
@@ -49,6 +49,13 @@ export default function Settings() {
           <p className="caution">이 브라우저는 음성 재생을 지원하지 않아요. 크롬이나 사파리로 열어 주세요.</p>
         ) : voices === null ? (
           <p className="note">기기의 중국어 음성을 찾는 중…</p>
+        ) : noVoice && !voiceListAvailable() ? (
+          <>
+            <p className="note">
+              이 브라우저는 음성 목록을 알려 주지 않아요. 아래 <strong>테스트 재생</strong>으로 중국어가 들리는지 확인해 주세요.
+            </p>
+            {test.state === 'error' && <VoiceHelp />}
+          </>
         ) : noVoice ? (
           <VoiceHelp />
         ) : (
@@ -84,7 +91,11 @@ export default function Settings() {
           <button type="button" className="btn-secondary strong" onClick={runTest} disabled={test.state === 'playing' || !ttsSupported}>
             {test.state === 'playing' ? '재생 중…' : '🔊 테스트 재생'}
           </button>
-          {test.state === 'ok' && <p className="note">소리가 들렸다면 정상이에요. 안 들렸다면 무음 모드와 음량을 확인해 주세요.</p>}
+          {test.state === 'ok' && (
+            <p className="note">
+              중국어로 들렸다면 정상이에요. 소리가 안 났다면 무음 모드와 음량을, 한국어·영어 발음처럼 들렸다면 아래 안내대로 중국어 음성을 설치해 주세요.
+            </p>
+          )}
           {test.state === 'error' && <p className="caution">⚠ {test.message}</p>}
         </div>
       </section>
@@ -133,14 +144,14 @@ function VoiceHelp() {
         <ol>
           <li>설정 → 손쉬운 사용 → 읽기 및 말하기 → 음성</li>
           <li>중국어(중국 본토) 선택 → 음성 하나 내려받기</li>
-          <li>이 화면을 새로고침</li>
+          <li>사파리를 완전히 닫았다가 다시 열기</li>
         </ol>
       ) : (
         <ol>
           <li>설정 → 일반 → 글자 읽어주기(TTS) 출력</li>
-          <li>기본 엔진을 Google 음성 인식 및 합성으로 선택</li>
-          <li>엔진 설정 → 음성 데이터 설치 → 중국어(중국) 설치</li>
-          <li>크롬을 완전히 닫았다가 다시 열기</li>
+          <li>기본 엔진: 삼성 TTS 엔진 → 옆의 톱니바퀴(설정) → 언어 설치 → 중국어 내려받기</li>
+          <li>(삼성 엔진에 중국어가 없으면) 기본 엔진을 Google 음성 엔진으로 바꾸고 → 음성 데이터 설치 → 중국어(중국)</li>
+          <li>삼성 인터넷을 완전히 닫았다가 다시 열기</li>
         </ol>
       )}
       <small className="note">메뉴 이름은 기기·버전마다 조금 다를 수 있어요.</small>

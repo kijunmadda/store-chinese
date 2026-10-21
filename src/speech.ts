@@ -37,6 +37,11 @@ export function getChineseVoices(timeoutMs = 2000): Promise<SpeechSynthesisVoice
   })
 }
 
+/** 브라우저가 음성 목록 자체를 제공하는지 (비어 있으면 목록 확인 불가) */
+export function voiceListAvailable(): boolean {
+  return ttsSupported && speechSynthesis.getVoices().length > 0
+}
+
 export function stopSpeech() {
   if (currentAudio) {
     currentAudio.pause()
@@ -79,12 +84,14 @@ export async function speak(text: string, opts: { id?: string; slow?: boolean } 
 
   if (!ttsSupported) throw new SpeechError('unsupported', '이 브라우저는 음성 재생을 지원하지 않아요')
   const voices = await getChineseVoices()
-  if (voices.length === 0) throw new SpeechError('no-voice', '이 기기에 중국어 음성이 없어요')
+  // 음성 목록을 아예 알려 주지 않는 브라우저(일부 삼성 인터넷 등)는 언어만 지정해 기기 기본 엔진에 맡긴다.
+  // 목록은 있는데 중국어가 없을 때만 '음성 없음'으로 처리한다.
+  if (voices.length === 0 && voiceListAvailable()) throw new SpeechError('no-voice', '이 기기에 중국어 음성이 없어요')
   const voice = voices.find((v) => v.voiceURI === voiceURI) ?? voices[0]
 
   const u = new SpeechSynthesisUtterance(text)
-  u.voice = voice
-  u.lang = voice.lang
+  if (voice) u.voice = voice
+  u.lang = voice?.lang ?? 'zh-CN'
   u.rate = speed
   currentUtterance = u
   return new Promise((resolve, reject) => {
