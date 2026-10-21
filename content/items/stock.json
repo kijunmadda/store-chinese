@@ -180,7 +180,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
+    "verificationStatus": "verified",
     "alternatives": [
       {
         "chinese": "请问你穿多大码？",
@@ -188,7 +188,7 @@
         "korean": "평소 몇 사이즈 입으세요?"
       }
     ],
-    "reviewNote": "v3: 你要 대신 你需要 유지(GPT·제미나이 2:1), 대체 표현 추가(제미나이 제안)"
+    "reviewNote": "v3: 你要 대신 你需要 유지(GPT·제미나이 2:1), 대체 표현 추가(제미나이 제안) / 2026-10-21 사용자 확인"
   },
   {
     "id": "S04",
@@ -250,8 +250,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v3: 就 추가 — 찾으시던 바로 그 색 (딥시크)"
+    "verificationStatus": "verified",
+    "reviewNote": "v3: 就 추가 — 찾으시던 바로 그 색 (딥시크) / 2026-10-21 사용자 확인"
   },
   {
     "id": "S06",

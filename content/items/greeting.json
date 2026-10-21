@@ -70,8 +70,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v3: 可以 삭제 (제미나이·딥시크 공통 의견)"
+    "verificationStatus": "verified",
+    "reviewNote": "v3: 可以 삭제 (제미나이·딥시크 공통 의견) / 2026-10-21 사용자 확인"
   },
   {
     "id": "G03",
@@ -109,8 +109,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v3: 可以 삭제 — 구어에서 더 자연스러움 (딥시크)"
+    "verificationStatus": "verified",
+    "reviewNote": "v3: 可以 삭제 — 구어에서 더 자연스러움 (딥시크) / 2026-10-21 사용자 확인"
   },
   {
     "id": "G04",
@@ -145,8 +145,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v3: 대체 표현 需要帮忙吗？ 추가 (딥시크 제안)"
+    "verificationStatus": "verified",
+    "reviewNote": "v3: 대체 표현 需要帮忙吗？ 추가 (딥시크 제안) / 2026-10-21 사용자 확인"
   },
   {
     "id": "G05",
@@ -174,7 +174,7 @@
         "korean": "네, 꺼내서 보여 드릴게요."
       }
     ],
-    "reviewNote": "v3: 可以的 → 好的 (딥시크), 고객 변형 G05-V1 추가 (딥시크 제안 문장)",
+    "reviewNote": "v3: 可以的 → 好的 (딥시크), 고객 변형 G05-V1 추가 (딥시크 제안 문장) / 2026-10-21 사용자 확인",
     "keywords": [
       {
         "word": "拿出来",
@@ -190,7 +190,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "G06",
