@@ -63,11 +63,13 @@ export class SpeechError extends Error {
  * 문장을 읽는다. 끝까지 읽으면 resolve, 다른 소리로 끊기면 'interrupted'로 resolve, 실패하면 reject.
  * @param id  문장 ID — MP3가 등록돼 있으면 MP3를 재생
  * @param slow 느리게 듣기
+ * @param rate 속도 직접 지정 (설정보다 우선)
  */
-export async function speak(text: string, opts: { id?: string; slow?: boolean } = {}): Promise<'ended' | 'interrupted'> {
+export async function speak(text: string, opts: { id?: string; slow?: boolean; rate?: number } = {}): Promise<'ended' | 'interrupted'> {
   stopSpeech()
   const { rate, voiceURI } = getPrefs()
-  const speed = opts.slow ? Math.min(rate, 0.6) : rate
+  // rate: 역할극에서 '빠르게 말하는 고객'처럼 특정 속도가 필요할 때 지정
+  const speed = opts.slow ? Math.min(rate, 0.6) : (opts.rate ?? rate)
 
   const file = opts.id ? manifest[opts.id] : undefined
   if (file) {

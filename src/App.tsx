@@ -12,6 +12,8 @@ import SentenceStudy from './screens/SentenceStudy'
 import Rescue from './screens/Rescue'
 import ListenTraining from './screens/ListenTraining'
 import SpeakPractice from './screens/SpeakPractice'
+import RoleplayList from './screens/RoleplayList'
+import RoleplayPlayer from './screens/RoleplayPlayer'
 import { contentErrors } from './content'
 
 export default function App() {
@@ -36,7 +38,8 @@ export default function App() {
           <Route path="/study/sentences/:categoryId" element={<SentenceStudy />} />
           <Route path="/study/listen" element={<ListenTraining />} />
           <Route path="/study/speak" element={<SpeakPractice />} />
-          <Route path="/study/roleplay" element={<Placeholder title="상황별 역할극" step={7} />} />
+          <Route path="/study/roleplay" element={<RoleplayList />} />
+          <Route path="/study/roleplay/:id" element={<RoleplayPlayer />} />
           <Route path="/study/tones" element={<Placeholder title="발음·성조" step={10} />} />
           <Route path="/review" element={<Review />} />
           <Route path="/settings" element={<Settings />} />

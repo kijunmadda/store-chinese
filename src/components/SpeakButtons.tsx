@@ -5,7 +5,7 @@ import { speak, SpeechError, stopSpeech } from '../speech'
 type State = 'idle' | 'playing' | 'playing-slow' | 'error'
 
 /** 🔊 듣기 / 🐢 느리게 버튼. 재생이 안 되면 안내만 띄우고 텍스트 학습은 그대로 계속할 수 있다. */
-export default function SpeakButtons({ text, id }: { text: string; id?: string }) {
+export default function SpeakButtons({ text, id, rate }: { text: string; id?: string; rate?: number }) {
   const [state, setState] = useState<State>('idle')
   const [error, setError] = useState('')
   const playId = useRef(0)
@@ -21,7 +21,7 @@ export default function SpeakButtons({ text, id }: { text: string; id?: string }
     setState(slow ? 'playing-slow' : 'playing')
     setError('')
     try {
-      await speak(text, { id, slow })
+      await speak(text, { id, slow, rate })
       if (playId.current === myId) setState('idle')
     } catch (e) {
       if (playId.current !== myId) return
