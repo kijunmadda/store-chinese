@@ -4,25 +4,69 @@
     "category": "stock",
     "scenario": "고객이 다른 색상을 물을 때",
     "difficulty": "beginner",
-    "customer": { "chinese": "这款还有别的颜色吗？", "pinyin": "Zhè kuǎn hái yǒu bié de yánsè ma?", "meaning": "이 제품 다른 색상도 있나요?" },
+    "customer": {
+      "chinese": "这款还有别的颜色吗？",
+      "pinyin": "Zhè kuǎn hái yǒu bié de yánsè ma?",
+      "meaning": "이 제품 다른 색상도 있나요?"
+    },
     "variants": [
-      { "id": "S01-V1", "chinese": "有没有别的颜色？", "pinyin": "Yǒu méiyǒu bié de yánsè?", "meaning": "다른 색 있어요?" },
-      { "id": "S01-V2", "chinese": "这个还有什么颜色？", "pinyin": "Zhège hái yǒu shénme yánsè?", "meaning": "이거 또 무슨 색 있어요?" }
+      {
+        "id": "S01-V1",
+        "chinese": "有没有别的颜色？",
+        "pinyin": "Yǒu méiyǒu bié de yánsè?",
+        "meaning": "다른 색 있어요?"
+      },
+      {
+        "id": "S01-V2",
+        "chinese": "这个还有什么颜色？",
+        "pinyin": "Zhège hái yǒu shénme yánsè?",
+        "meaning": "이거 또 무슨 색 있어요?"
+      }
     ],
     "responses": [
-      { "id": "S01-A", "chinese": "我帮你查一下。", "pinyin": "Wǒ bāng nǐ chá yíxià.", "korean": "확인해 드릴게요." }
+      {
+        "id": "S01-A",
+        "chinese": "我帮你查一下。",
+        "pinyin": "Wǒ bāng nǐ chá yíxià.",
+        "korean": "확인해 드릴게요."
+      }
     ],
     "alternatives": [
-      { "chinese": "我帮你看一下。", "pinyin": "Wǒ bāng nǐ kàn yíxià.", "korean": "봐 드릴게요." }
+      {
+        "chinese": "我帮你看一下。",
+        "pinyin": "Wǒ bāng nǐ kàn yíxià.",
+        "korean": "봐 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "款", "pinyin": "kuǎn", "meaning": "디자인, 모델" },
-      { "word": "别的", "pinyin": "bié de", "meaning": "다른" },
-      { "word": "颜色", "pinyin": "yánsè", "meaning": "색상" },
-      { "word": "查", "pinyin": "chá", "meaning": "조회하다, 찾아보다" }
+      {
+        "word": "款",
+        "pinyin": "kuǎn",
+        "meaning": "디자인, 모델"
+      },
+      {
+        "word": "别的",
+        "pinyin": "bié de",
+        "meaning": "다른"
+      },
+      {
+        "word": "颜色",
+        "pinyin": "yánsè",
+        "meaning": "색상"
+      },
+      {
+        "word": "查",
+        "pinyin": "chá",
+        "meaning": "조회하다, 찾아보다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -31,21 +75,56 @@
     "category": "stock",
     "scenario": "고객이 특정 색상의 재고를 물을 때",
     "difficulty": "beginner",
-    "customer": { "chinese": "黑色有现货吗？", "pinyin": "Hēisè yǒu xiànhuò ma?", "meaning": "검은색 지금 재고 있나요?" },
+    "customer": {
+      "chinese": "黑色有现货吗？",
+      "pinyin": "Hēisè yǒu xiànhuò ma?",
+      "meaning": "검은색 지금 재고 있나요?"
+    },
     "variants": [
-      { "id": "S02-V1", "chinese": "黑色的还有吗？", "pinyin": "Hēisè de hái yǒu ma?", "meaning": "검은색 아직 있어요?" }
+      {
+        "id": "S02-V1",
+        "chinese": "黑色的还有吗？",
+        "pinyin": "Hēisè de hái yǒu ma?",
+        "meaning": "검은색 아직 있어요?"
+      }
     ],
     "responses": [
-      { "id": "S02-A", "chinese": "我帮你确认一下库存，请稍等。", "pinyin": "Wǒ bāng nǐ quèrèn yíxià kùcún, qǐng shāo děng.", "korean": "재고 확인해 드릴게요, 잠시만 기다려 주세요." }
+      {
+        "id": "S02-A",
+        "chinese": "我帮你确认一下库存，请稍等。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià kùcún, qǐng shāo děng.",
+        "korean": "재고 확인해 드릴게요, 잠시만 기다려 주세요."
+      }
     ],
     "keywords": [
-      { "word": "现货", "pinyin": "xiànhuò", "meaning": "바로 살 수 있는 재고" },
-      { "word": "确认", "pinyin": "quèrèn", "meaning": "확인하다" },
-      { "word": "库存", "pinyin": "kùcún", "meaning": "재고" },
-      { "word": "稍等", "pinyin": "shāo děng", "meaning": "잠시 기다리다" }
+      {
+        "word": "现货",
+        "pinyin": "xiànhuò",
+        "meaning": "바로 살 수 있는 재고"
+      },
+      {
+        "word": "确认",
+        "pinyin": "quèrèn",
+        "meaning": "확인하다"
+      },
+      {
+        "word": "库存",
+        "pinyin": "kùcún",
+        "meaning": "재고"
+      },
+      {
+        "word": "稍等",
+        "pinyin": "shāo děng",
+        "meaning": "잠시 기다리다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -54,22 +133,62 @@
     "category": "stock",
     "scenario": "고객이 다른 사이즈를 물을 때",
     "difficulty": "beginner",
-    "customer": { "chinese": "有小一号的吗？", "pinyin": "Yǒu xiǎo yí hào de ma?", "meaning": "한 사이즈 작은 것 있나요?" },
+    "customer": {
+      "chinese": "有小一号的吗？",
+      "pinyin": "Yǒu xiǎo yí hào de ma?",
+      "meaning": "한 사이즈 작은 것 있나요?"
+    },
     "variants": [
-      { "id": "S03-V1", "chinese": "有大一号的吗？", "pinyin": "Yǒu dà yí hào de ma?", "meaning": "한 사이즈 큰 것 있나요?", "note": "비교 듣기: 小/大 구별" }
+      {
+        "id": "S03-V1",
+        "chinese": "有大一号的吗？",
+        "pinyin": "Yǒu dà yí hào de ma?",
+        "meaning": "한 사이즈 큰 것 있나요?",
+        "note": "비교 듣기: 小/大 구별"
+      }
     ],
     "responses": [
-      { "id": "S03-A", "chinese": "请问你需要什么尺码？我帮你找一下。", "pinyin": "Qǐngwèn nǐ xūyào shénme chǐmǎ? Wǒ bāng nǐ zhǎo yíxià.", "korean": "어떤 사이즈가 필요하세요? 찾아 드릴게요." }
+      {
+        "id": "S03-A",
+        "chinese": "请问你需要什么尺码？我帮你找一下。",
+        "pinyin": "Qǐngwèn nǐ xūyào shénme chǐmǎ? Wǒ bāng nǐ zhǎo yíxià.",
+        "korean": "어떤 사이즈가 필요하세요? 찾아 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "一号", "pinyin": "yí hào", "meaning": "한 사이즈" },
-      { "word": "尺码", "pinyin": "chǐmǎ", "meaning": "사이즈" },
-      { "word": "找", "pinyin": "zhǎo", "meaning": "찾다" }
+      {
+        "word": "一号",
+        "pinyin": "yí hào",
+        "meaning": "한 사이즈"
+      },
+      {
+        "word": "尺码",
+        "pinyin": "chǐmǎ",
+        "meaning": "사이즈"
+      },
+      {
+        "word": "找",
+        "pinyin": "zhǎo",
+        "meaning": "찾다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
-    "verificationStatus": "verified"
+    "verificationStatus": "reviewed",
+    "alternatives": [
+      {
+        "chinese": "请问你穿多大码？",
+        "pinyin": "Qǐngwèn nǐ chuān duō dà mǎ?",
+        "korean": "평소 몇 사이즈 입으세요?"
+      }
+    ],
+    "reviewNote": "v3: 你要 대신 你需要 유지(GPT·제미나이 2:1), 대체 표현 추가(제미나이 제안)"
   },
   {
     "id": "S04",
@@ -77,13 +196,30 @@
     "scenario": "재고 확인 후 고객에게 돌아왔을 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "S04-A", "chinese": "不好意思，让你久等了。", "pinyin": "Bù hǎoyìsi, ràng nǐ jiǔ děng le.", "korean": "오래 기다리시게 해서 죄송합니다." }
+      {
+        "id": "S04-A",
+        "chinese": "不好意思，让你久等了。",
+        "pinyin": "Bù hǎoyìsi, ràng nǐ jiǔ děng le.",
+        "korean": "오래 기다리시게 해서 죄송합니다."
+      }
     ],
     "keywords": [
-      { "word": "不好意思", "pinyin": "bù hǎoyìsi", "meaning": "죄송합니다(가벼운 사과)" },
-      { "word": "久等", "pinyin": "jiǔ děng", "meaning": "오래 기다리다" }
+      {
+        "word": "不好意思",
+        "pinyin": "bù hǎoyìsi",
+        "meaning": "죄송합니다(가벼운 사과)"
+      },
+      {
+        "word": "久等",
+        "pinyin": "jiǔ děng",
+        "meaning": "오래 기다리다"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -93,14 +229,29 @@
     "scenario": "재고를 확인했고 상품이 있을 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "S05-A", "chinese": "有的，这是你要的颜色。", "pinyin": "Yǒu de, zhè shì nǐ yào de yánsè.", "korean": "있습니다, 찾으시던 색상이에요.", "note": "실제로 재고를 확인한 뒤에만 사용" }
+      {
+        "id": "S05-A",
+        "chinese": "有的，这就是你要的颜色。",
+        "pinyin": "Yǒu de, zhè jiù shì nǐ yào de yánsè.",
+        "korean": "있습니다, 찾으시던 색상이에요.",
+        "note": "실제로 재고를 확인한 뒤에만 사용"
+      }
     ],
     "keywords": [
-      { "word": "有的", "pinyin": "yǒu de", "meaning": "있습니다" }
+      {
+        "word": "有的",
+        "pinyin": "yǒu de",
+        "meaning": "있습니다"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
-    "verificationStatus": "verified"
+    "verificationStatus": "reviewed",
+    "reviewNote": "v3: 就 추가 — 찾으시던 바로 그 색 (딥시크)"
   },
   {
     "id": "S06",
@@ -108,12 +259,26 @@
     "scenario": "재고를 확인했고 상품이 없을 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "S06-A", "chinese": "不好意思，这个颜色现在没有货了。", "pinyin": "Bù hǎoyìsi, zhège yánsè xiànzài méiyǒu huò le.", "korean": "죄송합니다, 이 색상은 지금 재고가 없습니다.", "note": "실제로 재고를 확인한 뒤에만 사용" }
+      {
+        "id": "S06-A",
+        "chinese": "不好意思，这个颜色现在没有货了。",
+        "pinyin": "Bù hǎoyìsi, zhège yánsè xiànzài méiyǒu huò le.",
+        "korean": "죄송합니다, 이 색상은 지금 재고가 없습니다.",
+        "note": "실제로 재고를 확인한 뒤에만 사용"
+      }
     ],
     "keywords": [
-      { "word": "没有货", "pinyin": "méiyǒu huò", "meaning": "물건이 없다" }
+      {
+        "word": "没有货",
+        "pinyin": "méiyǒu huò",
+        "meaning": "물건이 없다"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -122,20 +287,51 @@
     "category": "stock",
     "scenario": "고객이 다른 매장 재고를 물을 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "别的店有货吗？", "pinyin": "Bié de diàn yǒu huò ma?", "meaning": "다른 매장에는 재고 있나요?" },
+    "customer": {
+      "chinese": "别的店有货吗？",
+      "pinyin": "Bié de diàn yǒu huò ma?",
+      "meaning": "다른 매장에는 재고 있나요?"
+    },
     "variants": [
-      { "id": "S07-V1", "chinese": "其他门店有吗？", "pinyin": "Qítā méndiàn yǒu ma?", "meaning": "다른 지점에는 있어요?" }
+      {
+        "id": "S07-V1",
+        "chinese": "其他门店有吗？",
+        "pinyin": "Qítā méndiàn yǒu ma?",
+        "meaning": "다른 지점에는 있어요?"
+      }
     ],
     "responses": [
-      { "id": "S07-A", "chinese": "我帮你问一下别的门店。", "pinyin": "Wǒ bāng nǐ wèn yíxià bié de méndiàn.", "korean": "다른 매장에 물어봐 드릴게요." }
+      {
+        "id": "S07-A",
+        "chinese": "我帮你问一下别的门店。",
+        "pinyin": "Wǒ bāng nǐ wèn yíxià bié de méndiàn.",
+        "korean": "다른 매장에 물어봐 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "有货", "pinyin": "yǒu huò", "meaning": "물건이 있다" },
-      { "word": "门店", "pinyin": "méndiàn", "meaning": "매장, 지점" },
-      { "word": "问", "pinyin": "wèn", "meaning": "묻다" }
+      {
+        "word": "有货",
+        "pinyin": "yǒu huò",
+        "meaning": "물건이 있다"
+      },
+      {
+        "word": "门店",
+        "pinyin": "méndiàn",
+        "meaning": "매장, 지점"
+      },
+      {
+        "word": "问",
+        "pinyin": "wèn",
+        "meaning": "묻다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": true,
     "verificationStatus": "verified"
   },
@@ -144,19 +340,46 @@
     "category": "stock",
     "scenario": "고객이 입고 시기를 물을 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "什么时候到货？", "pinyin": "Shénme shíhou dào huò?", "meaning": "언제 입고되나요?" },
+    "customer": {
+      "chinese": "什么时候到货？",
+      "pinyin": "Shénme shíhou dào huò?",
+      "meaning": "언제 입고되나요?"
+    },
     "variants": [
-      { "id": "S08-V1", "chinese": "什么时候有货？", "pinyin": "Shénme shíhou yǒu huò?", "meaning": "언제 물건 들어와요?" }
+      {
+        "id": "S08-V1",
+        "chinese": "什么时候有货？",
+        "pinyin": "Shénme shíhou yǒu huò?",
+        "meaning": "언제 물건 들어와요?"
+      }
     ],
     "responses": [
-      { "id": "S08-A", "chinese": "到货时间我帮你确认一下。", "pinyin": "Dào huò shíjiān wǒ bāng nǐ quèrèn yíxià.", "korean": "입고 일정을 확인해 드릴게요." }
+      {
+        "id": "S08-A",
+        "chinese": "到货时间我帮你确认一下。",
+        "pinyin": "Dào huò shíjiān wǒ bāng nǐ quèrèn yíxià.",
+        "korean": "입고 일정을 확인해 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "什么时候", "pinyin": "shénme shíhou", "meaning": "언제" },
-      { "word": "到货", "pinyin": "dào huò", "meaning": "입고되다" }
+      {
+        "word": "什么时候",
+        "pinyin": "shénme shíhou",
+        "meaning": "언제"
+      },
+      {
+        "word": "到货",
+        "pinyin": "dào huò",
+        "meaning": "입고되다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -165,16 +388,38 @@
     "category": "stock",
     "scenario": "고객이 마지막 상품인지 물을 때",
     "difficulty": "beginner",
-    "customer": { "chinese": "这是最后一个吗？", "pinyin": "Zhè shì zuìhòu yí ge ma?", "meaning": "이게 마지막 하나예요?" },
+    "customer": {
+      "chinese": "这是最后一个吗？",
+      "pinyin": "Zhè shì zuìhòu yí ge ma?",
+      "meaning": "이게 마지막 하나예요?"
+    },
     "responses": [
-      { "id": "S09-A", "chinese": "我帮你看一下还有没有。", "pinyin": "Wǒ bāng nǐ kàn yíxià hái yǒu méiyǒu.", "korean": "더 있는지 봐 드릴게요." }
+      {
+        "id": "S09-A",
+        "chinese": "我帮你看一下还有没有。",
+        "pinyin": "Wǒ bāng nǐ kàn yíxià hái yǒu méiyǒu.",
+        "korean": "더 있는지 봐 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "最后", "pinyin": "zuìhòu", "meaning": "마지막" },
-      { "word": "还有没有", "pinyin": "hái yǒu méiyǒu", "meaning": "아직 있는지 없는지" }
+      {
+        "word": "最后",
+        "pinyin": "zuìhòu",
+        "meaning": "마지막"
+      },
+      {
+        "word": "还有没有",
+        "pinyin": "hái yǒu méiyǒu",
+        "meaning": "아직 있는지 없는지"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -183,16 +428,38 @@
     "category": "stock",
     "scenario": "고객이 상품을 따로 보관해 달라고 할 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "可以帮我留一下吗？", "pinyin": "Kěyǐ bāng wǒ liú yíxià ma?", "meaning": "따로 빼 둘(보관해 줄) 수 있나요?" },
+    "customer": {
+      "chinese": "可以帮我留一下吗？",
+      "pinyin": "Kěyǐ bāng wǒ liú yíxià ma?",
+      "meaning": "따로 빼 둘(보관해 줄) 수 있나요?"
+    },
     "responses": [
-      { "id": "S10-A", "chinese": "我帮你问一下可不可以。", "pinyin": "Wǒ bāng nǐ wèn yíxià kě bu kěyǐ.", "korean": "가능한지 여쭤봐 드릴게요." }
+      {
+        "id": "S10-A",
+        "chinese": "我帮你问一下可不可以。",
+        "pinyin": "Wǒ bāng nǐ wèn yíxià kě bu kěyǐ.",
+        "korean": "가능한지 여쭤봐 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "留", "pinyin": "liú", "meaning": "남겨 두다, 보관하다" },
-      { "word": "可不可以", "pinyin": "kě bu kěyǐ", "meaning": "되는지 안 되는지" }
+      {
+        "word": "留",
+        "pinyin": "liú",
+        "meaning": "남겨 두다, 보관하다"
+      },
+      {
+        "word": "可不可以",
+        "pinyin": "kě bu kěyǐ",
+        "meaning": "되는지 안 되는지"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": true,
     "verificationStatus": "verified"
   }
