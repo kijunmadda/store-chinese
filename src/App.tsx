@@ -15,6 +15,7 @@ import SpeakPractice from './screens/SpeakPractice'
 import RoleplayList from './screens/RoleplayList'
 import RoleplayPlayer from './screens/RoleplayPlayer'
 import ReviewSession from './screens/ReviewSession'
+import TodayFlow from './screens/TodayFlow'
 import { contentErrors } from './content'
 
 export default function App() {
@@ -32,7 +33,7 @@ export default function App() {
         )}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/today" element={<Placeholder title="오늘의 학습" step={9} />} />
+          <Route path="/today" element={<TodayFlow />} />
           <Route path="/rescue" element={<Rescue />} />
           <Route path="/study" element={<StudyHub />} />
           <Route path="/study/sentences" element={<SentenceCategories />} />

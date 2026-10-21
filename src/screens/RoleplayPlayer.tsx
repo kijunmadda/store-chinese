@@ -37,10 +37,11 @@ export default function RoleplayPlayer() {
         </div>
       </>
     )
-  return <Player key={rp.id} roleplayId={rp.id} />
+  return <RoleplayRun key={rp.id} roleplayId={rp.id} />
 }
 
-function Player({ roleplayId }: { roleplayId: string }) {
+/** 역할극 진행. embedded: '오늘의 학습' 안에 넣을 때 — 머리글을 숨기고 끝나면 onFinish 호출 */
+export function RoleplayRun({ roleplayId, embedded = false, onFinish }: { roleplayId: string; embedded?: boolean; onFinish?: () => void }) {
   const rp = roleplays.find((r) => r.id === roleplayId)!
   const { showPinyin } = usePrefs()
   const [queue, setQueue] = useState<RoleplayStep[]>(rp.steps)
@@ -113,7 +114,7 @@ function Player({ roleplayId }: { roleplayId: string }) {
 
   return (
     <>
-      <BackHeader title={rp.title} />
+      {embedded ? <h2 className="flow-sub">💬 {rp.title}</h2> : <BackHeader title={rp.title} />}
       <section className="card intro">
         <p>
           <span className="label">목표</span> {rp.goal}
@@ -223,6 +224,11 @@ function Player({ roleplayId }: { roleplayId: string }) {
             {usedStaff.some((s) => items.find((it) => it.id === s.itemId)?.alternatives?.length) && (
               <p className="note">문장 학습 화면에서 같은 뜻의 다른 표현도 확인할 수 있어요.</p>
             )}
+            {embedded ? (
+              <button type="button" className="btn-secondary strong" onClick={onFinish}>
+                다음 단계 ›
+              </button>
+            ) : (
             <div className="pager">
               <Link to="/study/roleplay" className="btn-secondary">목록으로</Link>
               <button
@@ -237,6 +243,7 @@ function Player({ roleplayId }: { roleplayId: string }) {
                 다시 하기
               </button>
             </div>
+            )}
           </>
         )}
       </div>

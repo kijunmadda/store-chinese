@@ -227,6 +227,13 @@ export const record = {
   step(step: string) {
     update((s) => logStep(s, step))
   },
+  /** 오늘의 학습을 끝까지 마침 */
+  completeDay() {
+    update((s) => {
+      logStep(s, 'today')
+      s.days[today()].completed = true
+    })
+  },
   /** 백업 복원 등으로 통째로 교체 (11단계) */
   replaceAll(next: StudyState) {
     update((s) => Object.assign(s, next))

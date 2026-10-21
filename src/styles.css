@@ -326,3 +326,14 @@ button { font: inherit; color: inherit; }
 .sentence-list a { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; min-height: 44px; }
 .sentence-list span { font-size: 18px; font-weight: 600; }
 .sentence-list small { color: var(--muted); font-size: 14px; }
+
+/* ── 9단계: 오늘의 학습 ───────────────────────── */
+.flow-steps { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
+.flow-steps li {
+  flex: 1; padding: 6px 0; text-align: center; font-size: 12px; font-weight: 600;
+  border-radius: 8px; background: var(--line); color: var(--muted);
+}
+.flow-steps li.current { background: var(--accent); color: var(--accent-ink); }
+.flow-steps li.done { background: var(--ok-soft); color: var(--ok); }
+.flow-sub { margin: 0; font-size: 15px; font-weight: 700; color: var(--muted); }
+.btn-secondary { font-family: inherit; color: inherit; }

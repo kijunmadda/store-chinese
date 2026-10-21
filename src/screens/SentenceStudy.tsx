@@ -7,7 +7,7 @@ import type { ContentItem } from '../content/types'
 import { setPrefs, usePrefs } from '../prefs'
 import { record, useStudyState } from '../store'
 
-type Mode = 'learn' | 'recall'
+export type Mode = 'learn' | 'recall'
 
 export default function SentenceStudy() {
   const { categoryId } = useParams()
@@ -90,7 +90,7 @@ export default function SentenceStudy() {
 const idsOf = (item: ContentItem) => [...(item.customer ? [item.id] : []), ...(item.responses ?? []).map((r) => r.id)]
 
 /** 학습 기록 + 복습에 추가 + 매장에서 써 봤어요 */
-function StudyActions({ item }: { item: ContentItem }) {
+export function StudyActions({ item }: { item: ContentItem }) {
   const state = useStudyState()
   const ids = idsOf(item)
   const marked = ids.some((id) => state.progress[id]?.markedForReview)
@@ -126,7 +126,7 @@ function StudyActions({ item }: { item: ContentItem }) {
   )
 }
 
-function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode: Mode; showPinyin: boolean }) {
+export function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode: Mode; showPinyin: boolean }) {
   const recall = mode === 'recall'
   const [customerOpen, setCustomerOpen] = useState(!recall)
   const [staffOpen, setStaffOpen] = useState(!recall)
