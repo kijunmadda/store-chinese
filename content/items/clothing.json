@@ -49,7 +49,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C02",
@@ -87,7 +88,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C03",
@@ -135,8 +137,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "S·M·L은 중국에서도 영어 알파벳으로 읽음"
+    "verificationStatus": "verified",
+    "reviewNote": "S·M·L은 중국에서도 영어 알파벳으로 읽음 / 2026-10-21 사용자 확인"
   },
   {
     "id": "C04",
@@ -188,7 +190,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C05",
@@ -235,7 +238,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C06",
@@ -268,7 +272,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C07",
@@ -301,7 +306,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C08",
@@ -345,7 +351,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C09",
@@ -394,7 +401,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C10",
@@ -433,7 +441,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "C11",
@@ -462,8 +471,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft",
-    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장) / 2026-10-21 사용자 확인"
   },
   {
     "id": "C12",
@@ -485,8 +494,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft",
-    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장) / 2026-10-21 사용자 확인"
   },
   {
     "id": "C13",
@@ -533,7 +542,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft",
-    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장). 답변은 C07-A와 같은 문장"
+    "verificationStatus": "verified",
+    "reviewNote": "v2 신규: RP3 흐름 보완(GPT 제안 문장). 답변은 C07-A와 같은 문장 / 2026-10-21 사용자 확인"
   }
 ]

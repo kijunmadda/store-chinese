@@ -49,7 +49,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "N02",
@@ -112,8 +113,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 请问 추가(제미나이)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 请问 추가(제미나이) / 2026-10-21 사용자 확인"
   },
   {
     "id": "N03",
@@ -152,8 +153,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 请问 추가(제미나이)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 请问 추가(제미나이) / 2026-10-21 사용자 확인"
   },
   {
     "id": "N04",
@@ -200,7 +201,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "N05",
@@ -247,8 +249,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 더 구어적인 표현(GPT·딥시크 공통)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 더 구어적인 표현(GPT·딥시크 공통) / 2026-10-21 사용자 확인"
   },
   {
     "id": "N06",
@@ -295,7 +297,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "N07",
@@ -342,7 +345,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "N08",
@@ -390,8 +394,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 재고를 단정하지 않게(GPT)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 재고를 단정하지 않게(GPT) / 2026-10-21 사용자 확인"
   },
   {
     "id": "N09",
@@ -443,7 +447,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "N10",
@@ -476,7 +481,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "명품 매장에서 예산을 묻는 것이 실례가 아닌지 검토 필요 / v2: 예산 대신 가격대 — 3개 AI 공통 의견"
+    "verificationStatus": "verified",
+    "reviewNote": "명품 매장에서 예산을 묻는 것이 실례가 아닌지 검토 필요 / v2: 예산 대신 가격대 — 3개 AI 공통 의견 / 2026-10-21 사용자 확인"
   }
 ]

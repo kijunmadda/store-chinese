@@ -55,7 +55,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B02",
@@ -94,8 +95,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 질문에 직접 답하고 단정하지 않게(GPT)",
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 질문에 직접 답하고 단정하지 않게(GPT) / 2026-10-21 사용자 확인",
     "pattern": "我帮你___一下"
   },
   {
@@ -153,7 +154,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B04",
@@ -205,7 +207,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B05",
@@ -263,7 +266,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B06",
@@ -315,7 +319,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B07",
@@ -354,7 +359,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B08",
@@ -402,7 +408,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B09",
@@ -442,7 +449,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B10",
@@ -486,7 +494,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "B11",
@@ -525,6 +534,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   }
 ]

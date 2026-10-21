@@ -5,13 +5,31 @@
     "scenario": "고객의 말을 못 알아들었을 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P01-A", "chinese": "不好意思，请再说一遍。", "pinyin": "Bù hǎoyìsi, qǐng zài shuō yí biàn.", "korean": "죄송하지만 한 번 더 말씀해 주세요." }
+      {
+        "id": "P01-A",
+        "chinese": "不好意思，请再说一遍。",
+        "pinyin": "Bù hǎoyìsi, qǐng zài shuō yí biàn.",
+        "korean": "죄송하지만 한 번 더 말씀해 주세요."
+      }
     ],
     "keywords": [
-      { "word": "再", "pinyin": "zài", "meaning": "다시" },
-      { "word": "一遍", "pinyin": "yí biàn", "meaning": "한 번(처음부터 끝까지)" }
+      {
+        "word": "再",
+        "pinyin": "zài",
+        "meaning": "다시"
+      },
+      {
+        "word": "一遍",
+        "pinyin": "yí biàn",
+        "meaning": "한 번(처음부터 끝까지)"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -21,16 +39,38 @@
     "scenario": "고객이 너무 빨리 말할 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P02-A", "chinese": "麻烦你说慢一点，好吗？", "pinyin": "Máfan nǐ shuō màn yìdiǎn, hǎo ma?", "korean": "죄송하지만 조금 천천히 말씀해 주시겠어요?" }
+      {
+        "id": "P02-A",
+        "chinese": "麻烦你说慢一点，好吗？",
+        "pinyin": "Máfan nǐ shuō màn yìdiǎn, hǎo ma?",
+        "korean": "죄송하지만 조금 천천히 말씀해 주시겠어요?"
+      }
     ],
     "alternatives": [
-      { "chinese": "可以说慢一点吗？", "pinyin": "Kěyǐ shuō màn yìdiǎn ma?", "korean": "조금 천천히 말씀해 주실 수 있나요?" }
+      {
+        "chinese": "可以说慢一点吗？",
+        "pinyin": "Kěyǐ shuō màn yìdiǎn ma?",
+        "korean": "조금 천천히 말씀해 주실 수 있나요?"
+      }
     ],
     "keywords": [
-      { "word": "麻烦你", "pinyin": "máfan nǐ", "meaning": "번거롭겠지만(정중한 부탁)" },
-      { "word": "慢一点", "pinyin": "màn yìdiǎn", "meaning": "조금 천천히" }
+      {
+        "word": "麻烦你",
+        "pinyin": "máfan nǐ",
+        "meaning": "번거롭겠지만(정중한 부탁)"
+      },
+      {
+        "word": "慢一点",
+        "pinyin": "màn yìdiǎn",
+        "meaning": "조금 천천히"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -40,13 +80,31 @@
     "scenario": "중국어 실력이 부족함을 알릴 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P03-A", "chinese": "不好意思，我中文不太好。", "pinyin": "Bù hǎoyìsi, wǒ Zhōngwén bú tài hǎo.", "korean": "죄송해요, 제가 중국어를 잘 못해요." }
+      {
+        "id": "P03-A",
+        "chinese": "不好意思，我中文不太好。",
+        "pinyin": "Bù hǎoyìsi, wǒ Zhōngwén bú tài hǎo.",
+        "korean": "죄송해요, 제가 중국어를 잘 못해요."
+      }
     ],
     "keywords": [
-      { "word": "中文", "pinyin": "Zhōngwén", "meaning": "중국어" },
-      { "word": "不太", "pinyin": "bú tài", "meaning": "별로 ~하지 않다" }
+      {
+        "word": "中文",
+        "pinyin": "Zhōngwén",
+        "meaning": "중국어"
+      },
+      {
+        "word": "不太",
+        "pinyin": "bú tài",
+        "meaning": "별로 ~하지 않다"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -56,13 +114,27 @@
     "scenario": "말로 이해가 어려워 글로 써 달라고 할 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P04-A", "chinese": "可以写给我看一下吗？", "pinyin": "Kěyǐ xiě gěi wǒ kàn yíxià ma?", "korean": "써서 보여 주실 수 있나요?" }
+      {
+        "id": "P04-A",
+        "chinese": "可以写给我看一下吗？",
+        "pinyin": "Kěyǐ xiě gěi wǒ kàn yíxià ma?",
+        "korean": "써서 보여 주실 수 있나요?"
+      }
     ],
     "keywords": [
-      { "word": "写", "pinyin": "xiě", "meaning": "쓰다" }
+      {
+        "word": "写",
+        "pinyin": "xiě",
+        "meaning": "쓰다"
+      }
     ],
     "pattern": "可以___吗？",
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -72,13 +144,31 @@
     "scenario": "번역 앱을 사용하려 할 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P05-A", "chinese": "我用翻译软件可以吗？", "pinyin": "Wǒ yòng fānyì ruǎnjiàn kěyǐ ma?", "korean": "번역 앱을 써도 될까요?" }
+      {
+        "id": "P05-A",
+        "chinese": "我用翻译软件可以吗？",
+        "pinyin": "Wǒ yòng fānyì ruǎnjiàn kěyǐ ma?",
+        "korean": "번역 앱을 써도 될까요?"
+      }
     ],
     "keywords": [
-      { "word": "翻译", "pinyin": "fānyì", "meaning": "번역" },
-      { "word": "软件", "pinyin": "ruǎnjiàn", "meaning": "앱, 소프트웨어" }
+      {
+        "word": "翻译",
+        "pinyin": "fānyì",
+        "meaning": "번역"
+      },
+      {
+        "word": "软件",
+        "pinyin": "ruǎnjiàn",
+        "meaning": "앱, 소프트웨어"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -88,12 +178,26 @@
     "scenario": "중국어 가능한 동료를 부를 때",
     "difficulty": "beginner",
     "responses": [
-      { "id": "P06-A", "chinese": "请稍等，我去叫会说中文的同事。", "pinyin": "Qǐng shāo děng, wǒ qù jiào huì shuō Zhōngwén de tóngshì.", "korean": "잠시만요, 중국어 하는 동료를 불러 올게요." }
+      {
+        "id": "P06-A",
+        "chinese": "请稍等，我去叫会说中文的同事。",
+        "pinyin": "Qǐng shāo děng, wǒ qù jiào huì shuō Zhōngwén de tóngshì.",
+        "korean": "잠시만요, 중국어 하는 동료를 불러 올게요."
+      }
     ],
     "keywords": [
-      { "word": "同事", "pinyin": "tóngshì", "meaning": "동료" }
+      {
+        "word": "同事",
+        "pinyin": "tóngshì",
+        "meaning": "동료"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay", "rescue"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -102,21 +206,57 @@
     "category": "problem",
     "scenario": "고객이 반품·환불을 물을 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "可以退货吗？", "pinyin": "Kěyǐ tuìhuò ma?", "meaning": "반품할 수 있나요?" },
+    "customer": {
+      "chinese": "可以退货吗？",
+      "pinyin": "Kěyǐ tuìhuò ma?",
+      "meaning": "반품할 수 있나요?"
+    },
     "variants": [
-      { "id": "P07-V1", "chinese": "能退吗？", "pinyin": "Néng tuì ma?", "meaning": "반품·환불 되나요?(넓은 의미)" },
-      { "id": "P07-V2", "chinese": "可以退款吗？", "pinyin": "Kěyǐ tuìkuǎn ma?", "meaning": "환불받을 수 있나요?" }
+      {
+        "id": "P07-V1",
+        "chinese": "能退吗？",
+        "pinyin": "Néng tuì ma?",
+        "meaning": "반품·환불 되나요?(넓은 의미)"
+      },
+      {
+        "id": "P07-V2",
+        "chinese": "可以退款吗？",
+        "pinyin": "Kěyǐ tuìkuǎn ma?",
+        "meaning": "환불받을 수 있나요?"
+      }
     ],
     "responses": [
-      { "id": "P07-A", "chinese": "我帮你确认一下退货规定。", "pinyin": "Wǒ bāng nǐ quèrèn yíxià tuìhuò guīdìng.", "korean": "반품 규정을 확인해 드릴게요." }
+      {
+        "id": "P07-A",
+        "chinese": "我帮你确认一下退货规定。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià tuìhuò guīdìng.",
+        "korean": "반품 규정을 확인해 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "退货", "pinyin": "tuìhuò", "meaning": "반품" },
-      { "word": "退款", "pinyin": "tuìkuǎn", "meaning": "환불" },
-      { "word": "规定", "pinyin": "guīdìng", "meaning": "규정" }
+      {
+        "word": "退货",
+        "pinyin": "tuìhuò",
+        "meaning": "반품"
+      },
+      {
+        "word": "退款",
+        "pinyin": "tuìkuǎn",
+        "meaning": "환불"
+      },
+      {
+        "word": "规定",
+        "pinyin": "guīdìng",
+        "meaning": "규정"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": true,
     "verificationStatus": "verified"
   },
@@ -125,19 +265,50 @@
     "category": "problem",
     "scenario": "고객이 교환을 원할 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "能换货吗？", "pinyin": "Néng huàn huò ma?", "meaning": "교환되나요?" },
+    "customer": {
+      "chinese": "能换货吗？",
+      "pinyin": "Néng huàn huò ma?",
+      "meaning": "교환되나요?"
+    },
     "variants": [
-      { "id": "P08-V1", "chinese": "可以换一个吗？", "pinyin": "Kěyǐ huàn yí ge ma?", "meaning": "다른 것으로 바꿀 수 있나요?" }
+      {
+        "id": "P08-V1",
+        "chinese": "可以换一个吗？",
+        "pinyin": "Kěyǐ huàn yí ge ma?",
+        "meaning": "다른 것으로 바꿀 수 있나요?"
+      }
     ],
     "responses": [
-      { "id": "P08-A", "chinese": "请问你带小票了吗？", "pinyin": "Qǐngwèn nǐ dài xiǎopiào le ma?", "korean": "혹시 영수증 가져오셨나요?" }
+      {
+        "id": "P08-A",
+        "chinese": "请问你带小票了吗？",
+        "pinyin": "Qǐngwèn nǐ dài xiǎopiào le ma?",
+        "korean": "혹시 영수증 가져오셨나요?"
+      }
     ],
     "keywords": [
-      { "word": "换货", "pinyin": "huàn huò", "meaning": "교환" },
-      { "word": "带", "pinyin": "dài", "meaning": "가지고 오다" },
-      { "word": "小票", "pinyin": "xiǎopiào", "meaning": "영수증" }
+      {
+        "word": "换货",
+        "pinyin": "huàn huò",
+        "meaning": "교환"
+      },
+      {
+        "word": "带",
+        "pinyin": "dài",
+        "meaning": "가지고 오다"
+      },
+      {
+        "word": "小票",
+        "pinyin": "xiǎopiào",
+        "meaning": "영수증"
+      }
     ],
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": true,
     "verificationStatus": "verified"
   },
@@ -146,20 +317,51 @@
     "category": "problem",
     "scenario": "고객이 상품 하자를 알릴 때",
     "difficulty": "intermediate",
-    "customer": { "chinese": "这里有点问题。", "pinyin": "Zhèlǐ yǒudiǎn wèntí.", "meaning": "여기 좀 문제가 있어요." },
+    "customer": {
+      "chinese": "这里有点问题。",
+      "pinyin": "Zhèlǐ yǒudiǎn wèntí.",
+      "meaning": "여기 좀 문제가 있어요."
+    },
     "variants": [
-      { "id": "P09-V1", "chinese": "这里坏了。", "pinyin": "Zhèlǐ huài le.", "meaning": "여기가 망가졌어요." }
+      {
+        "id": "P09-V1",
+        "chinese": "这里坏了。",
+        "pinyin": "Zhèlǐ huài le.",
+        "meaning": "여기가 망가졌어요."
+      }
     ],
     "responses": [
-      { "id": "P09-A", "chinese": "真不好意思，我帮你看一下。", "pinyin": "Zhēn bù hǎoyìsi, wǒ bāng nǐ kàn yíxià.", "korean": "정말 죄송합니다, 확인해 드릴게요." }
+      {
+        "id": "P09-A",
+        "chinese": "真不好意思，我帮你看一下。",
+        "pinyin": "Zhēn bù hǎoyìsi, wǒ bāng nǐ kàn yíxià.",
+        "korean": "정말 죄송합니다, 확인해 드릴게요."
+      }
     ],
     "keywords": [
-      { "word": "有点", "pinyin": "yǒudiǎn", "meaning": "조금(부정적인 느낌)" },
-      { "word": "问题", "pinyin": "wèntí", "meaning": "문제" },
-      { "word": "坏", "pinyin": "huài", "meaning": "망가지다" }
+      {
+        "word": "有点",
+        "pinyin": "yǒudiǎn",
+        "meaning": "조금(부정적인 느낌)"
+      },
+      {
+        "word": "问题",
+        "pinyin": "wèntí",
+        "meaning": "문제"
+      },
+      {
+        "word": "坏",
+        "pinyin": "huài",
+        "meaning": "망가지다"
+      }
     ],
     "pattern": "我帮你___一下",
-    "learningModes": ["study", "listen", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   },
@@ -169,13 +371,30 @@
     "scenario": "고객에게 불편을 끼쳐 사과할 때",
     "difficulty": "intermediate",
     "responses": [
-      { "id": "P10-A", "chinese": "非常抱歉，给你添麻烦了。", "pinyin": "Fēicháng bàoqiàn, gěi nǐ tiān máfan le.", "korean": "불편을 드려서 정말 죄송합니다." }
+      {
+        "id": "P10-A",
+        "chinese": "非常抱歉，给你添麻烦了。",
+        "pinyin": "Fēicháng bàoqiàn, gěi nǐ tiān máfan le.",
+        "korean": "불편을 드려서 정말 죄송합니다."
+      }
     ],
     "keywords": [
-      { "word": "抱歉", "pinyin": "bàoqiàn", "meaning": "죄송하다" },
-      { "word": "添麻烦", "pinyin": "tiān máfan", "meaning": "폐를 끼치다" }
+      {
+        "word": "抱歉",
+        "pinyin": "bàoqiàn",
+        "meaning": "죄송하다"
+      },
+      {
+        "word": "添麻烦",
+        "pinyin": "tiān máfan",
+        "meaning": "폐를 끼치다"
+      }
     ],
-    "learningModes": ["study", "speak", "roleplay"],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
     "policyDependent": false,
     "verificationStatus": "verified"
   }

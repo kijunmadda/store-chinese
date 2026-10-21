@@ -44,7 +44,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y02",
@@ -102,7 +103,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y03",
@@ -141,8 +143,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 가능 여부를 단정하지 않게(GPT)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 가능 여부를 단정하지 않게(GPT) / 2026-10-21 사용자 확인"
   },
   {
     "id": "Y04",
@@ -172,7 +174,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y05",
@@ -200,7 +203,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y06",
@@ -248,8 +252,8 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 질문에 직접 답하게(GPT)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 질문에 직접 답하게(GPT) / 2026-10-21 사용자 확인"
   },
   {
     "id": "Y07",
@@ -277,7 +281,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y08",
@@ -310,7 +315,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
+    "verificationStatus": "verified",
     "alternatives": [
       {
         "chinese": "这是你的卡和小票，请收好。",
@@ -318,7 +323,7 @@
         "korean": "카드와 영수증입니다, 잘 보관하세요."
       }
     ],
-    "reviewNote": "v2: 카드 결제 후 대체 표현 추가(제미나이)"
+    "reviewNote": "v2: 카드 결제 후 대체 표현 추가(제미나이) / 2026-10-21 사용자 확인"
   },
   {
     "id": "Y09",
@@ -357,7 +362,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "Y10",
@@ -391,7 +397,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft",
-    "reviewNote": "v2 신규: RP4 흐름 보완(GPT 제안 문장)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2 신규: RP4 흐름 보완(GPT 제안 문장) / 2026-10-21 사용자 확인"
   }
 ]

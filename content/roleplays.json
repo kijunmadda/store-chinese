@@ -218,7 +218,7 @@
       "有点___",
       "大一码 / 小一码"
     ],
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "RP4",
@@ -273,7 +273,7 @@
       "签名",
       "小票"
     ],
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "RP5",
@@ -323,6 +323,6 @@
       "打折 / 折扣",
       "优惠"
     ],
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   }
 ]

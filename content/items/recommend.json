@@ -30,7 +30,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M02",
@@ -58,7 +59,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M03",
@@ -110,7 +112,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M04",
@@ -162,8 +165,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 这 추가(딥시크)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 这 추가(딥시크) / 2026-10-21 사용자 확인"
   },
   {
     "id": "M05",
@@ -211,7 +214,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
+    "verificationStatus": "verified",
     "alternatives": [
       {
         "chinese": "我可以给你介绍几款，你可以比较一下。",
@@ -219,7 +222,7 @@
         "korean": "몇 가지 소개해 드릴 테니 비교해 보세요."
       }
     ],
-    "reviewNote": "v2: 인기 근거가 없을 때 쓸 대체 표현 추가(GPT)"
+    "reviewNote": "v2: 인기 근거가 없을 때 쓸 대체 표현 추가(GPT) / 2026-10-21 사용자 확인"
   },
   {
     "id": "M06",
@@ -263,7 +266,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M07",
@@ -315,8 +319,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 不着急 추가(제미나이)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 不着急 추가(제미나이) / 2026-10-21 사용자 확인"
   },
   {
     "id": "M08",
@@ -344,7 +348,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M09",
@@ -373,7 +378,8 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified",
+    "reviewNote": "2026-10-21 사용자 확인"
   },
   {
     "id": "M10",
@@ -402,7 +408,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed",
-    "reviewNote": "v2: 더 명확하게(GPT)"
+    "verificationStatus": "verified",
+    "reviewNote": "v2: 더 명확하게(GPT) / 2026-10-21 사용자 확인"
   }
 ]
