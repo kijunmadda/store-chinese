@@ -88,7 +88,7 @@ export default function SpeakPractice() {
   )
 }
 
-function SpeakCard({ entry, onRated }: { entry: SpeakEntry; onRated: (r: Rating) => void }) {
+export function SpeakCard({ entry, onRated }: { entry: SpeakEntry; onRated: (r: Rating) => void }) {
   const { showPinyin } = usePrefs()
   const [revealed, setRevealed] = useState(false)
   const [hideText, setHideText] = useState(false)

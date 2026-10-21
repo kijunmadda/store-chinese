@@ -128,7 +128,7 @@ export default function ListenTraining() {
   )
 }
 
-function QuestionCard({ question, onAnswered, onNext, isLast }: {
+export function QuestionCard({ question, onAnswered, onNext, isLast }: {
   question: Question
   onAnswered: (correct: boolean) => void
   onNext: () => void

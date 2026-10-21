@@ -203,10 +203,25 @@ export const record = {
       logStep(s, 'speak')
     })
   },
-  toggleReview(id: string) {
+  /** '복습에 추가' 켜기/끄기 — 한 상황의 문장들을 함께 지정 */
+  setReview(ids: string[], on: boolean) {
     update((s) => {
-      const p = (s.progress[id] ??= blankProgress())
-      p.markedForReview = !p.markedForReview
+      for (const id of ids) (s.progress[id] ??= blankProgress()).markedForReview = on
+    })
+  },
+  /** 복습을 마치면 '직접 추가' 표시를 내린다 (이후에는 간격 반복 일정이 관리) */
+  clearReviewMark(id: string) {
+    update((s) => {
+      const p = s.progress[id]
+      if (p) p.markedForReview = false
+    })
+  },
+  /** 매장에서 실제로 써 본 문장 — 실전 사용은 기억을 강화하므로 다음 복습을 한 단계 미룬다 */
+  usedInStore(id: string) {
+    update((s) => {
+      const p = touch(s, id)
+      p.usedInStore += 1
+      if (p.box > 0) schedule(p, 'good')
     })
   },
   step(step: string) {

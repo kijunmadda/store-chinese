@@ -14,6 +14,7 @@ import ListenTraining from './screens/ListenTraining'
 import SpeakPractice from './screens/SpeakPractice'
 import RoleplayList from './screens/RoleplayList'
 import RoleplayPlayer from './screens/RoleplayPlayer'
+import ReviewSession from './screens/ReviewSession'
 import { contentErrors } from './content'
 
 export default function App() {
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/study/roleplay/:id" element={<RoleplayPlayer />} />
           <Route path="/study/tones" element={<Placeholder title="발음·성조" step={10} />} />
           <Route path="/review" element={<Review />} />
+          <Route path="/review/session" element={<ReviewSession />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<Home />} />
         </Routes>

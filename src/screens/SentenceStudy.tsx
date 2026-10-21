@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import BackHeader from '../components/BackHeader'
 import Zh from '../components/Zh'
 import { categories, items } from '../content'
 import type { ContentItem } from '../content/types'
 import { setPrefs, usePrefs } from '../prefs'
+import { record, useStudyState } from '../store'
 
 type Mode = 'learn' | 'recall'
 
@@ -67,6 +68,7 @@ export default function SentenceStudy() {
 
       {/* key: 문장이나 모드가 바뀌면 '정답 보기' 상태를 초기화 */}
       <StudyCard key={`${item.id}-${mode}`} item={item} mode={mode} showPinyin={showPinyin} />
+      <StudyActions key={item.id} item={item} />
 
       <nav className="pager" aria-label="문장 이동">
         <button type="button" className="btn-secondary" disabled={index === 0} onClick={() => go({ i: index - 1 })}>
@@ -81,6 +83,46 @@ export default function SentenceStudy() {
         )}
       </nav>
     </>
+  )
+}
+
+/** 이 상황의 문장 ID들 (고객 질문 + 직원 답변) */
+const idsOf = (item: ContentItem) => [...(item.customer ? [item.id] : []), ...(item.responses ?? []).map((r) => r.id)]
+
+/** 학습 기록 + 복습에 추가 + 매장에서 써 봤어요 */
+function StudyActions({ item }: { item: ContentItem }) {
+  const state = useStudyState()
+  const ids = idsOf(item)
+  const marked = ids.some((id) => state.progress[id]?.markedForReview)
+  const staffId = item.responses?.[0]?.id
+  const used = staffId ? (state.progress[staffId]?.usedInStore ?? 0) : 0
+  const [justUsed, setJustUsed] = useState(false)
+
+  // 이 문장을 봤다고 기록 (상황이 바뀔 때마다 한 번)
+  useEffect(() => {
+    ids.forEach((id) => record.studied(id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.id])
+
+  return (
+    <div className="study-actions">
+      <button type="button" className={`chip ${marked ? 'on' : ''}`} aria-pressed={marked} onClick={() => record.setReview(ids, !marked)}>
+        {marked ? '★ 복습 목록에 있음' : '☆ 복습에 추가'}
+      </button>
+      {staffId && (
+        <button
+          type="button"
+          className={`chip ${justUsed ? 'on' : ''}`}
+          onClick={() => {
+            record.usedInStore(staffId)
+            setJustUsed(true)
+          }}
+        >
+          {justUsed ? '👍 기록했어요' : '매장에서 써 봤어요'}
+          {used > 0 && ` · ${used}회`}
+        </button>
+      )}
+    </div>
   )
 }
 
