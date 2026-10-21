@@ -1,0 +1,438 @@
+[
+  {
+    "id": "C01",
+    "category": "clothing",
+    "scenario": "고객이 입어 봐도 되는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以试穿吗？",
+      "pinyin": "Kěyǐ shìchuān ma?",
+      "meaning": "입어 봐도 돼요?"
+    },
+    "variants": [
+      {
+        "id": "C01-V1",
+        "chinese": "我可以试一下吗？",
+        "pinyin": "Wǒ kěyǐ shì yíxià ma?",
+        "meaning": "한번 입어 봐도 될까요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "C01-A",
+        "chinese": "当然可以，试衣间在这边。",
+        "pinyin": "Dāngrán kěyǐ, shìyījiān zài zhèbiān.",
+        "korean": "물론이죠, 피팅룸은 이쪽이에요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "试穿",
+        "pinyin": "shìchuān",
+        "meaning": "입어 보다"
+      },
+      {
+        "word": "当然",
+        "pinyin": "dāngrán",
+        "meaning": "물론"
+      },
+      {
+        "word": "试衣间",
+        "pinyin": "shìyījiān",
+        "meaning": "피팅룸"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C02",
+    "category": "clothing",
+    "scenario": "평소 사이즈를 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C02-A",
+        "chinese": "你平时穿什么尺码？",
+        "pinyin": "Nǐ píngshí chuān shénme chǐmǎ?",
+        "korean": "평소 어떤 사이즈 입으세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "平时",
+        "pinyin": "píngshí",
+        "meaning": "평소"
+      },
+      {
+        "word": "穿",
+        "pinyin": "chuān",
+        "meaning": "입다"
+      },
+      {
+        "word": "尺码",
+        "pinyin": "chǐmǎ",
+        "meaning": "사이즈"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C03",
+    "category": "clothing",
+    "scenario": "고객이 평소 사이즈를 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我一般穿M码。",
+      "pinyin": "Wǒ yìbān chuān M mǎ.",
+      "meaning": "저는 보통 M 사이즈 입어요."
+    },
+    "variants": [
+      {
+        "id": "C03-V1",
+        "chinese": "我穿S码。",
+        "pinyin": "Wǒ chuān S mǎ.",
+        "meaning": "저는 S 사이즈 입어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C03-A",
+        "chinese": "好的，我帮你找一下M码。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ zhǎo yíxià M mǎ.",
+        "korean": "네, M 사이즈 찾아 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "一般",
+        "pinyin": "yìbān",
+        "meaning": "보통"
+      },
+      {
+        "word": "码",
+        "pinyin": "mǎ",
+        "meaning": "사이즈(치수)"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft",
+    "reviewNote": "S·M·L은 중국에서도 영어 알파벳으로 읽음"
+  },
+  {
+    "id": "C04",
+    "category": "clothing",
+    "scenario": "고객이 옷이 작다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有点紧。",
+      "pinyin": "Yǒudiǎn jǐn.",
+      "meaning": "좀 끼어요."
+    },
+    "variants": [
+      {
+        "id": "C04-V1",
+        "chinese": "有点小。",
+        "pinyin": "Yǒudiǎn xiǎo.",
+        "meaning": "좀 작아요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C04-A",
+        "chinese": "我帮你看看有没有大一码的。",
+        "pinyin": "Wǒ bāng nǐ kànkan yǒu méiyǒu dà yì mǎ de.",
+        "korean": "한 사이즈 큰 게 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "有点",
+        "pinyin": "yǒudiǎn",
+        "meaning": "조금(불만스러운 느낌)"
+      },
+      {
+        "word": "紧",
+        "pinyin": "jǐn",
+        "meaning": "꽉 끼다"
+      },
+      {
+        "word": "大一码",
+        "pinyin": "dà yì mǎ",
+        "meaning": "한 사이즈 큰"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C05",
+    "category": "clothing",
+    "scenario": "고객이 옷이 크다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有点大。",
+      "pinyin": "Yǒudiǎn dà.",
+      "meaning": "좀 커요."
+    },
+    "variants": [
+      {
+        "id": "C05-V1",
+        "chinese": "有点松。",
+        "pinyin": "Yǒudiǎn sōng.",
+        "meaning": "좀 헐렁해요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C05-A",
+        "chinese": "我帮你看看有没有小一码的。",
+        "pinyin": "Wǒ bāng nǐ kànkan yǒu méiyǒu xiǎo yì mǎ de.",
+        "korean": "한 사이즈 작은 게 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "松",
+        "pinyin": "sōng",
+        "meaning": "헐렁하다"
+      },
+      {
+        "word": "小一码",
+        "pinyin": "xiǎo yì mǎ",
+        "meaning": "한 사이즈 작은"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C06",
+    "category": "clothing",
+    "scenario": "피팅 후 고객에게 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C06-A",
+        "chinese": "穿起来怎么样？",
+        "pinyin": "Chuān qǐlai zěnmeyàng?",
+        "korean": "입어 보시니 어떠세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "穿起来",
+        "pinyin": "chuān qǐlai",
+        "meaning": "입어 보니"
+      },
+      {
+        "word": "怎么样",
+        "pinyin": "zěnmeyàng",
+        "meaning": "어때요"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C07",
+    "category": "clothing",
+    "scenario": "옷이 잘 어울릴 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C07-A",
+        "chinese": "这件很适合你。",
+        "pinyin": "Zhè jiàn hěn shìhé nǐ.",
+        "korean": "이 옷이 잘 어울리세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "件",
+        "pinyin": "jiàn",
+        "meaning": "벌(옷을 세는 말)"
+      },
+      {
+        "word": "适合",
+        "pinyin": "shìhé",
+        "meaning": "어울리다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C08",
+    "category": "clothing",
+    "scenario": "고객이 원단을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "这是什么面料？",
+      "pinyin": "Zhè shì shénme miànliào?",
+      "meaning": "이건 무슨 원단이에요?"
+    },
+    "responses": [
+      {
+        "id": "C08-A",
+        "chinese": "我给你看一下成分标签。",
+        "pinyin": "Wǒ gěi nǐ kàn yíxià chéngfèn biāoqiān.",
+        "korean": "소재 라벨을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "面料",
+        "pinyin": "miànliào",
+        "meaning": "원단"
+      },
+      {
+        "word": "成分",
+        "pinyin": "chéngfèn",
+        "meaning": "성분"
+      },
+      {
+        "word": "标签",
+        "pinyin": "biāoqiān",
+        "meaning": "라벨"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C09",
+    "category": "clothing",
+    "scenario": "고객이 세탁 방법을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "可以机洗吗？",
+      "pinyin": "Kěyǐ jīxǐ ma?",
+      "meaning": "세탁기에 빨아도 돼요?"
+    },
+    "responses": [
+      {
+        "id": "C09-A",
+        "chinese": "建议按照洗涤标签上的说明清洗。",
+        "pinyin": "Jiànyì ànzhào xǐdí biāoqiān shang de shuōmíng qīngxǐ.",
+        "korean": "세탁 라벨 안내대로 세탁하시길 권해 드려요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "机洗",
+        "pinyin": "jīxǐ",
+        "meaning": "세탁기 세탁"
+      },
+      {
+        "word": "按照",
+        "pinyin": "ànzhào",
+        "meaning": "~에 따라"
+      },
+      {
+        "word": "洗涤",
+        "pinyin": "xǐdí",
+        "meaning": "세탁"
+      },
+      {
+        "word": "清洗",
+        "pinyin": "qīngxǐ",
+        "meaning": "씻다, 세탁하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C10",
+    "category": "clothing",
+    "scenario": "고객이 거울 위치를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "镜子在哪儿？",
+      "pinyin": "Jìngzi zài nǎr?",
+      "meaning": "거울 어디 있어요?"
+    },
+    "responses": [
+      {
+        "id": "C10-A",
+        "chinese": "镜子在这边。",
+        "pinyin": "Jìngzi zài zhèbiān.",
+        "korean": "거울은 이쪽에 있어요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "镜子",
+        "pinyin": "jìngzi",
+        "meaning": "거울"
+      },
+      {
+        "word": "哪儿",
+        "pinyin": "nǎr",
+        "meaning": "어디"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

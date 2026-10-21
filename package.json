@@ -9,7 +9,8 @@
     "build": "npm run check && npm test && tsc -b && vite build",
     "preview": "vite preview --host",
     "export:review": "node scripts/export-review.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:pinyin": "node scripts/check-pinyin.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -20,6 +21,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "pinyin-pro": "^3.29.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.4",
     "vite-plugin-pwa": "^2.0.0",

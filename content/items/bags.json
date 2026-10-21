@@ -1,0 +1,528 @@
+[
+  {
+    "id": "B01",
+    "category": "bags",
+    "scenario": "고객이 가방 메는 방법을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "这个包怎么背？",
+      "pinyin": "Zhège bāo zěnme bēi?",
+      "meaning": "이 가방은 어떻게 메나요?"
+    },
+    "responses": [
+      {
+        "id": "B01-A",
+        "chinese": "可以手提，也可以单肩背。",
+        "pinyin": "Kěyǐ shǒutí, yě kěyǐ dānjiān bēi.",
+        "korean": "손에 드셔도 되고, 한쪽 어깨에 메셔도 돼요.",
+        "note": "실제 상품에 맞게 바꿔 말하기"
+      }
+    ],
+    "alternatives": [
+      {
+        "chinese": "可以斜挎，也可以手提。",
+        "pinyin": "Kěyǐ xiékuà, yě kěyǐ shǒutí.",
+        "korean": "크로스로 메셔도 되고, 손에 드셔도 돼요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "背",
+        "pinyin": "bēi",
+        "meaning": "메다"
+      },
+      {
+        "word": "手提",
+        "pinyin": "shǒutí",
+        "meaning": "손에 들다"
+      },
+      {
+        "word": "单肩背",
+        "pinyin": "dānjiān bēi",
+        "meaning": "한쪽 어깨에 메다"
+      },
+      {
+        "word": "斜挎",
+        "pinyin": "xiékuà",
+        "meaning": "크로스로 메다"
+      }
+    ],
+    "pattern": "可以___，也可以___",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B02",
+    "category": "bags",
+    "scenario": "고객이 크로스로 멜 수 있는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以斜挎吗？",
+      "pinyin": "Kěyǐ xiékuà ma?",
+      "meaning": "크로스로 멜 수 있나요?"
+    },
+    "responses": [
+      {
+        "id": "B02-A",
+        "chinese": "我给你看一下肩带。",
+        "pinyin": "Wǒ gěi nǐ kàn yíxià jiāndài.",
+        "korean": "스트랩을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "斜挎",
+        "pinyin": "xiékuà",
+        "meaning": "크로스로 메다"
+      },
+      {
+        "word": "肩带",
+        "pinyin": "jiāndài",
+        "meaning": "어깨끈, 스트랩"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B03",
+    "category": "bags",
+    "scenario": "고객이 수납 용량을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "能装多少东西？",
+      "pinyin": "Néng zhuāng duōshao dōngxi?",
+      "meaning": "얼마나 들어가요?"
+    },
+    "variants": [
+      {
+        "id": "B03-V1",
+        "chinese": "里面大不大？",
+        "pinyin": "Lǐmiàn dà bu dà?",
+        "meaning": "안이 넓어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B03-A",
+        "chinese": "我打开给你看一下里面。",
+        "pinyin": "Wǒ dǎkāi gěi nǐ kàn yíxià lǐmiàn.",
+        "korean": "안을 열어서 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "装",
+        "pinyin": "zhuāng",
+        "meaning": "담다, 넣다"
+      },
+      {
+        "word": "东西",
+        "pinyin": "dōngxi",
+        "meaning": "물건"
+      },
+      {
+        "word": "打开",
+        "pinyin": "dǎkāi",
+        "meaning": "열다"
+      },
+      {
+        "word": "里面",
+        "pinyin": "lǐmiàn",
+        "meaning": "안쪽"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B04",
+    "category": "bags",
+    "scenario": "고객이 휴대폰이 들어가는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "手机放得进去吗？",
+      "pinyin": "Shǒujī fàng de jìnqu ma?",
+      "meaning": "휴대폰 들어가요?"
+    },
+    "variants": [
+      {
+        "id": "B04-V1",
+        "chinese": "能放手机吗？",
+        "pinyin": "Néng fàng shǒujī ma?",
+        "meaning": "휴대폰 넣을 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B04-A",
+        "chinese": "你可以用自己的手机试一下。",
+        "pinyin": "Nǐ kěyǐ yòng zìjǐ de shǒujī shì yíxià.",
+        "korean": "갖고 계신 휴대폰으로 한번 넣어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "手机",
+        "pinyin": "shǒujī",
+        "meaning": "휴대폰"
+      },
+      {
+        "word": "放",
+        "pinyin": "fàng",
+        "meaning": "넣다, 두다"
+      },
+      {
+        "word": "放得进去",
+        "pinyin": "fàng de jìnqu",
+        "meaning": "넣을 수 있다(들어가다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B05",
+    "category": "bags",
+    "scenario": "고객이 가죽 소재를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "这是什么皮？",
+      "pinyin": "Zhè shì shénme pí?",
+      "meaning": "이건 무슨 가죽이에요?"
+    },
+    "variants": [
+      {
+        "id": "B05-V1",
+        "chinese": "是真皮的吗？",
+        "pinyin": "Shì zhēnpí de ma?",
+        "meaning": "진짜 가죽이에요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B05-A",
+        "chinese": "我帮你看一下材质说明。",
+        "pinyin": "Wǒ bāng nǐ kàn yíxià cáizhì shuōmíng.",
+        "korean": "소재 안내를 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "皮",
+        "pinyin": "pí",
+        "meaning": "가죽"
+      },
+      {
+        "word": "真皮",
+        "pinyin": "zhēnpí",
+        "meaning": "천연 가죽"
+      },
+      {
+        "word": "材质",
+        "pinyin": "cáizhì",
+        "meaning": "소재"
+      },
+      {
+        "word": "说明",
+        "pinyin": "shuōmíng",
+        "meaning": "설명, 안내"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B06",
+    "category": "bags",
+    "scenario": "고객이 무게를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "重不重？",
+      "pinyin": "Zhòng bu zhòng?",
+      "meaning": "무거워요?"
+    },
+    "variants": [
+      {
+        "id": "B06-V1",
+        "chinese": "这个包重吗？",
+        "pinyin": "Zhège bāo zhòng ma?",
+        "meaning": "이 가방 무거워요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B06-A",
+        "chinese": "你可以拿起来试试。",
+        "pinyin": "Nǐ kěyǐ ná qǐlai shìshi.",
+        "korean": "직접 들어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "重",
+        "pinyin": "zhòng",
+        "meaning": "무겁다"
+      },
+      {
+        "word": "拿起来",
+        "pinyin": "ná qǐlai",
+        "meaning": "들어 올리다"
+      },
+      {
+        "word": "试试",
+        "pinyin": "shìshi",
+        "meaning": "해 보다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B07",
+    "category": "bags",
+    "scenario": "고객이 지갑 카드 칸 수를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有几个卡位？",
+      "pinyin": "Yǒu jǐ ge kǎwèi?",
+      "meaning": "카드 칸이 몇 개예요?"
+    },
+    "responses": [
+      {
+        "id": "B07-A",
+        "chinese": "我给你数一下。",
+        "pinyin": "Wǒ gěi nǐ shǔ yíxià.",
+        "korean": "세어 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "卡位",
+        "pinyin": "kǎwèi",
+        "meaning": "카드 칸"
+      },
+      {
+        "word": "数",
+        "pinyin": "shǔ",
+        "meaning": "세다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B08",
+    "category": "bags",
+    "scenario": "고객이 스트랩 조절·분리를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "肩带可以调吗？",
+      "pinyin": "Jiāndài kěyǐ tiáo ma?",
+      "meaning": "스트랩 길이 조절돼요?"
+    },
+    "variants": [
+      {
+        "id": "B08-V1",
+        "chinese": "肩带能拆下来吗？",
+        "pinyin": "Jiāndài néng chāi xiàlai ma?",
+        "meaning": "스트랩 분리돼요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B08-A",
+        "chinese": "我帮你确认一下。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià.",
+        "korean": "확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "调",
+        "pinyin": "tiáo",
+        "meaning": "조절하다"
+      },
+      {
+        "word": "拆下来",
+        "pinyin": "chāi xiàlai",
+        "meaning": "떼어 내다"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B09",
+    "category": "bags",
+    "scenario": "고객이 더 큰 사이즈를 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有没有大一点的？",
+      "pinyin": "Yǒu méiyǒu dà yìdiǎn de?",
+      "meaning": "좀 더 큰 거 있어요?"
+    },
+    "responses": [
+      {
+        "id": "B09-A",
+        "chinese": "我帮你看一下有没有大号的。",
+        "pinyin": "Wǒ bāng nǐ kàn yíxià yǒu méiyǒu dà hào de.",
+        "korean": "큰 사이즈가 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "大一点",
+        "pinyin": "dà yìdiǎn",
+        "meaning": "조금 큰"
+      },
+      {
+        "word": "大号",
+        "pinyin": "dà hào",
+        "meaning": "큰 사이즈"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B10",
+    "category": "bags",
+    "scenario": "고객이 관리 방법을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "这个包怎么保养？",
+      "pinyin": "Zhège bāo zěnme bǎoyǎng?",
+      "meaning": "이 가방은 어떻게 관리해요?"
+    },
+    "responses": [
+      {
+        "id": "B10-A",
+        "chinese": "我帮你确认一下品牌的保养建议。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià pǐnpái de bǎoyǎng jiànyì.",
+        "korean": "브랜드의 관리 안내를 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "保养",
+        "pinyin": "bǎoyǎng",
+        "meaning": "관리하다"
+      },
+      {
+        "word": "品牌",
+        "pinyin": "pǐnpái",
+        "meaning": "브랜드"
+      },
+      {
+        "word": "建议",
+        "pinyin": "jiànyì",
+        "meaning": "권장 사항"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B11",
+    "category": "bags",
+    "scenario": "고객이 방수 여부를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "防水吗？",
+      "pinyin": "Fángshuǐ ma?",
+      "meaning": "방수돼요?"
+    },
+    "responses": [
+      {
+        "id": "B11-A",
+        "chinese": "我帮你看一下产品说明。",
+        "pinyin": "Wǒ bāng nǐ kàn yíxià chǎnpǐn shuōmíng.",
+        "korean": "제품 설명을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "防水",
+        "pinyin": "fángshuǐ",
+        "meaning": "방수"
+      },
+      {
+        "word": "产品",
+        "pinyin": "chǎnpǐn",
+        "meaning": "제품"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

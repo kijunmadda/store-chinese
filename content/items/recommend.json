@@ -1,0 +1,392 @@
+[
+  {
+    "id": "M01",
+    "category": "recommend",
+    "scenario": "좋아하는 색을 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M01-A",
+        "chinese": "你喜欢什么颜色？",
+        "pinyin": "Nǐ xǐhuan shénme yánsè?",
+        "korean": "어떤 색을 좋아하세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "喜欢",
+        "pinyin": "xǐhuan",
+        "meaning": "좋아하다"
+      },
+      {
+        "word": "颜色",
+        "pinyin": "yánsè",
+        "meaning": "색"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M02",
+    "category": "recommend",
+    "scenario": "평소 스타일을 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M02-A",
+        "chinese": "你平时喜欢什么风格？",
+        "pinyin": "Nǐ píngshí xǐhuan shénme fēnggé?",
+        "korean": "평소 어떤 스타일을 좋아하세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "风格",
+        "pinyin": "fēnggé",
+        "meaning": "스타일"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M03",
+    "category": "recommend",
+    "scenario": "고객이 비슷한 디자인을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有类似的吗？",
+      "pinyin": "Yǒu lèisì de ma?",
+      "meaning": "비슷한 거 있어요?"
+    },
+    "variants": [
+      {
+        "id": "M03-V1",
+        "chinese": "有没有差不多的款式？",
+        "pinyin": "Yǒu méiyǒu chàbuduō de kuǎnshì?",
+        "meaning": "비슷한 디자인 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M03-A",
+        "chinese": "我给你看看类似的款式。",
+        "pinyin": "Wǒ gěi nǐ kànkan lèisì de kuǎnshì.",
+        "korean": "비슷한 디자인을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "类似",
+        "pinyin": "lèisì",
+        "meaning": "비슷하다"
+      },
+      {
+        "word": "差不多",
+        "pinyin": "chàbuduō",
+        "meaning": "비슷하다(구어)"
+      },
+      {
+        "word": "款式",
+        "pinyin": "kuǎnshì",
+        "meaning": "디자인"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M04",
+    "category": "recommend",
+    "scenario": "고객이 어느 쪽이 나은지 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "哪个更好？",
+      "pinyin": "Nǎge gèng hǎo?",
+      "meaning": "어느 게 더 좋아요?"
+    },
+    "variants": [
+      {
+        "id": "M04-V1",
+        "chinese": "你觉得哪个好？",
+        "pinyin": "Nǐ juéde nǎge hǎo?",
+        "meaning": "어느 게 좋은 것 같아요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M04-A",
+        "chinese": "要看你平时怎么用。",
+        "pinyin": "Yào kàn nǐ píngshí zěnme yòng.",
+        "korean": "평소에 어떻게 쓰시는지에 따라 달라요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "更",
+        "pinyin": "gèng",
+        "meaning": "더"
+      },
+      {
+        "word": "觉得",
+        "pinyin": "juéde",
+        "meaning": "~라고 생각하다"
+      },
+      {
+        "word": "要看",
+        "pinyin": "yào kàn",
+        "meaning": "~에 달려 있다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M05",
+    "category": "recommend",
+    "scenario": "고객이 인기 상품을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "哪款卖得最好？",
+      "pinyin": "Nǎ kuǎn mài de zuì hǎo?",
+      "meaning": "어떤 게 제일 잘 팔려요?"
+    },
+    "variants": [
+      {
+        "id": "M05-V1",
+        "chinese": "哪款最受欢迎？",
+        "pinyin": "Nǎ kuǎn zuì shòu huānyíng?",
+        "meaning": "어떤 게 제일 인기 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M05-A",
+        "chinese": "这款很受欢迎。",
+        "pinyin": "Zhè kuǎn hěn shòu huānyíng.",
+        "korean": "이 제품이 인기가 많아요.",
+        "note": "실제로 인기 있는 상품을 가리키며 사용"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "卖得好",
+        "pinyin": "mài de hǎo",
+        "meaning": "잘 팔리다"
+      },
+      {
+        "word": "受欢迎",
+        "pinyin": "shòu huānyíng",
+        "meaning": "인기 있다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M06",
+    "category": "recommend",
+    "scenario": "고객이 두 제품의 차이를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "这两款有什么区别？",
+      "pinyin": "Zhè liǎng kuǎn yǒu shénme qūbié?",
+      "meaning": "두 제품은 차이가 뭐예요?"
+    },
+    "responses": [
+      {
+        "id": "M06-A",
+        "chinese": "我给你比较一下。",
+        "pinyin": "Wǒ gěi nǐ bǐjiào yíxià.",
+        "korean": "비교해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "两款",
+        "pinyin": "liǎng kuǎn",
+        "meaning": "두 제품"
+      },
+      {
+        "word": "区别",
+        "pinyin": "qūbié",
+        "meaning": "차이"
+      },
+      {
+        "word": "比较",
+        "pinyin": "bǐjiào",
+        "meaning": "비교하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M07",
+    "category": "recommend",
+    "scenario": "고객이 더 생각해 보겠다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我再考虑一下。",
+      "pinyin": "Wǒ zài kǎolǜ yíxià.",
+      "meaning": "좀 더 생각해 볼게요."
+    },
+    "variants": [
+      {
+        "id": "M07-V1",
+        "chinese": "我再看看。",
+        "pinyin": "Wǒ zài kànkan.",
+        "meaning": "좀 더 볼게요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "M07-A",
+        "chinese": "好的，你慢慢考虑。",
+        "pinyin": "Hǎo de, nǐ mànmàn kǎolǜ.",
+        "korean": "네, 천천히 생각해 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "考虑",
+        "pinyin": "kǎolǜ",
+        "meaning": "고려하다, 생각해 보다"
+      },
+      {
+        "word": "再",
+        "pinyin": "zài",
+        "meaning": "더, 다시"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M08",
+    "category": "recommend",
+    "scenario": "색상의 장점을 말할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M08-A",
+        "chinese": "这个颜色很百搭。",
+        "pinyin": "Zhège yánsè hěn bǎidā.",
+        "korean": "이 색은 어디에나 잘 어울려요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "百搭",
+        "pinyin": "bǎidā",
+        "meaning": "무엇에나 잘 어울리다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M09",
+    "category": "recommend",
+    "scenario": "다른 제품을 권할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M09-A",
+        "chinese": "要不要试一下这款？",
+        "pinyin": "Yào bu yào shì yíxià zhè kuǎn?",
+        "korean": "이 제품도 한번 해 보시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "要不要",
+        "pinyin": "yào bu yào",
+        "meaning": "~하시겠어요?"
+      }
+    ],
+    "pattern": "要不要___？",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M10",
+    "category": "recommend",
+    "scenario": "함께 살 상품을 권할 때",
+    "difficulty": "intermediate",
+    "responses": [
+      {
+        "id": "M10-A",
+        "chinese": "要不要看看配套的钱包？",
+        "pinyin": "Yào bu yào kànkan pèitào de qiánbāo?",
+        "korean": "세트로 어울리는 지갑도 보시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "配套",
+        "pinyin": "pèitào",
+        "meaning": "세트로 맞추다"
+      }
+    ],
+    "pattern": "要不要___？",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

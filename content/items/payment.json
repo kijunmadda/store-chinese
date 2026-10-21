@@ -1,0 +1,353 @@
+[
+  {
+    "id": "Y01",
+    "category": "payment",
+    "scenario": "고객이 카드 결제를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以刷卡吗？",
+      "pinyin": "Kěyǐ shuākǎ ma?",
+      "meaning": "카드 돼요?"
+    },
+    "variants": [
+      {
+        "id": "Y01-V1",
+        "chinese": "能用信用卡吗？",
+        "pinyin": "Néng yòng xìnyòngkǎ ma?",
+        "meaning": "신용카드 쓸 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y01-A",
+        "chinese": "可以，这边请。",
+        "pinyin": "Kěyǐ, zhèbiān qǐng.",
+        "korean": "네, 이쪽으로 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "刷卡",
+        "pinyin": "shuākǎ",
+        "meaning": "카드로 결제하다"
+      },
+      {
+        "word": "信用卡",
+        "pinyin": "xìnyòngkǎ",
+        "meaning": "신용카드"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y02",
+    "category": "payment",
+    "scenario": "고객이 중국 간편결제를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以用支付宝吗？",
+      "pinyin": "Kěyǐ yòng Zhīfùbǎo ma?",
+      "meaning": "알리페이 쓸 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "Y02-V1",
+        "chinese": "能用微信支付吗？",
+        "pinyin": "Néng yòng Wēixìn zhīfù ma?",
+        "meaning": "위챗페이 돼요?"
+      },
+      {
+        "id": "Y02-V2",
+        "chinese": "可以用银联卡吗？",
+        "pinyin": "Kěyǐ yòng Yínlián kǎ ma?",
+        "meaning": "은련카드 돼요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y02-A",
+        "chinese": "我帮你确认一下。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià.",
+        "korean": "확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "支付宝",
+        "pinyin": "Zhīfùbǎo",
+        "meaning": "알리페이"
+      },
+      {
+        "word": "微信支付",
+        "pinyin": "Wēixìn zhīfù",
+        "meaning": "위챗페이"
+      },
+      {
+        "word": "银联",
+        "pinyin": "Yínlián",
+        "meaning": "은련(카드)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y03",
+    "category": "payment",
+    "scenario": "고객이 택스리펀을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以退税吗？",
+      "pinyin": "Kěyǐ tuìshuì ma?",
+      "meaning": "택스리펀 되나요?"
+    },
+    "responses": [
+      {
+        "id": "Y03-A",
+        "chinese": "麻烦给我看一下你的护照。",
+        "pinyin": "Máfan gěi wǒ kàn yíxià nǐ de hùzhào.",
+        "korean": "여권 좀 보여 주시겠어요?",
+        "note": "매장에서 택스리펀이 가능한 경우에만"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "退税",
+        "pinyin": "tuìshuì",
+        "meaning": "세금 환급"
+      },
+      {
+        "word": "护照",
+        "pinyin": "hùzhào",
+        "meaning": "여권"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y04",
+    "category": "payment",
+    "scenario": "결제 금액을 알려 줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y04-A",
+        "chinese": "一共是一百二十万韩元。",
+        "pinyin": "Yígòng shì yìbǎi èrshí wàn hányuán.",
+        "korean": "모두 120만 원입니다.",
+        "note": "실제 금액으로 바꿔 말하기"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "一共",
+        "pinyin": "yígòng",
+        "meaning": "모두 합쳐서"
+      }
+    ],
+    "pattern": "一共是___韩元",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y05",
+    "category": "payment",
+    "scenario": "포장이 필요한지 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y05-A",
+        "chinese": "需要包装吗？",
+        "pinyin": "Xūyào bāozhuāng ma?",
+        "korean": "포장해 드릴까요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "包装",
+        "pinyin": "bāozhuāng",
+        "meaning": "포장"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y06",
+    "category": "payment",
+    "scenario": "고객이 선물 포장을 부탁할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "能帮我包装一下吗？",
+      "pinyin": "Néng bāng wǒ bāozhuāng yíxià ma?",
+      "meaning": "포장해 주실 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "Y06-V1",
+        "chinese": "可以礼品包装吗？",
+        "pinyin": "Kěyǐ lǐpǐn bāozhuāng ma?",
+        "meaning": "선물 포장 돼요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y06-A",
+        "chinese": "我帮你确认一下包装方式。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià bāozhuāng fāngshì.",
+        "korean": "포장 방법을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "礼品",
+        "pinyin": "lǐpǐn",
+        "meaning": "선물(용품)"
+      },
+      {
+        "word": "方式",
+        "pinyin": "fāngshì",
+        "meaning": "방식"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y07",
+    "category": "payment",
+    "scenario": "카드 서명을 부탁할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y07-A",
+        "chinese": "请在这里签名。",
+        "pinyin": "Qǐng zài zhèlǐ qiānmíng.",
+        "korean": "여기에 서명해 주세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "签名",
+        "pinyin": "qiānmíng",
+        "meaning": "서명하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y08",
+    "category": "payment",
+    "scenario": "영수증을 건넬 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y08-A",
+        "chinese": "这是你的小票，请收好。",
+        "pinyin": "Zhè shì nǐ de xiǎopiào, qǐng shōuhǎo.",
+        "korean": "영수증입니다, 잘 보관하세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "小票",
+        "pinyin": "xiǎopiào",
+        "meaning": "영수증"
+      },
+      {
+        "word": "收好",
+        "pinyin": "shōuhǎo",
+        "meaning": "잘 챙겨 두다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y09",
+    "category": "payment",
+    "scenario": "고객이 쇼핑백을 달라고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "可以给我一个袋子吗？",
+      "pinyin": "Kěyǐ gěi wǒ yí ge dàizi ma?",
+      "meaning": "쇼핑백 하나 주실 수 있어요?"
+    },
+    "responses": [
+      {
+        "id": "Y09-A",
+        "chinese": "好的，我帮你装好。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ zhuānghǎo.",
+        "korean": "네, 담아 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "袋子",
+        "pinyin": "dàizi",
+        "meaning": "봉투, 쇼핑백"
+      },
+      {
+        "word": "装好",
+        "pinyin": "zhuānghǎo",
+        "meaning": "잘 담다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

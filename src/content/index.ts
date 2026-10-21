@@ -15,8 +15,20 @@ export const contentErrors = contentIssues.filter((i) => i.level === 'error')
 const brokenIds = new Set(contentErrors.map((e) => e.where.split(' ')[0]))
 
 export const categories: Category[] = [...(categoriesJson as Category[])].sort((a, b) => a.order - b.order)
-export const items: ContentItem[] = (rawItems as ContentItem[]).filter((it) => !brokenIds.has(it.id))
-export const roleplays: Roleplay[] = roleplaysJson as Roleplay[]
+// 사용자 최종 확인(verified)을 마친 문장만 학습에 쓴다. 초안·AI 검토만 된 문장은 검증 문서에만 나온다.
+const isLive = (status: string) => status === 'verified'
+export const items: ContentItem[] = (rawItems as ContentItem[]).filter((it) => !brokenIds.has(it.id) && isLive(it.verificationStatus))
+const liveIds = new Set(items.flatMap((it) => [it.id, ...(it.variants ?? []).map((v) => v.id), ...(it.responses ?? []).map((r) => r.id)]))
+
+/** 역할극의 모든 문장 참조 (분기 포함) */
+function refsOf(steps: Roleplay['steps']): string[] {
+  return steps.flatMap((s) => [...(s.ref ? [s.ref] : []), ...(s.choices ?? []), ...(s.accept ?? []), ...(s.branches ?? []).flatMap((b) => refsOf(b.steps))])
+}
+// 역할극도 확인 완료이고, 쓰는 문장이 모두 학습 가능한 것만
+export const roleplays: Roleplay[] = (roleplaysJson as Roleplay[]).filter((rp) => isLive(rp.verificationStatus) && refsOf(rp.steps).every((id) => liveIds.has(id)))
+
+/** 검토 대기 중인 상황 수 (설정 화면 안내용) */
+export const pendingCount = (rawItems as ContentItem[]).filter((it) => !isLive(it.verificationStatus)).length
 
 export type Sentence =
   | ({ kind: 'customer'; id: string; itemId: string } & CustomerLine)
@@ -35,4 +47,5 @@ export const contentStats = {
   sentences: sentences.size,
   verified: items.filter((i) => i.verificationStatus === 'verified').length,
   roleplays: roleplays.length,
+  pending: pendingCount,
 }

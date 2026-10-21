@@ -1,0 +1,330 @@
+[
+  {
+    "id": "R01",
+    "category": "price",
+    "scenario": "고객이 가격을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "这个多少钱？",
+      "pinyin": "Zhège duōshao qián?",
+      "meaning": "이거 얼마예요?"
+    },
+    "variants": [
+      {
+        "id": "R01-V1",
+        "chinese": "这个怎么卖？",
+        "pinyin": "Zhège zěnme mài?",
+        "meaning": "이거 얼마에 팔아요?"
+      },
+      {
+        "id": "R01-V2",
+        "chinese": "价格是多少？",
+        "pinyin": "Jiàgé shì duōshao?",
+        "meaning": "가격이 얼마예요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "R01-A",
+        "chinese": "价格在这里，我给你看一下。",
+        "pinyin": "Jiàgé zài zhèlǐ, wǒ gěi nǐ kàn yíxià.",
+        "korean": "가격은 여기 있어요, 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "多少钱",
+        "pinyin": "duōshao qián",
+        "meaning": "얼마"
+      },
+      {
+        "word": "价格",
+        "pinyin": "jiàgé",
+        "meaning": "가격"
+      },
+      {
+        "word": "怎么卖",
+        "pinyin": "zěnme mài",
+        "meaning": "얼마에 팔아요(구어)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R02",
+    "category": "price",
+    "scenario": "가격을 말해 줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "R02-A",
+        "chinese": "这款是三百五十万韩元。",
+        "pinyin": "Zhè kuǎn shì sānbǎi wǔshí wàn hányuán.",
+        "korean": "이 제품은 350만 원이에요.",
+        "note": "실제 가격으로 바꿔 말하기 — 발음·성조의 가격 듣기로 숫자 연습"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "万",
+        "pinyin": "wàn",
+        "meaning": "만"
+      },
+      {
+        "word": "韩元",
+        "pinyin": "hányuán",
+        "meaning": "원(한국 돈)"
+      }
+    ],
+    "pattern": "这款是___韩元",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R03",
+    "category": "price",
+    "scenario": "고객이 할인을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有折扣吗？",
+      "pinyin": "Yǒu zhékòu ma?",
+      "meaning": "할인 있어요?"
+    },
+    "variants": [
+      {
+        "id": "R03-V1",
+        "chinese": "打折吗？",
+        "pinyin": "Dǎzhé ma?",
+        "meaning": "할인해요?"
+      },
+      {
+        "id": "R03-V2",
+        "chinese": "现在有活动吗？",
+        "pinyin": "Xiànzài yǒu huódòng ma?",
+        "meaning": "지금 행사 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "R03-A",
+        "chinese": "我帮你问一下现在有没有活动。",
+        "pinyin": "Wǒ bāng nǐ wèn yíxià xiànzài yǒu méiyǒu huódòng.",
+        "korean": "지금 행사가 있는지 여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "折扣",
+        "pinyin": "zhékòu",
+        "meaning": "할인"
+      },
+      {
+        "word": "打折",
+        "pinyin": "dǎzhé",
+        "meaning": "할인하다"
+      },
+      {
+        "word": "活动",
+        "pinyin": "huódòng",
+        "meaning": "행사, 이벤트"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R04",
+    "category": "price",
+    "scenario": "고객이 할인율을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "打几折？",
+      "pinyin": "Dǎ jǐ zhé?",
+      "meaning": "몇 % 할인이에요?"
+    },
+    "responses": [
+      {
+        "id": "R04-A",
+        "chinese": "我帮你确认一下折扣。",
+        "pinyin": "Wǒ bāng nǐ quèrèn yíxià zhékòu.",
+        "korean": "할인율을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "打几折",
+        "pinyin": "dǎ jǐ zhé",
+        "meaning": "몇 % 할인?"
+      },
+      {
+        "word": "打八折",
+        "pinyin": "dǎ bā zhé",
+        "meaning": "20% 할인 (정가의 80%를 받음)"
+      },
+      {
+        "word": "打九折",
+        "pinyin": "dǎ jiǔ zhé",
+        "meaning": "10% 할인 (정가의 90%)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft",
+    "reviewNote": "중국식 할인 표현: 숫자는 \"내는 비율\" — 打八折 = 20% 할인"
+  },
+  {
+    "id": "R05",
+    "category": "price",
+    "scenario": "고객이 가격을 깎아 달라고 할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "能便宜一点吗？",
+      "pinyin": "Néng piányi yìdiǎn ma?",
+      "meaning": "좀 싸게 안 돼요?"
+    },
+    "variants": [
+      {
+        "id": "R05-V1",
+        "chinese": "能便宜点吗？",
+        "pinyin": "Néng piányi diǎn ma?",
+        "meaning": "좀 깎아 줄 수 있어요?"
+      },
+      {
+        "id": "R05-V2",
+        "chinese": "再便宜一点吧。",
+        "pinyin": "Zài piányi yìdiǎn ba.",
+        "meaning": "좀 더 싸게 해 주세요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "R05-A",
+        "chinese": "不好意思，我帮你问一下有没有优惠。",
+        "pinyin": "Bù hǎoyìsi, wǒ bāng nǐ wèn yíxià yǒu méiyǒu yōuhuì.",
+        "korean": "죄송해요, 할인 혜택이 있는지 여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "便宜",
+        "pinyin": "piányi",
+        "meaning": "싸다"
+      },
+      {
+        "word": "优惠",
+        "pinyin": "yōuhuì",
+        "meaning": "할인 혜택"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R06",
+    "category": "price",
+    "scenario": "고객이 한국과 중국 가격을 비교할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "韩国比中国便宜吗？",
+      "pinyin": "Hánguó bǐ Zhōngguó piányi ma?",
+      "meaning": "한국이 중국보다 싸요?"
+    },
+    "responses": [
+      {
+        "id": "R06-A",
+        "chinese": "我不太清楚中国的价格。",
+        "pinyin": "Wǒ bú tài qīngchu Zhōngguó de jiàgé.",
+        "korean": "중국 가격은 잘 모르겠어요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "比",
+        "pinyin": "bǐ",
+        "meaning": "~보다"
+      },
+      {
+        "word": "清楚",
+        "pinyin": "qīngchu",
+        "meaning": "잘 알다, 분명하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R07",
+    "category": "price",
+    "scenario": "고객이 여러 개 구매 혜택을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "买两个有优惠吗？",
+      "pinyin": "Mǎi liǎng ge yǒu yōuhuì ma?",
+      "meaning": "두 개 사면 혜택 있어요?"
+    },
+    "responses": [
+      {
+        "id": "R07-A",
+        "chinese": "我帮你问一下。",
+        "pinyin": "Wǒ bāng nǐ wèn yíxià.",
+        "korean": "여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "两个",
+        "pinyin": "liǎng ge",
+        "meaning": "두 개"
+      },
+      {
+        "word": "优惠",
+        "pinyin": "yōuhuì",
+        "meaning": "할인 혜택"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  }
+]

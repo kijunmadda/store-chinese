@@ -1,0 +1,478 @@
+[
+  {
+    "id": "N01",
+    "category": "needs",
+    "scenario": "고객이 보고 싶은 상품 종류를 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我想看看包。",
+      "pinyin": "Wǒ xiǎng kànkan bāo.",
+      "meaning": "가방 좀 보고 싶어요."
+    },
+    "variants": [
+      {
+        "id": "N01-V1",
+        "chinese": "我想看一下钱包。",
+        "pinyin": "Wǒ xiǎng kàn yíxià qiánbāo.",
+        "meaning": "지갑 좀 보고 싶어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N01-A",
+        "chinese": "好的，这边请。",
+        "pinyin": "Hǎo de, zhèbiān qǐng.",
+        "korean": "네, 이쪽으로 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "想",
+        "pinyin": "xiǎng",
+        "meaning": "~하고 싶다"
+      },
+      {
+        "word": "包",
+        "pinyin": "bāo",
+        "meaning": "가방"
+      },
+      {
+        "word": "钱包",
+        "pinyin": "qiánbāo",
+        "meaning": "지갑"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N02",
+    "category": "needs",
+    "scenario": "고객이 선물을 찾는다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我想买个礼物送朋友。",
+      "pinyin": "Wǒ xiǎng mǎi ge lǐwù sòng péngyou.",
+      "meaning": "친구에게 줄 선물을 사고 싶어요."
+    },
+    "variants": [
+      {
+        "id": "N02-V1",
+        "chinese": "我想给我妈妈买个礼物。",
+        "pinyin": "Wǒ xiǎng gěi wǒ māma mǎi ge lǐwù.",
+        "meaning": "엄마께 드릴 선물을 사고 싶어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N02-A",
+        "chinese": "是送给男士还是女士？",
+        "pinyin": "Shì sòng gěi nánshì háishi nǚshì?",
+        "korean": "남성분께 드리는 건가요, 여성분께 드리는 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "礼物",
+        "pinyin": "lǐwù",
+        "meaning": "선물"
+      },
+      {
+        "word": "送",
+        "pinyin": "sòng",
+        "meaning": "선물하다, 주다"
+      },
+      {
+        "word": "男士",
+        "pinyin": "nánshì",
+        "meaning": "남성(정중)"
+      },
+      {
+        "word": "女士",
+        "pinyin": "nǚshì",
+        "meaning": "여성(정중)"
+      },
+      {
+        "word": "还是",
+        "pinyin": "háishi",
+        "meaning": "아니면(선택 질문)"
+      }
+    ],
+    "pattern": "是___还是___？",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N03",
+    "category": "needs",
+    "scenario": "본인용인지 선물용인지 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "N03-A",
+        "chinese": "是自己用还是送人？",
+        "pinyin": "Shì zìjǐ yòng háishi sòng rén?",
+        "korean": "본인이 쓰실 건가요, 선물하실 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "自己",
+        "pinyin": "zìjǐ",
+        "meaning": "자기, 본인"
+      },
+      {
+        "word": "用",
+        "pinyin": "yòng",
+        "meaning": "쓰다"
+      },
+      {
+        "word": "送人",
+        "pinyin": "sòng rén",
+        "meaning": "남에게 선물하다"
+      }
+    ],
+    "pattern": "是___还是___？",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N04",
+    "category": "needs",
+    "scenario": "고객이 본인이 쓸 거라고 답할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我自己用。",
+      "pinyin": "Wǒ zìjǐ yòng.",
+      "meaning": "제가 쓸 거예요."
+    },
+    "variants": [
+      {
+        "id": "N04-V1",
+        "chinese": "是我自己用的。",
+        "pinyin": "Shì wǒ zìjǐ yòng de.",
+        "meaning": "제가 쓸 거예요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N04-A",
+        "chinese": "好的，我给你介绍几款。",
+        "pinyin": "Hǎo de, wǒ gěi nǐ jièshào jǐ kuǎn.",
+        "korean": "네, 몇 가지 소개해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "介绍",
+        "pinyin": "jièshào",
+        "meaning": "소개하다"
+      },
+      {
+        "word": "几款",
+        "pinyin": "jǐ kuǎn",
+        "meaning": "몇 가지 디자인"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N05",
+    "category": "needs",
+    "scenario": "고객이 선물용이라고 답할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "送人的。",
+      "pinyin": "Sòng rén de.",
+      "meaning": "선물할 거예요."
+    },
+    "variants": [
+      {
+        "id": "N05-V1",
+        "chinese": "是送朋友的。",
+        "pinyin": "Shì sòng péngyou de.",
+        "meaning": "친구 선물이에요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N05-A",
+        "chinese": "好的，送给什么人呢？",
+        "pinyin": "Hǎo de, sòng gěi shénme rén ne?",
+        "korean": "네, 어떤 분께 드리는 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "送给",
+        "pinyin": "sòng gěi",
+        "meaning": "~에게 주다"
+      },
+      {
+        "word": "什么人",
+        "pinyin": "shénme rén",
+        "meaning": "어떤 사람"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N06",
+    "category": "needs",
+    "scenario": "고객이 작은 가방을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我在找一个小一点的包。",
+      "pinyin": "Wǒ zài zhǎo yí ge xiǎo yìdiǎn de bāo.",
+      "meaning": "좀 작은 가방을 찾고 있어요."
+    },
+    "variants": [
+      {
+        "id": "N06-V1",
+        "chinese": "有没有小一点的包？",
+        "pinyin": "Yǒu méiyǒu xiǎo yìdiǎn de bāo?",
+        "meaning": "좀 작은 가방 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N06-A",
+        "chinese": "好的，我帮你找找。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ zhǎozhao.",
+        "korean": "네, 찾아봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "在找",
+        "pinyin": "zài zhǎo",
+        "meaning": "찾고 있다"
+      },
+      {
+        "word": "小一点",
+        "pinyin": "xiǎo yìdiǎn",
+        "meaning": "조금 작은"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N07",
+    "category": "needs",
+    "scenario": "고객이 신상품을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "有新款吗？",
+      "pinyin": "Yǒu xīn kuǎn ma?",
+      "meaning": "신상품 있어요?"
+    },
+    "variants": [
+      {
+        "id": "N07-V1",
+        "chinese": "最新的是哪款？",
+        "pinyin": "Zuì xīn de shì nǎ kuǎn?",
+        "meaning": "제일 최신 제품이 어떤 거예요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N07-A",
+        "chinese": "我给你看一下这一季的新款。",
+        "pinyin": "Wǒ gěi nǐ kàn yíxià zhè yí jì de xīn kuǎn.",
+        "korean": "이번 시즌 신상품을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "新款",
+        "pinyin": "xīn kuǎn",
+        "meaning": "신상품"
+      },
+      {
+        "word": "这一季",
+        "pinyin": "zhè yí jì",
+        "meaning": "이번 시즌"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N08",
+    "category": "needs",
+    "scenario": "고객이 원하는 색을 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "chinese": "我想要黑色的。",
+      "pinyin": "Wǒ xiǎng yào hēisè de.",
+      "meaning": "검은색으로 하고 싶어요."
+    },
+    "variants": [
+      {
+        "id": "N08-V1",
+        "chinese": "有黑色的吗？",
+        "pinyin": "Yǒu hēisè de ma?",
+        "meaning": "검은색 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N08-A",
+        "chinese": "好的，我帮你看一下黑色的。",
+        "pinyin": "Hǎo de, wǒ bāng nǐ kàn yíxià hēisè de.",
+        "korean": "네, 검은색 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "想要",
+        "pinyin": "xiǎng yào",
+        "meaning": "원하다"
+      },
+      {
+        "word": "黑色",
+        "pinyin": "hēisè",
+        "meaning": "검은색"
+      }
+    ],
+    "pattern": "我帮你___一下",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N09",
+    "category": "needs",
+    "scenario": "고객이 출근용 가방을 찾을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "chinese": "有适合上班用的包吗？",
+      "pinyin": "Yǒu shìhé shàngbān yòng de bāo ma?",
+      "meaning": "출근용으로 좋은 가방 있어요?"
+    },
+    "variants": [
+      {
+        "id": "N09-V1",
+        "chinese": "我想要一个上班背的包。",
+        "pinyin": "Wǒ xiǎng yào yí ge shàngbān bēi de bāo.",
+        "meaning": "출근할 때 멜 가방을 찾아요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N09-A",
+        "chinese": "我给你推荐几款。",
+        "pinyin": "Wǒ gěi nǐ tuījiàn jǐ kuǎn.",
+        "korean": "몇 가지 추천해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "适合",
+        "pinyin": "shìhé",
+        "meaning": "~에 알맞다"
+      },
+      {
+        "word": "上班",
+        "pinyin": "shàngbān",
+        "meaning": "출근하다"
+      },
+      {
+        "word": "推荐",
+        "pinyin": "tuījiàn",
+        "meaning": "추천하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N10",
+    "category": "needs",
+    "scenario": "예산을 물어볼 때",
+    "difficulty": "intermediate",
+    "responses": [
+      {
+        "id": "N10-A",
+        "chinese": "请问你的预算大概是多少？",
+        "pinyin": "Qǐngwèn nǐ de yùsuàn dàgài shì duōshao?",
+        "korean": "예산은 대략 어느 정도세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "预算",
+        "pinyin": "yùsuàn",
+        "meaning": "예산"
+      },
+      {
+        "word": "大概",
+        "pinyin": "dàgài",
+        "meaning": "대략"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft",
+    "reviewNote": "명품 매장에서 예산을 묻는 것이 실례가 아닌지 검토 필요"
+  }
+]

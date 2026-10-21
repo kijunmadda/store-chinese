@@ -125,7 +125,7 @@ export default function Settings() {
         <p className="note">
           상황 {contentStats.items}개 · 문장 {contentStats.sentences}개 · 역할극 {contentStats.roleplays}개
           <br />
-          검증 완료 {contentStats.verified}/{contentStats.items}
+          학습 가능 {contentStats.items}개{contentStats.pending > 0 && ` · 검토 대기 ${contentStats.pending}개 (확인 후 자동으로 추가돼요)`}
           {contentErrors.length > 0 && ` · 오류 ${contentErrors.length}개`}
         </p>
       </section>

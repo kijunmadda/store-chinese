@@ -1,11 +1,14 @@
 // 앱에 들어가는 콘텐츠(content/)를 그대로 뽑아 외부 AI 검증용 문서를 만든다.
-// 사용: npm run export:review  →  검증요청_콘텐츠.md 생성
+// 사용: npm run export:review          → 검토가 필요한 것(verified가 아닌 것)만
+//       npm run export:review -- --all → 전체
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 interface Line { id?: string; chinese: string; pinyin: string; meaning?: string; korean?: string }
 interface Item {
   id: string; category: string; scenario: string
+  verificationStatus: string
+  reviewNote?: string
   customer?: Line; variants?: Line[]; responses?: Line[]; alternatives?: Line[]
   keywords?: { word: string; pinyin: string; meaning: string }[]
 }
@@ -13,9 +16,32 @@ interface Item {
 const root = join(import.meta.dirname, '..')
 const read = (p: string) => JSON.parse(readFileSync(join(root, p), 'utf8'))
 const categories: { id: string; order: number; name: string }[] = read('content/categories.json')
-const items: Item[] = readdirSync(join(root, 'content/items'))
+const ALL = process.argv.includes('--all')
+const allItems: Item[] = readdirSync(join(root, 'content/items'))
   .filter((f) => f.endsWith('.json'))
   .flatMap((f) => read(`content/items/${f}`))
+const items = ALL ? allItems : allItems.filter((i) => i.verificationStatus !== 'verified')
+
+interface Step { speaker: string; ref?: string; accept?: string[]; label?: string; branches?: { label: string; steps: Step[] }[] }
+interface Rp { id: string; title: string; goal: string; steps: Step[]; verificationStatus: string }
+const roleplays: Rp[] = (read('content/roleplays.json') as Rp[]).filter((r) => ALL || r.verificationStatus !== 'verified')
+const lineById = new Map<string, Line>()
+for (const it of allItems) {
+  if (it.customer) lineById.set(it.id, it.customer)
+  for (const v of it.variants ?? []) lineById.set(v.id!, v)
+  for (const r of it.responses ?? []) lineById.set(r.id!, r)
+}
+function dialog(steps: Step[], indent = ''): string[] {
+  return steps.flatMap((st) => {
+    if (st.speaker === 'branch') return [`${indent}- 【${st.label ?? '分支'}】`, ...(st.branches ?? []).flatMap((b) => [`${indent}  - (${b.label})`, ...dialog(b.steps, indent + '    ')])]
+    const l = lineById.get(st.ref!)
+    const reply = st.accept?.[0] ? lineById.get(st.accept[0]) : undefined
+    return [
+      ...(l ? [`${indent}- ${st.speaker === 'customer' ? '顾客' : '店员'}: ${l.chinese} (${l.meaning ?? l.korean})`] : []),
+      ...(reply ? [`${indent}- 店员: ${reply.chinese} (${reply.korean})`] : []),
+    ]
+  })
+}
 
 const esc = (s: string) => s.replace(/\|/g, '\\|')
 const row = (id: string, role: string, l: Line) =>
@@ -102,7 +128,16 @@ for (const cat of [...categories].sort((a, b) => a.order - b.order)) {
       out.push(`| ${it.id}-KW | 关键词 | ${esc(it.keywords.map((k) => `${k.word} ${k.pinyin}: ${k.meaning}`).join(' / '))} | | |`)
   }
 }
+const notes = items.filter((i) => i.reviewNote && i.verificationStatus !== 'verified')
+if (notes.length) {
+  out.push('', '## 特别请确认 (작성자 메모)', '')
+  for (const i of notes) out.push(`- ${i.id}: ${i.reviewNote}`)
+}
+if (roleplays.length) {
+  out.push('', '## 角色扮演对话 (请检查对话是否自然连贯)')
+  for (const rp of roleplays) out.push('', `### ${rp.id} ${rp.title} — ${rp.goal}`, '', ...dialog(rp.steps))
+}
 out.push('')
 
 writeFileSync(join(root, '검증요청_콘텐츠.md'), out.join('\n'))
-console.log(`검증요청_콘텐츠.md 생성 완료 (상황 ${items.length}개)`)
+console.log(`검증요청_콘텐츠.md 생성 완료 (상황 ${items.length}개, 역할극 ${roleplays.length}개, ${ALL ? '전체' : '검토 필요한 것만'})`)
