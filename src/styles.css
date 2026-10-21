@@ -343,3 +343,10 @@ button { font: inherit; color: inherit; }
 .tab-scroll::-webkit-scrollbar { display: none; }
 .tab-scroll .chip { flex-shrink: 0; }
 .option-zh small { font-size: 15px; font-weight: 400; color: var(--accent); margin-left: 4px; }
+
+/* ── 11단계: 백업 ───────────────────────── */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.confirm { display: flex; flex-direction: column; gap: 8px; border: 1.5px solid var(--accent); }
+.confirm p { margin: 0; }
+.backup-alert { display: flex; flex-direction: column; gap: 4px; border-color: var(--accent); }
+.backup-alert span { font-size: 14px; color: var(--muted); }

@@ -234,14 +234,35 @@ export const record = {
       s.days[today()].completed = true
     })
   },
-  /** 백업 복원 등으로 통째로 교체 (11단계) */
-  replaceAll(next: StudyState) {
-    update((s) => Object.assign(s, next))
+  /** 백업 파일로 통째로 교체. 바로 전 상태는 되돌리기용으로 보관한다. */
+  restore(next: StudyState) {
+    undoSnapshot = structuredClone(state)
+    update((s) => {
+      const { app, schemaVersion, progress, days, recentListen, lastBackupAt } = next
+      Object.assign(s, emptyState(), { app, schemaVersion, progress, days, recentListen, lastBackupAt })
+    })
+  },
+  /** 직전 복원 되돌리기 (이번에 앱을 연 동안만 가능) */
+  undoRestore(): boolean {
+    if (!undoSnapshot) return false
+    const prev = undoSnapshot
+    undoSnapshot = null
+    update((s) => Object.assign(s, prev))
+    return true
+  },
+  backedUp() {
+    update((s) => {
+      s.lastBackupAt = new Date().toISOString()
+    })
   },
   resetAll() {
+    undoSnapshot = structuredClone(state)
     update((s) => Object.assign(s, emptyState()))
   },
 }
+
+let undoSnapshot: StudyState | null = null
+export const canUndo = () => undoSnapshot !== null
 
 // ── 조회 ──────────────────────────────────
 export function getState() {

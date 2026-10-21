@@ -8,10 +8,12 @@ export interface Prefs {
   rate: number
   /** 사용자가 고른 기기 음성. 빈 값이면 자동 선택 */
   voiceURI: string
+  /** 오늘의 학습에서 새로 배울 상황 수 */
+  dailyNew: number
 }
 
 const KEY = 'prefs.v1'
-const DEFAULTS: Prefs = { showPinyin: true, rate: 0.85, voiceURI: '' }
+const DEFAULTS: Prefs = { showPinyin: true, rate: 0.85, voiceURI: '', dailyNew: 3 }
 
 function load(): Prefs {
   try {

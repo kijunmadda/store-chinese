@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { daysSinceBackup } from '../backup'
 import { sentences } from '../content'
 import { computeStats, studyLink } from '../stats'
 import { today, useStudyState } from '../store'
@@ -7,6 +8,8 @@ export default function Home() {
   const state = useStudyState()
   const stats = computeStats(state, today())
   const todayDone = state.days[today()]?.completed
+  const since = daysSinceBackup(state.lastBackupAt)
+  const needBackup = stats.learned > 0 && (since === null || since >= 7)
   const recent = Object.entries(state.progress)
     .filter(([id, p]) => p.lastStudiedAt && sentences.get(id)?.kind === 'staff')
     .sort((a, b) => (b[1].lastStudiedAt ?? '').localeCompare(a[1].lastStudiedAt ?? ''))
@@ -35,6 +38,13 @@ export default function Home() {
         <Link to="/study/listen" className="shortcut">🎧<span>고객 질문 듣기</span></Link>
         <Link to="/study/roleplay" className="shortcut">💬<span>상황별 역할극</span></Link>
       </section>
+
+      {needBackup && (
+        <Link to="/settings" className="card backup-alert">
+          <strong>💾 {since === null ? '아직 백업한 적이 없어요' : `마지막 백업 후 ${since}일 지났어요`}</strong>
+          <span>휴대폰 브라우저 데이터가 지워지면 학습 기록이 사라져요. 설정에서 백업해 주세요.</span>
+        </Link>
+      )}
 
       <Link to="/rescue" className="card rescue">
         <strong>위기 탈출 카드</strong>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import BackHeader from '../components/BackHeader'
 import { items } from '../content'
 import { buildPool, buildQuestion } from '../listen'
-import { usePrefs } from '../prefs'
+import { getPrefs, usePrefs } from '../prefs'
 import { getState, record, type Rating } from '../store'
 import { planToday, recallEntries, STEP_LABEL, type StepKey, type TodayPlan } from '../today'
 import { QuestionCard } from './ListenTraining'
@@ -24,7 +24,7 @@ export default function TodayFlow() {
           <p>복습으로 기억을 깨운 뒤 새 문장을 배우고, 듣기·말하기·역할극으로 바로 써 봐요. 마지막에 오늘 배운 문장을 한 번 더 떠올리면 끝!</p>
           <p className="note">어느 단계든 건너뛸 수 있어요.</p>
         </section>
-        <button type="button" className="btn-primary compact" onClick={() => setPlan(planToday(getState(), false))}>
+        <button type="button" className="btn-primary compact" onClick={() => setPlan(planToday(getState(), false, Math.random, getPrefs().dailyNew))}>
           전체 학습 (약 10분)
         </button>
         <button type="button" className="btn-secondary" onClick={() => setPlan(planToday(getState(), true))}>

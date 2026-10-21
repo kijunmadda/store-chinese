@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import BackupSection from '../components/BackupSection'
 import { contentErrors, contentStats } from '../content'
 import { setPrefs, usePrefs } from '../prefs'
 import { getChineseVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
@@ -8,11 +9,6 @@ const RATES = [
   { value: 0.7, label: '느리게' },
   { value: 0.85, label: '조금 느리게' },
   { value: 1, label: '보통' },
-]
-const upcoming = [
-  { title: '하루 새 문장 수', step: 9 },
-  { title: '백업 내보내기 / 가져오기', step: 11 },
-  { title: '학습 기록 초기화', step: 8 },
 ]
 
 export default function Settings() {
@@ -106,18 +102,21 @@ export default function Settings() {
           <span>병음 표시</span>
           <input type="checkbox" checked={prefs.showPinyin} onChange={(e) => setPrefs({ showPinyin: e.target.checked })} />
         </label>
+        <div className="field">
+          <span>오늘의 학습에서 새로 배울 상황</span>
+          <div className="segmented three" role="radiogroup" aria-label="하루 새 문장 수">
+            {[2, 3, 5].map((n) => (
+              <button key={n} type="button" role="radio" aria-checked={prefs.dailyNew === n} aria-selected={prefs.dailyNew === n} onClick={() => setPrefs({ dailyNew: n })}>
+                {n}개
+              </button>
+            ))}
+          </div>
+          <small className="note">처음에는 3개를 추천해요. 한 번에 너무 많이 배우면 오히려 기억에 덜 남아요.</small>
+        </div>
       </section>
 
-      <ul className="menu-list">
-        {upcoming.map((i) => (
-          <li key={i.title} className="menu-item disabled">
-            <span className="menu-text">
-              <strong>{i.title}</strong>
-              <small>{i.step}단계에서 구현 예정</small>
-            </span>
-          </li>
-        ))}
-      </ul>
+      <BackupSection />
+
 
       <section className="card" aria-label="콘텐츠 정보">
         <strong>콘텐츠 정보</strong>

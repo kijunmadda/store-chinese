@@ -44,9 +44,9 @@ export function pickNewItems(state: StudyState, count: number): ContentItem[] {
   return [...fresh, ...old].slice(0, count)
 }
 
-export function planToday(state: StudyState, short: boolean, rand = Math.random): TodayPlan {
+export function planToday(state: StudyState, short: boolean, rand = Math.random, newCount = NEW_PER_DAY): TodayPlan {
   const reviewIds = shuffle(computeStats(state, today()).dueIds, rand).slice(0, LIMITS.review)
-  const newItems = pickNewItems(state, NEW_PER_DAY)
+  const newItems = pickNewItems(state, newCount)
   const newIds = new Set(newItems.map((it) => it.id))
 
   // 듣기: 오늘 배운 상황의 고객 문장을 우선 섞어 넣는다
