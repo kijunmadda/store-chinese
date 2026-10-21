@@ -216,3 +216,32 @@ button { font: inherit; color: inherit; }
 .btn-secondary:disabled { opacity: 0.4; cursor: default; }
 
 .rescue-line { display: flex; flex-direction: column; gap: 6px; }
+
+/* ── 4단계: 음성 ───────────────────────── */
+.speak { margin-top: 10px; }
+.speak-buttons { display: flex; gap: 8px; }
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.speak-btn span { font-size: 14px; }
+.speak-btn.playing { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.speak-error { margin: 8px 0 0; font-size: 14px; color: var(--accent); }
+.speak-error a { text-decoration: underline; }
+.zh-md .speak-btn { min-height: 38px; padding: 0 12px; }
+
+.settings-group { display: flex; flex-direction: column; gap: 16px; }
+.settings-group h2 { margin: 0; font-size: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field > span { font-size: 15px; font-weight: 600; }
+.field select {
+  min-height: 48px; padding: 0 12px; font: inherit; font-size: 16px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text);
+}
+.segmented.three { grid-template-columns: repeat(3, 1fr); }
+.test-sentence { margin: 0; font-size: 20px; font-weight: 600; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; min-height: 44px; font-size: 16px; }
+.switch-row input { width: 24px; height: 24px; accent-color: var(--accent); }
+.voice-help ol { margin: 8px 0; padding-left: 20px; font-size: 15px; }

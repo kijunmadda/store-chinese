@@ -12,7 +12,7 @@ export default function Rescue() {
       {lines.map((r) => (
         <article key={r.id} className="card rescue-line">
           <p className="meaning">{r.korean}</p>
-          <Zh chinese={r.chinese} pinyin={r.pinyin} showPinyin />
+          <Zh id={r.id} chinese={r.chinese} pinyin={r.pinyin} showPinyin />
         </article>
       ))}
     </>

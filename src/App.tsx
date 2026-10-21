@@ -1,4 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { stopSpeech } from './speech'
 import TabBar from './components/TabBar'
 import Home from './screens/Home'
 import StudyHub from './screens/StudyHub'
@@ -11,6 +13,10 @@ import Rescue from './screens/Rescue'
 import { contentErrors } from './content'
 
 export default function App() {
+  const location = useLocation()
+  // 화면을 옮기면 재생 중인 소리를 멈춘다
+  useEffect(() => stopSpeech(), [location.pathname])
+
   return (
     <div className="app">
       <main className="screen">

@@ -4,14 +4,15 @@ import BackHeader from '../components/BackHeader'
 import Zh from '../components/Zh'
 import { categories, items } from '../content'
 import type { ContentItem } from '../content/types'
-import { useStoredToggle } from '../hooks'
+import { setPrefs, usePrefs } from '../prefs'
 
 type Mode = 'learn' | 'recall'
 
 export default function SentenceStudy() {
   const { categoryId } = useParams()
   const [params, setParams] = useSearchParams()
-  const [showPinyin, togglePinyin] = useStoredToggle('pref.showPinyin', true)
+  const { showPinyin } = usePrefs()
+  const togglePinyin = () => setPrefs({ showPinyin: !showPinyin })
 
   const category = categories.find((c) => c.id === categoryId)
   const list = items.filter((i) => i.category === categoryId && i.learningModes.includes('study'))
@@ -100,7 +101,7 @@ function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode: Mode; 
         <section className="block">
           <h2 className="block-title">🎧 고객이 이렇게 말해요</h2>
           {/* 고객 문장은 '알아듣기'용: 떠올리기 모드에서는 중국어를 보여 주고 뜻을 가린다 */}
-          <Zh chinese={item.customer.chinese} pinyin={item.customer.pinyin} showPinyin={showPinyin} />
+          <Zh id={item.id} chinese={item.customer.chinese} pinyin={item.customer.pinyin} showPinyin={showPinyin} />
           {customerOpen ? (
             <p className="meaning">{item.customer.meaning}</p>
           ) : (
@@ -113,7 +114,7 @@ function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode: Mode; 
               <summary>같은 뜻의 다른 표현 {item.variants.length}개</summary>
               {item.variants.map((v) => (
                 <div key={v.id} className="variant">
-                  <Zh chinese={v.chinese} pinyin={v.pinyin} showPinyin={showPinyin} size="md" />
+                  <Zh id={v.id} chinese={v.chinese} pinyin={v.pinyin} showPinyin={showPinyin} size="md" />
                   <p className="meaning sm">{v.meaning}</p>
                 </div>
               ))}
@@ -128,7 +129,7 @@ function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode: Mode; 
           {/* 직원 문장은 '말하기'용: 떠올리기 모드에서는 한국어를 보여 주고 중국어를 가린다 */}
           <p className={recall ? 'prompt-ko' : 'meaning'}>{r.korean}</p>
           {staffOpen ? (
-            <Zh chinese={r.chinese} pinyin={r.pinyin} showPinyin={showPinyin} />
+            <Zh id={r.id} chinese={r.chinese} pinyin={r.pinyin} showPinyin={showPinyin} />
           ) : (
             <button type="button" className="reveal" onClick={() => setStaffOpen(true)}>
               중국어로 떠올려 본 뒤 정답 보기

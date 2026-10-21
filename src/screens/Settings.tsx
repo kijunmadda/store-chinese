@@ -1,22 +1,104 @@
+import { useEffect, useState } from 'react'
 import { contentErrors, contentStats } from '../content'
+import { setPrefs, usePrefs } from '../prefs'
+import { getChineseVoices, speak, SpeechError, ttsSupported } from '../speech'
 
-const items = [
-  { title: '음성 선택·테스트', step: 4 },
-  { title: '재생 속도', step: 4 },
-  { title: '병음 표시', step: 3 },
+const TEST_SENTENCE = '我帮你确认一下库存，请稍等。'
+const RATES = [
+  { value: 0.7, label: '느리게' },
+  { value: 0.85, label: '조금 느리게' },
+  { value: 1, label: '보통' },
+]
+const upcoming = [
   { title: '하루 새 문장 수', step: 9 },
   { title: '백업 내보내기 / 가져오기', step: 11 },
   { title: '학습 기록 초기화', step: 8 },
 ]
 
 export default function Settings() {
+  const prefs = usePrefs()
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[] | null>(null)
+  const [test, setTest] = useState<{ state: 'idle' | 'playing' | 'ok' | 'error'; message?: string }>({ state: 'idle' })
+
+  useEffect(() => {
+    getChineseVoices(3000).then(setVoices)
+  }, [])
+
+  const runTest = async () => {
+    setTest({ state: 'playing' })
+    try {
+      const result = await speak(TEST_SENTENCE)
+      setTest(result === 'ended' ? { state: 'ok' } : { state: 'idle' })
+    } catch (e) {
+      setTest({ state: 'error', message: e instanceof SpeechError ? e.message : '재생하지 못했어요' })
+    }
+  }
+
+  const noVoice = voices !== null && voices.length === 0
+
   return (
     <>
       <header className="screen-header">
         <h1>설정</h1>
       </header>
+
+      <section className="card settings-group" aria-labelledby="voice-title">
+        <h2 id="voice-title">중국어 음성</h2>
+
+        {!ttsSupported ? (
+          <p className="caution">이 브라우저는 음성 재생을 지원하지 않아요. 크롬이나 사파리로 열어 주세요.</p>
+        ) : voices === null ? (
+          <p className="note">기기의 중국어 음성을 찾는 중…</p>
+        ) : noVoice ? (
+          <VoiceHelp />
+        ) : (
+          <label className="field">
+            <span>목소리 ({voices.length}개 사용 가능)</span>
+            <select value={prefs.voiceURI} onChange={(e) => setPrefs({ voiceURI: e.target.value })}>
+              <option value="">자동 선택 (추천)</option>
+              {voices.map((v) => (
+                <option key={v.voiceURI} value={v.voiceURI}>
+                  {v.name} · {v.lang}
+                  {v.localService ? '' : ' · 인터넷 필요'}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+
+        <div className="field">
+          <span>재생 속도</span>
+          <div className="segmented three" role="radiogroup" aria-label="재생 속도">
+            {RATES.map((r) => (
+              <button key={r.value} type="button" role="radio" aria-checked={prefs.rate === r.value} aria-selected={prefs.rate === r.value} onClick={() => setPrefs({ rate: r.value })}>
+                {r.label}
+              </button>
+            ))}
+          </div>
+          <small className="note">🐢 버튼은 이 설정과 상관없이 항상 느리게 읽어요.</small>
+        </div>
+
+        <div className="field">
+          <span>음성 테스트</span>
+          <p className="test-sentence" lang="zh-CN">{TEST_SENTENCE}</p>
+          <button type="button" className="btn-secondary strong" onClick={runTest} disabled={test.state === 'playing' || !ttsSupported}>
+            {test.state === 'playing' ? '재생 중…' : '🔊 테스트 재생'}
+          </button>
+          {test.state === 'ok' && <p className="note">소리가 들렸다면 정상이에요. 안 들렸다면 무음 모드와 음량을 확인해 주세요.</p>}
+          {test.state === 'error' && <p className="caution">⚠ {test.message}</p>}
+        </div>
+      </section>
+
+      <section className="card settings-group" aria-labelledby="view-title">
+        <h2 id="view-title">화면</h2>
+        <label className="switch-row">
+          <span>병음 표시</span>
+          <input type="checkbox" checked={prefs.showPinyin} onChange={(e) => setPrefs({ showPinyin: e.target.checked })} />
+        </label>
+      </section>
+
       <ul className="menu-list">
-        {items.map((i) => (
+        {upcoming.map((i) => (
           <li key={i.title} className="menu-item disabled">
             <span className="menu-text">
               <strong>{i.title}</strong>
@@ -25,6 +107,7 @@ export default function Settings() {
           </li>
         ))}
       </ul>
+
       <section className="card" aria-label="콘텐츠 정보">
         <strong>콘텐츠 정보</strong>
         <p className="note">
@@ -38,5 +121,29 @@ export default function Settings() {
         학습 기록은 이 기기의 브라우저에만 저장됩니다. 기기 변경이나 데이터 삭제에 대비해 정기적으로 백업해 주세요.
       </p>
     </>
+  )
+}
+
+function VoiceHelp() {
+  const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
+  return (
+    <div className="voice-help">
+      <p className="caution">⚠ 이 기기에서 중국어 음성을 찾지 못했어요. 글자와 병음으로는 계속 학습할 수 있어요.</p>
+      {isIOS ? (
+        <ol>
+          <li>설정 → 손쉬운 사용 → 읽기 및 말하기 → 음성</li>
+          <li>중국어(중국 본토) 선택 → 음성 하나 내려받기</li>
+          <li>이 화면을 새로고침</li>
+        </ol>
+      ) : (
+        <ol>
+          <li>설정 → 일반 → 글자 읽어주기(TTS) 출력</li>
+          <li>기본 엔진을 Google 음성 인식 및 합성으로 선택</li>
+          <li>엔진 설정 → 음성 데이터 설치 → 중국어(중국) 설치</li>
+          <li>크롬을 완전히 닫았다가 다시 열기</li>
+        </ol>
+      )}
+      <small className="note">메뉴 이름은 기기·버전마다 조금 다를 수 있어요.</small>
+    </div>
   )
 }
