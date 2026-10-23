@@ -30,7 +30,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M02",
@@ -63,7 +63,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M03",
@@ -115,7 +115,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M04",
@@ -172,7 +172,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M05",
@@ -232,7 +232,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M06",
@@ -276,7 +276,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M07",
@@ -328,7 +328,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M08",
@@ -361,7 +361,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M09",
@@ -371,9 +371,9 @@
     "responses": [
       {
         "id": "M09-A",
-        "english": "Would you like to try this one?",
-        "hangul": "우쥬 라익 투 트라이 디스 원?",
-        "korean": "이 제품도 한번 해 보시겠어요?"
+        "english": "Would you like to see this one?",
+        "hangul": "우쥬 라익 투 씨 디스 원?",
+        "korean": "이 제품도 한번 보시겠어요?"
       }
     ],
     "keywords": [
@@ -383,9 +383,9 @@
         "meaning": "(would you like to = ~하시겠어요?)"
       },
       {
-        "word": "try",
-        "hangul": "트라이",
-        "meaning": "해 보다"
+        "word": "see",
+        "hangul": "씨",
+        "meaning": "보다"
       }
     ],
     "pattern": "Would you like to ___?",
@@ -395,7 +395,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "M10",
@@ -429,6 +429,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

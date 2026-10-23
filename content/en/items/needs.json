@@ -49,7 +49,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N02",
@@ -73,7 +73,7 @@
       {
         "id": "N02-A",
         "english": "Is it for a man or a woman?",
-        "hangul": "이짓 포 어 맨 오어 어 워먼?",
+        "hangul": "이짓 포 어 맨 오어 어 우먼?",
         "korean": "남성분께 드리는 건가요, 여성분께 드리는 건가요?"
       }
     ],
@@ -95,7 +95,7 @@
       },
       {
         "word": "woman",
-        "hangul": "워먼",
+        "hangul": "우먼",
         "meaning": "여성"
       }
     ],
@@ -107,7 +107,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N03",
@@ -117,31 +117,25 @@
     "responses": [
       {
         "id": "N03-A",
-        "english": "Is it for yourself or a gift?",
-        "hangul": "이짓 포 유어셀프 오어 어 기프트?",
+        "english": "Is it for you, or is it a gift?",
+        "hangul": "이짓 포 유, 오어 이짓 어 기프트?",
         "korean": "본인이 쓰실 건가요, 선물하실 건가요?"
       }
     ],
     "keywords": [
-      {
-        "word": "yourself",
-        "hangul": "유어셀프",
-        "meaning": "본인, 당신 자신"
-      },
       {
         "word": "gift",
         "hangul": "기프트",
         "meaning": "선물"
       }
     ],
-    "pattern": "Is it for ___ or ___?",
     "learningModes": [
       "study",
       "speak",
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N04",
@@ -193,7 +187,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N05",
@@ -235,7 +229,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N06",
@@ -282,7 +276,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N07",
@@ -334,7 +328,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N08",
@@ -344,7 +338,7 @@
     "customer": {
       "english": "I'd like it in black.",
       "hangul": "아이드 라이킷 인 블랙.",
-      "meaning": "검은색으로 하고 싶어요."
+      "meaning": "검은색으로 사고 싶어요."
     },
     "variants": [
       {
@@ -382,7 +376,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N09",
@@ -434,7 +428,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "N10",
@@ -467,6 +461,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

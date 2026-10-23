@@ -39,7 +39,7 @@
       {
         "word": "fitting",
         "hangul": "피링",
-        "meaning": "입어 보기 (fitting room = 피팅룸)"
+        "meaning": "(fitting room = 피팅룸, 옷을 입어 보는 곳)"
       }
     ],
     "learningModes": [
@@ -49,7 +49,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C02",
@@ -87,7 +87,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C03",
@@ -139,7 +139,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C04",
@@ -162,8 +162,8 @@
     "responses": [
       {
         "id": "C04-A",
-        "english": "Let me see if we have it in a size up.",
-        "hangul": "렛 미 씨 이프 위 해빗 이너 사이즈 업.",
+        "english": "Let me see if we have it in the next size up.",
+        "hangul": "렛 미 씨 이프 위 해빗 인 더 넥스트 사이즈 업.",
         "korean": "한 사이즈 큰 게 있는지 봐 드릴게요."
       }
     ],
@@ -181,7 +181,7 @@
       {
         "word": "up",
         "hangul": "업",
-        "meaning": "위로 (a size up = 한 사이즈 큰)"
+        "meaning": "위로 (the next size up = 한 사이즈 큰 것)"
       }
     ],
     "pattern": "Let me see if ___.",
@@ -192,7 +192,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C05",
@@ -215,8 +215,8 @@
     "responses": [
       {
         "id": "C05-A",
-        "english": "Let me see if we have it in a size down.",
-        "hangul": "렛 미 씨 이프 위 해빗 이너 사이즈 다운.",
+        "english": "Let me see if we have it in the next size down.",
+        "hangul": "렛 미 씨 이프 위 해빗 인 더 넥스트 사이즈 다운.",
         "korean": "한 사이즈 작은 게 있는지 봐 드릴게요."
       }
     ],
@@ -234,7 +234,7 @@
       {
         "word": "down",
         "hangul": "다운",
-        "meaning": "아래로 (a size down = 한 사이즈 작은)"
+        "meaning": "아래로 (the next size down = 한 사이즈 작은 것)"
       }
     ],
     "pattern": "Let me see if ___.",
@@ -245,7 +245,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C06",
@@ -273,7 +273,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C07",
@@ -306,7 +306,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C08",
@@ -345,7 +345,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C09",
@@ -360,8 +360,8 @@
     "responses": [
       {
         "id": "C09-A",
-        "english": "We recommend following the care label.",
-        "hangul": "위 레커멘드 팔로잉 더 케어 레이블.",
+        "english": "We recommend following the care instructions on the label.",
+        "hangul": "위 레커멘드 팔로잉 더 케어 인스트럭션즈 온 더 레이블.",
         "korean": "세탁 라벨 안내대로 세탁하시길 권해 드려요."
       }
     ],
@@ -385,6 +385,11 @@
         "word": "label",
         "hangul": "레이블",
         "meaning": "라벨 (care label = 세탁 라벨)"
+      },
+      {
+        "word": "instructions",
+        "hangul": "인스트럭션즈",
+        "meaning": "안내, 설명"
       }
     ],
     "learningModes": [
@@ -394,7 +399,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C10",
@@ -433,7 +438,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C11",
@@ -443,8 +448,8 @@
     "responses": [
       {
         "id": "C11-A",
-        "english": "Here's a size up. Please try it on.",
-        "hangul": "히어즈 어 사이즈 업. 플리즈 트라이 이론.",
+        "english": "Here's the next size up. Please try it on.",
+        "hangul": "히어즈 더 넥스트 사이즈 업. 플리즈 트라이 이론.",
         "korean": "한 사이즈 큰 거예요, 다시 입어 보세요."
       }
     ],
@@ -457,7 +462,7 @@
       {
         "word": "up",
         "hangul": "업",
-        "meaning": "위로 (a size up = 한 사이즈 큰)"
+        "meaning": "위로 (the next size up = 한 사이즈 큰 것)"
       }
     ],
     "pattern": "Here's ___. Please try it on.",
@@ -467,7 +472,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C12",
@@ -477,8 +482,8 @@
     "responses": [
       {
         "id": "C12-A",
-        "english": "Here's a size down. Please try it on.",
-        "hangul": "히어즈 어 사이즈 다운. 플리즈 트라이 이론.",
+        "english": "Here's the next size down. Please try it on.",
+        "hangul": "히어즈 더 넥스트 사이즈 다운. 플리즈 트라이 이론.",
         "korean": "한 사이즈 작은 거예요, 다시 입어 보세요."
       }
     ],
@@ -486,7 +491,7 @@
       {
         "word": "down",
         "hangul": "다운",
-        "meaning": "아래로 (a size down = 한 사이즈 작은)"
+        "meaning": "아래로 (the next size down = 한 사이즈 작은 것)"
       }
     ],
     "pattern": "Here's ___. Please try it on.",
@@ -496,7 +501,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "C13",
@@ -543,6 +548,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

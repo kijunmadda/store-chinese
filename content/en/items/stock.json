@@ -62,7 +62,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S02",
@@ -120,7 +120,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S03",
@@ -130,14 +130,14 @@
     "customer": {
       "english": "Do you have a smaller size?",
       "hangul": "두 유 해버 스몰러 사이즈?",
-      "meaning": "한 사이즈 작은 것 있나요?"
+      "meaning": "더 작은 사이즈 있나요?"
     },
     "variants": [
       {
         "id": "S03-V1",
         "english": "Do you have a bigger size?",
         "hangul": "두 유 해버 비거 사이즈?",
-        "meaning": "한 사이즈 큰 것 있나요?"
+        "meaning": "더 큰 사이즈 있나요?"
       }
     ],
     "responses": [
@@ -179,7 +179,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S04",
@@ -212,7 +212,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S05",
@@ -222,9 +222,9 @@
     "responses": [
       {
         "id": "S05-A",
-        "english": "Yes, we have it. Here's the color you wanted.",
-        "hangul": "예스, 위 해빗. 히어즈 더 컬러 유 원티드.",
-        "korean": "있습니다, 찾으시던 색상이에요.",
+        "english": "Yes, we have it in that color. Here it is.",
+        "hangul": "예스, 위 해빗 인 댓 컬러. 히어릿 이즈.",
+        "korean": "네, 그 색상 있습니다. 여기 있어요.",
         "note": "실제로 재고를 확인한 뒤에만 사용"
       }
     ],
@@ -235,9 +235,9 @@
         "meaning": "색상"
       },
       {
-        "word": "wanted",
-        "hangul": "원티드",
-        "meaning": "원했던"
+        "word": "here",
+        "hangul": "히어",
+        "meaning": "여기 (here it is = 여기 있어요)"
       }
     ],
     "learningModes": [
@@ -246,7 +246,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S06",
@@ -280,7 +280,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S07",
@@ -295,17 +295,17 @@
     "variants": [
       {
         "id": "S07-V1",
-        "english": "Is it available at another branch?",
-        "hangul": "이짓 어베일러블 앳 어나더 브랜치?",
+        "english": "Is it available at another location?",
+        "hangul": "이짓 어베일러블 앳 어나더 로케이션?",
         "meaning": "다른 지점에는 있어요?"
       }
     ],
     "responses": [
       {
         "id": "S07-A",
-        "english": "Let me ask our other stores.",
-        "hangul": "렛 미 애스크 아워 아더 스토어즈.",
-        "korean": "다른 매장에 물어봐 드릴게요."
+        "english": "Let me check with our other stores.",
+        "hangul": "렛 미 첵 위드 아워 아더 스토어즈.",
+        "korean": "다른 매장에 확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -320,17 +320,17 @@
         "meaning": "구할 수 있는, 있는"
       },
       {
-        "word": "branch",
-        "hangul": "브랜치",
-        "meaning": "지점"
+        "word": "location",
+        "hangul": "로케이션",
+        "meaning": "지점, 매장 위치"
       },
       {
-        "word": "ask",
-        "hangul": "애스크",
-        "meaning": "묻다"
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다 (check with = ~에 확인하다)"
       }
     ],
-    "pattern": "Let me ask ___.",
+    "pattern": "Let me check ___.",
     "learningModes": [
       "study",
       "listen",
@@ -338,7 +338,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S08",
@@ -386,7 +386,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S09",
@@ -426,7 +426,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "S10",
@@ -466,6 +466,6 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

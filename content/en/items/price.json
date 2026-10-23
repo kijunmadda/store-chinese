@@ -55,7 +55,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R02",
@@ -95,7 +95,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R03",
@@ -124,8 +124,8 @@
     "responses": [
       {
         "id": "R03-A",
-        "english": "Let me ask if there are any promotions right now.",
-        "hangul": "렛 미 애스크 이프 데어라 애니 프로모션즈 라잇 나우.",
+        "english": "Let me check if there are any promotions right now.",
+        "hangul": "렛 미 첵 이프 데어라 애니 프로모션즈 라잇 나우.",
         "korean": "지금 행사가 있는지 여쭤봐 드릴게요."
       }
     ],
@@ -146,12 +146,12 @@
         "meaning": "행사, 프로모션"
       },
       {
-        "word": "ask",
-        "hangul": "애스크",
-        "meaning": "묻다, 물어보다"
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다"
       }
     ],
-    "pattern": "Let me ask ___.",
+    "pattern": "Let me check ___.",
     "learningModes": [
       "study",
       "listen",
@@ -159,7 +159,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R04",
@@ -186,14 +186,9 @@
         "meaning": "할인"
       },
       {
-        "word": "percent",
-        "hangul": "퍼센트",
-        "meaning": "퍼센트 (20 percent off = 20% 할인)"
-      },
-      {
-        "word": "off",
-        "hangul": "오프",
-        "meaning": "할인된 (20% off)"
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다"
       }
     ],
     "learningModes": [
@@ -203,7 +198,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R05",
@@ -224,17 +219,17 @@
       },
       {
         "id": "R05-V2",
-        "english": "Can you do a better price?",
-        "hangul": "캔 유 두 어 베러 프라이스?",
+        "english": "Can you give me a better price?",
+        "hangul": "캔 유 기미 어 베러 프라이스?",
         "meaning": "가격 좀 더 잘해 주실 수 있어요?"
       }
     ],
     "responses": [
       {
         "id": "R05-A",
-        "english": "I'm sorry. Let me ask if there are any special offers.",
-        "hangul": "아임 쏘리. 렛 미 애스크 이프 데어라 애니 스페셜 오퍼즈.",
-        "korean": "죄송해요, 할인 혜택이 있는지 여쭤봐 드릴게요."
+        "english": "Let me check if there are any special offers.",
+        "hangul": "렛 미 첵 이프 데어라 애니 스페셜 오퍼즈.",
+        "korean": "할인 혜택이 있는지 확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -266,7 +261,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R06",
@@ -315,7 +310,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "R07",
@@ -330,9 +325,9 @@
     "responses": [
       {
         "id": "R07-A",
-        "english": "Let me ask for you.",
-        "hangul": "렛 미 애스크 포 유.",
-        "korean": "여쭤봐 드릴게요."
+        "english": "Let me check for you.",
+        "hangul": "렛 미 첵 포 유.",
+        "korean": "확인해 드릴게요."
       }
     ],
     "keywords": [
@@ -350,6 +345,11 @@
         "word": "two",
         "hangul": "투",
         "meaning": "둘, 두 개"
+      },
+      {
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다"
       }
     ],
     "learningModes": [
@@ -359,6 +359,6 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

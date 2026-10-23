@@ -12,16 +12,16 @@
     "responses": [
       {
         "id": "B01-A",
-        "english": "You can carry it by hand or on one shoulder.",
-        "hangul": "유 캔 캐리 잇 바이 핸드 오어 온 원 숄더.",
+        "english": "You can carry it in your hand or over one shoulder.",
+        "hangul": "유 캔 캐리 잇 인 유어 핸드 오어 오버 원 숄더.",
         "korean": "손에 드셔도 되고, 한쪽 어깨에 메셔도 돼요.",
         "note": "실제 상품에 맞게 바꿔 말하기"
       }
     ],
     "alternatives": [
       {
-        "english": "You can wear it crossbody or carry it by hand.",
-        "hangul": "유 캔 웨어릿 크로스바디 오어 캐리 잇 바이 핸드.",
+        "english": "You can wear it crossbody or carry it in your hand.",
+        "hangul": "유 캔 웨어릿 크로스바디 오어 캐리 잇 인 유어 핸드.",
         "korean": "크로스로 메셔도 되고, 손에 드셔도 돼요."
       }
     ],
@@ -39,7 +39,7 @@
       {
         "word": "hand",
         "hangul": "핸드",
-        "meaning": "손 (by hand = 손으로)"
+        "meaning": "손 (in your hand = 손에)"
       },
       {
         "word": "shoulder",
@@ -60,7 +60,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B02",
@@ -105,7 +105,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B03",
@@ -157,7 +157,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B04",
@@ -180,9 +180,9 @@
     "responses": [
       {
         "id": "B04-A",
-        "english": "You can try it with your own phone.",
-        "hangul": "유 캔 트라이 잇 위드 유어 오운 폰.",
-        "korean": "갖고 계신 휴대폰으로 한번 넣어 보세요."
+        "english": "Feel free to see if your phone fits.",
+        "hangul": "필 프리 투 씨 이퓨어 폰 핏츠.",
+        "korean": "휴대폰이 들어가는지 직접 넣어 보세요."
       }
     ],
     "keywords": [
@@ -197,14 +197,9 @@
         "meaning": "(크기가) 맞다, 들어가다"
       },
       {
-        "word": "try",
-        "hangul": "트라이",
-        "meaning": "해 보다"
-      },
-      {
-        "word": "own",
-        "hangul": "오운",
-        "meaning": "자기 자신의"
+        "word": "free",
+        "hangul": "프리",
+        "meaning": "자유로운 (feel free to = 편하게 ~하세요)"
       }
     ],
     "learningModes": [
@@ -214,7 +209,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B05",
@@ -272,7 +267,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B06",
@@ -319,7 +314,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B07",
@@ -363,7 +358,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B08",
@@ -405,7 +400,7 @@
       {
         "word": "off",
         "hangul": "오프",
-        "meaning": "떨어져 (take off = 떼다)"
+        "meaning": "떼어 낸 (take ... off = ~을 떼다, 분리하다)"
       }
     ],
     "pattern": "Let me check ___.",
@@ -416,7 +411,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B09",
@@ -461,7 +456,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B10",
@@ -476,8 +471,8 @@
     "responses": [
       {
         "id": "B10-A",
-        "english": "Let me check the brand's care guide.",
-        "hangul": "렛 미 첵 더 브랜즈 케어 가이드.",
+        "english": "Let me check the brand's care instructions.",
+        "hangul": "렛 미 첵 더 브랜즈 케어 인스트럭션즈.",
         "korean": "브랜드의 관리 안내를 확인해 드릴게요."
       }
     ],
@@ -493,9 +488,9 @@
         "meaning": "브랜드의"
       },
       {
-        "word": "guide",
-        "hangul": "가이드",
-        "meaning": "안내"
+        "word": "instructions",
+        "hangul": "인스트럭션즈",
+        "meaning": "안내, 설명 (care instructions = 관리 방법)"
       }
     ],
     "learningModes": [
@@ -505,7 +500,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "B11",
@@ -549,6 +544,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

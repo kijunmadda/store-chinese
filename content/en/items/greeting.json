@@ -25,7 +25,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G02",
@@ -65,7 +65,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G03",
@@ -103,7 +103,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G04",
@@ -138,7 +138,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G05",
@@ -186,7 +186,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G06",
@@ -219,7 +219,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G07",
@@ -247,7 +247,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G08",
@@ -286,7 +286,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G09",
@@ -303,7 +303,7 @@
         "id": "G09-V1",
         "english": "Just looking, thanks.",
         "hangul": "저스트 루킹, 쌩스.",
-        "meaning": "그냥 보는 거예요, 고마워요."
+        "meaning": "그냥 둘러보는 중이에요, 고마워요."
       },
       {
         "id": "G09-V2",
@@ -339,7 +339,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "G10",
@@ -349,21 +349,21 @@
     "responses": [
       {
         "id": "G10-A",
-        "english": "Thank you. Please come again!",
-        "hangul": "쌩큐. 플리즈 컴 어게인!",
-        "korean": "감사합니다, 또 오세요!"
+        "english": "Thank you. Have a great day!",
+        "hangul": "쌩큐. 해버 그레잇 데이!",
+        "korean": "감사합니다, 좋은 하루 보내세요!"
       }
     ],
     "keywords": [
       {
-        "word": "come",
-        "hangul": "컴",
-        "meaning": "오다"
+        "word": "great",
+        "hangul": "그레잇",
+        "meaning": "아주 좋은"
       },
       {
-        "word": "again",
-        "hangul": "어게인",
-        "meaning": "다시, 또"
+        "word": "day",
+        "hangul": "데이",
+        "meaning": "하루, 날"
       }
     ],
     "learningModes": [
@@ -372,6 +372,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]

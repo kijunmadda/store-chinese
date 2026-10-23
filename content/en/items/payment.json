@@ -54,7 +54,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y02",
@@ -112,7 +112,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y03",
@@ -156,7 +156,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y04",
@@ -191,7 +191,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y05",
@@ -219,7 +219,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y06",
@@ -272,7 +272,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y07",
@@ -305,7 +305,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y08",
@@ -315,8 +315,8 @@
     "responses": [
       {
         "id": "Y08-A",
-        "english": "Here's your receipt. Please keep it safe.",
-        "hangul": "히어즈 유어 리씻. 플리즈 킵 잇 세이프.",
+        "english": "Here's your receipt. Please keep it.",
+        "hangul": "히어즈 유어 리씻. 플리즈 키핏.",
         "korean": "영수증입니다, 잘 보관하세요."
       }
     ],
@@ -337,11 +337,6 @@
         "word": "keep",
         "hangul": "킵",
         "meaning": "보관하다, 가지고 있다"
-      },
-      {
-        "word": "safe",
-        "hangul": "세이프",
-        "meaning": "안전한 (keep it safe = 잘 보관하다)"
       }
     ],
     "learningModes": [
@@ -350,7 +345,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y09",
@@ -394,7 +389,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   },
   {
     "id": "Y10",
@@ -428,6 +423,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "draft"
+    "verificationStatus": "reviewed"
   }
 ]
