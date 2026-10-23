@@ -192,12 +192,13 @@ export const record = {
     })
   },
   /** 듣기 문제 결과 — 틀리면 자동으로 복습 대상 */
-  listened(id: string, correct: boolean) {
+  /** rating: 쉬운 문제(글자 보며 고르기 등)는 'hard'로 넘겨 단계를 크게 올리지 않는다 */
+  listened(id: string, correct: boolean, rating: Rating = correct ? 'good' : 'again') {
     update((s) => {
       const p = touch(s, id)
       if (correct) p.listen.correct += 1
       else p.listen.wrong += 1
-      schedule(p, correct ? 'good' : 'again')
+      schedule(p, rating)
       s.recentListen = [id, ...s.recentListen.filter((x) => x !== id)].slice(0, 12)
       logStep(s, 'listen')
     })

@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import SpeakButtons from '../components/SpeakButtons'
 import SpeakCard from '../components/SpeakCard'
 import Zh from '../components/Zh'
+import { sentences, type Sentence } from '../content'
+import wordPinyinJson from '../generated/word-pinyin.json'
 import type { StaffLine } from '../content/types'
 import { buildLesson, ratingFor, retryOf, type Exercise, type GradedExercise } from '../lesson'
 import { getPrefs, usePrefs } from '../prefs'
@@ -41,8 +43,12 @@ export default function Lesson() {
 
   /** 채점된 문제의 결과 기록 + 틀리면 판 끝에 한 번 더 */
   const answered = (g: GradedExercise, correct: boolean, fb?: Feedback['answer'], showBar = true) => {
-    if (g.kind === 'listen') record.listened(g.id, correct)
-    else if (g.kind !== 'speak') record.spoke(g.id, ratingFor(g.kind, correct))
+    // 고객 문장 → 듣기 기록, 직원 문장 → 말하기 기록 (쉬운 유형은 단계를 크게 올리지 않음)
+    const isCustomer = sentences.get(g.id)?.kind === 'customer'
+    if (g.kind !== 'speak') {
+      if (isCustomer) record.listened(g.id, correct, ratingFor(g.kind, correct))
+      else record.spoke(g.id, ratingFor(g.kind, correct))
+    }
     setStats((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1 }))
     if (!correct && !g.key.endsWith('-retry') && !retried.current.has(g.key)) {
       retried.current.add(g.key)
@@ -83,6 +89,9 @@ export default function Lesson() {
 
       <div className="lesson-body" key={ex.key}>
         {ex.kind === 'intro' && <Intro ex={ex} onNext={next} />}
+        {ex.kind === 'fill' && <FillEx ex={ex} answered={answered} locked={!!feedback} />}
+        {ex.kind === 'read' && <ListenEx ex={ex} answered={answered} locked={!!feedback} textFirst />}
+        {ex.kind === 'match' && <MatchEx ex={ex} answered={answered} locked={!!feedback} />}
         {ex.kind === 'listen' && <ListenEx ex={ex} answered={answered} locked={!!feedback} />}
         {ex.kind === 'pick-zh' && <PickZhEx ex={ex} answered={answered} locked={!!feedback} />}
         {ex.kind === 'build' && <BuildEx ex={ex} answered={answered} locked={!!feedback} />}
@@ -124,7 +133,7 @@ function Intro({ ex, onNext }: { ex: Extract<Exercise, { kind: 'intro' }>; onNex
   )
 }
 
-function ListenEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'listen' }>; answered: Answered; locked: boolean }) {
+function ListenEx({ ex, answered, locked, textFirst = false }: { ex: Extract<Exercise, { kind: 'listen' | 'read' }>; answered: Answered; locked: boolean; textFirst?: boolean }) {
   const { showPinyin } = usePrefs()
   const { entry, type, options, answer } = ex.question
   const [chosen, setChosen] = useState<string | null>(null)
@@ -139,7 +148,7 @@ function ListenEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'lis
   }
   return (
     <>
-      <p className="ex-label">{type === 'meaning' ? '고객의 말을 듣고 뜻을 고르세요' : '고객의 말에 알맞은 대답을 고르세요'}</p>
+      <p className="ex-label">{textFirst ? '고객이 한 말의 뜻을 고르세요' : type === 'meaning' ? '고객의 말을 듣고 뜻을 고르세요' : '고객의 말에 알맞은 대답을 고르세요'}</p>
       <div className="listen-box">
         <SpeakButtons text={entry.chinese} id={entry.id} />
         {showText || chosen ? (
@@ -226,6 +235,76 @@ function BuildEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'buil
           <button type="button" className="btn-primary compact" disabled={picked.length === 0} onClick={check}>확인</button>
         </div>
       )}
+    </>
+  )
+}
+
+const meaningOf = (s: Sentence) => (s.kind === 'customer' ? s.meaning : s.korean)
+
+/** 글자 채우기: 뜻을 보고 빈칸에 들어갈 단어 고르기 (가장 쉬운 단계) */
+function FillEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'fill' }>; answered: Answered; locked: boolean }) {
+  const { showPinyin } = usePrefs()
+  const [chosen, setChosen] = useState<string | null>(null)
+  const answer = ex.tokens[ex.blank]
+  const choose = (o: string) => {
+    if (locked || chosen) return
+    setChosen(o)
+    answered(ex, o === answer, { id: ex.id, chinese: ex.sentence.chinese, pinyin: ex.sentence.pinyin, meaning: meaningOf(ex.sentence) })
+  }
+  return (
+    <>
+      <p className="ex-label">빈칸에 들어갈 말을 고르세요</p>
+      <p className="scenario">
+        <span className="label">{ex.sentence.kind === 'customer' ? '🎧 고객' : '🗣 직원'}</span> {meaningOf(ex.sentence)}
+      </p>
+      <p className="fill-sentence" lang="zh-CN">
+        {ex.tokens.map((t, i) =>
+          i === ex.blank ? (
+            <span key={i} className={`blank ${chosen ? (chosen === answer ? 'right' : 'wrong') : ''}`}>{chosen ?? '　'.repeat([...t].length)}</span>
+          ) : (
+            <span key={i}>{t}</span>
+          ),
+        )}
+      </p>
+      <div className="options row">
+        {ex.options.map((o) => (
+          <button key={o} type="button" className={`option tile-option ${optState(chosen, o, o === answer)}`} disabled={!!chosen} onClick={() => choose(o)}>
+            <span lang="zh-CN" className="option-zh">{o}</span>
+            {showPinyin && <small>{pinyinOfToken(o)}</small>}
+          </button>
+        ))}
+      </div>
+    </>
+  )
+}
+
+/** 보기 단어의 병음 (빌드할 때 콘텐츠 병음에서 만든 표) */
+const pinyinOfToken = (word: string) => (wordPinyinJson as Record<string, string>)[word] ?? ''
+
+/** 듣고 맞추기: 소리를 듣고 같은 문장을 중국어 보기에서 고르기 */
+function MatchEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'match' }>; answered: Answered; locked: boolean }) {
+  const { showPinyin } = usePrefs()
+  const [chosen, setChosen] = useState<string | null>(null)
+  const choose = (o: Sentence) => {
+    if (locked || chosen) return
+    setChosen(o.id)
+    answered(ex, o.id === ex.id, { id: ex.id, chinese: ex.sentence.chinese, pinyin: ex.sentence.pinyin, meaning: meaningOf(ex.sentence) })
+  }
+  return (
+    <>
+      <p className="ex-label">들은 문장을 고르세요</p>
+      <div className="listen-box">
+        <SpeakButtons text={ex.sentence.chinese} id={ex.id} />
+        {!chosen && <p className="note">🔊를 눌러 듣고, 같은 문장을 고르세요. 소리가 안 나면 뜻을 보고 골라도 돼요: {meaningOf(ex.sentence)}</p>}
+      </div>
+      <div className="options">
+        {ex.options.map((o) => (
+          <button key={o.id} type="button" className={`option ${optState(chosen, o.id, o.id === ex.id)}`} disabled={!!chosen} onClick={() => choose(o)}>
+            <span lang="zh-CN" className="option-zh">{o.chinese}</span>
+            {(showPinyin || chosen) && <small>{o.pinyin}</small>}
+          </button>
+        ))}
+      </div>
     </>
   )
 }

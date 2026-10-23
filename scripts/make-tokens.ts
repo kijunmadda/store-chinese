@@ -12,7 +12,7 @@ import { applyPinyinOverrides } from './pinyin-overrides.ts'
 applyPinyinOverrides()
 
 interface Line { id: string; chinese: string; pinyin: string }
-interface Item { customer?: Line; variants?: Line[]; responses?: Line[]; alternatives?: Line[]; keywords?: { word: string; pinyin: string }[] }
+interface Item { id?: string; customer?: Line; variants?: Line[]; responses?: Line[]; alternatives?: Line[]; keywords?: { word: string; pinyin: string }[] }
 interface ToneWord { word: string; syllables: string[] }
 const root = join(import.meta.dirname, '..')
 const items: Item[] = readdirSync(join(root, 'content', 'items'))
@@ -23,13 +23,14 @@ const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerC
 
 /** 병음 단어 경계에 맞춰 한자를 묶는다. 맞춰지지 않으면 null (그 문장은 조각 문제를 내지 않음)
  *  tokens: 단어 조각 / syllables: 단어별 음절(성조 포함) */
-export function align(chinese: string, py: string): { tokens: string[]; syllables: string[][] } | null {
+export function align(chinese: string, py: string): { tokens: string[]; syllables: string[][]; words: string[] } | null {
   const chars = [...chinese].filter((c) => /[\p{Script=Han}A-Za-z]/u.test(c))
   const charPy = pinyin(chars.join(''), { type: 'array', toneType: 'none' }).map(plain)
   if (charPy.length !== chars.length) return null
   const words = py.normalize('NFC').split(/[\s,.!?;:…"'’]+/).filter((w) => plain(w))
   const tokens: string[] = []
   const syllables: string[][] = []
+  const pyWords: string[] = []
   let i = 0
   for (const word of words) {
     const w = plain(word)
@@ -48,21 +49,30 @@ export function align(chinese: string, py: string): { tokens: string[]; syllable
     if (acc !== w) return null
     tokens.push(tok)
     syllables.push(syls)
+    pyWords.push(letters.join('').toLowerCase())
   }
-  return i === chars.length ? { tokens, syllables } : null
+  return i === chars.length ? { tokens, syllables, words: pyWords } : null
 }
 
 const out: Record<string, string[]> = {}
+const wordPinyin: Record<string, string> = {}
 const failed: string[] = []
 for (const it of items)
-  for (const r of it.responses ?? []) {
-    const t = align(r.chinese, r.pinyin)?.tokens
-    if (t) out[r.id] = t
-    else failed.push(`${r.id} ${r.chinese}`)
+  // 직원 답변(조각 배열·빈칸) + 고객 질문·변형(빈칸 채우기)
+  for (const r of [...(it.customer ? [{ ...it.customer, id: (it as { id?: string }).id! }] : []), ...(it.variants ?? []), ...(it.responses ?? [])]) {
+    const a = align(r.chinese, r.pinyin)
+    if (!a) {
+      failed.push(`${r.id} ${r.chinese}`)
+      continue
+    }
+    out[r.id] = a.tokens
+    // 단어 조각별 병음 (글자 채우기 보기에 표시) — 처음 나온 읽기를 쓴다
+    a.tokens.forEach((tok, k) => (wordPinyin[tok] ??= a.words[k]))
   }
 
 mkdirSync(join(root, 'src', 'generated'), { recursive: true })
 writeFileSync(join(root, 'src', 'generated', 'tokens.json'), JSON.stringify(out, null, 1) + '\n')
+writeFileSync(join(root, 'src', 'generated', 'word-pinyin.json'), JSON.stringify(wordPinyin, null, 1) + '\n')
 // 한글 발음: 모든 문장·변형·답변·대체 표현·핵심 단어
 const hangul: Record<string, string> = {}
 const noHangul: string[] = []

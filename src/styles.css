@@ -434,3 +434,11 @@ button { font: inherit; color: inherit; }
 .zh-hangul { margin: 4px 0 0; font-size: 16px; color: var(--muted); letter-spacing: 0.02em; }
 .zh-md .zh-hangul { font-size: 14px; }
 .zh-hangul small { display: block; margin-top: 2px; font-size: 12px; opacity: 0.8; }
+
+/* 글자 채우기 */
+.fill-sentence { margin: 0; font-size: 26px; font-weight: 600; line-height: 1.6; font-family: 'PingFang SC', 'Noto Sans SC', 'Noto Sans CJK SC', sans-serif; }
+.fill-sentence .blank { display: inline-block; min-width: 1.2em; margin: 0 2px; padding: 0 4px; border-bottom: 3px solid var(--muted); color: var(--accent); }
+.fill-sentence .blank.right { border-color: var(--ok); color: var(--ok); }
+.fill-sentence .blank.wrong { border-color: var(--accent); }
+.options.row { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+.options.row .tile-option { flex: 1 1 28%; align-items: center; text-align: center; }
