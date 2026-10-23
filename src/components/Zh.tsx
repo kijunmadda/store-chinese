@@ -29,7 +29,7 @@ export default function Zh({ chinese, pinyin, showPinyin, id, rate, size = 'lg',
       {reading && open && (
         <p className="zh-hangul">
           {reading}
-          <small>참고용 · 숫자는 성조 · zh·ch·sh, f 같은 소리는 한글로 정확히 못 적어요 — 🔊로 확인하세요</small>
+          <small>참고용 · 숫자는 실제로 읽는 성조 · zh·ch·sh, f 같은 소리는 한글로 정확히 못 적어요 — 🔊로 확인하세요</small>
         </p>
       )}
       {(speakable || reading) && (

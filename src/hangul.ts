@@ -48,6 +48,13 @@ const STANDALONE: Record<string, string> = {
   yu: '위', yue: '위에', yuan: '위엔', yun: '윈',
 }
 
+// sh는 혀를 마는 느낌을 살려 샤·셔·슈·쉬처럼 적는다 (2026-10-23 사용자 결정, 제미나이 제안)
+const SH_FINAL: Record<string, string> = {
+  a: '야', e: '여', i: '위', u: '유', ai: '야이', ei: '예이', ao: '야오', ou: '요우',
+  an: '얀', en: '연', ang: '양', eng: '영',
+  ua: '유아', uo: '유어', uai: '유아이', ui: '유이', uan: '유안', un: '윤', uang: '유앙',
+}
+
 const INITIALS = ['zh', 'ch', 'sh', 'b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'r', 'z', 'c', 's']
 
 const CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ'
@@ -77,10 +84,13 @@ export function syllableToHangul(plain: string, tone = 1): string | null {
   const ini = INITIALS.find((i) => plain.startsWith(i))
   if (!ini) return null
   let fin = plain.slice(ini.length)
-  // z·c·s / zh·ch·sh·r 뒤의 i는 '으'
-  if (fin === 'i' && ['z', 'c', 's', 'zh', 'ch', 'sh', 'r'].includes(ini)) return withInitial('으', initialFor(ini, tone))
+  if (ini === 'sh') return SH_FINAL[fin] ? withInitial(SH_FINAL[fin], initialFor(ini, tone)) : null
+  // z·c·s / zh·ch·r 뒤의 i는 '으'
+  if (fin === 'i' && ['z', 'c', 's', 'zh', 'ch', 'r'].includes(ini)) return withInitial('으', initialFor(ini, tone))
   // j·q·x 뒤의 u는 ü
   if (['j', 'q', 'x'].includes(ini) && fin.startsWith('u')) fin = 'ü' + fin.slice(1)
+  // x + ü는 ㅆ(쒸): sh의 '쉬'(是)와 구별하기 위해
+  if (ini === 'x' && fin.startsWith('ü')) return withInitial(FINAL[fin], 'ㅆ')
   if (U_MERGED[fin]) return withInitial(U_MERGED[fin], initialFor(ini, tone))
   const f = FINAL[fin]
   return f ? withInitial(f, initialFor(ini, tone)) : null
@@ -100,10 +110,15 @@ const SUP = ['', '¹', '²', '³', '⁴']
  * words: 단어별 음절 목록, 예) [["Nǐ"], ["hǎo"]] → "니³ 하오³"
  */
 export function pinyinToHangul(words: string[][]): string | null {
+  // 3성 + 3성 → 앞은 실제로 읽는 2성으로 표시 (2026-10-23 사용자 결정: 니² 하오³)
+  const flat = words.flat().map((syl) => (/^[A-Za-z]$/.test(syl) ? -1 : splitTone(syl).tone))
+  const spoken = flat.map((t, i) => (t === 3 && flat[i + 1] === 3 ? 2 : t))
+  let k = 0
   const out: string[] = []
   for (const word of words) {
     let w = ''
     for (const syl of word) {
+      const toneShown = spoken[k++]
       if (/^[A-Za-z]$/.test(syl)) {
         w += syl.toUpperCase() // S·M·L 같은 알파벳
         continue
@@ -111,7 +126,7 @@ export function pinyinToHangul(words: string[][]): string | null {
       const { plain, tone } = splitTone(syl)
       const h = syllableToHangul(plain, tone)
       if (!h) return null
-      w += h + SUP[tone]
+      w += h + SUP[toneShown]
     }
     out.push(w)
   }
