@@ -65,7 +65,31 @@ const PROMPT_ZH = `你是一位在中国大陆长大的汉语母语者，同时�
 
 输出格式：只列出有问题的句子，用表格：| ID | 问题类型(1-5) | 现在的句子 | 建议修改 | 理由 |。没有问题的句子不用列出，最后写一句"其余全部OK"。不确定的意见请标注"不确定"。
 
-最后请补充：中国顾客在韩国百货商场买包、钱包、衣服时，还经常说哪些上面没有的话？请列出10句，附拼音和简单的中文说明。`
+最后请补充：中国顾客在韩国百货商场买包、钱包、衣服时，还经常说哪些上面没有的话？请列出10句，附拼音和简单的中文说明。
+
+请把结果整理成 Markdown（.md）文件给我。`
+
+const PROMPT_KO = `당신은 중국 본토에서 자란 표준중국어 원어민이자 외국인 대상 중국어 교사이며, 고급 백화점(명품 가방·지갑·의류) 판매 경험이 있습니다.
+
+아래는 한국 백화점 판매직원이 중국인 고객을 응대하기 위해 배울 중국어 문장입니다. 표의 "顾客(고객)"은 고객이 하는 말로 학습자는 알아듣기만 하면 되고, "店员(직원)"은 학습자가 직접 말해야 하는 문장입니다. "店员-替换"은 대신 써도 되는 표현, "关键词"는 핵심 단어 설명입니다.
+
+다음은 의도적인 규칙이니 이것 때문에 문장을 고치지 마세요.
+- 직원 문장은 일부러 您 대신 你를 씁니다. 정중함은 请问·麻烦你·不好意思·一下 등으로 보완합니다.
+- 병음 규칙: 성조 기호 표기 / 一·不는 실제로 바뀐 성조로 표기(yíxià, bú tài) / 3성 연속은 원래 성조로 표기(nǐ hǎo) / 경성은 성조 기호 없음(kànkan, xièxie)
+- 직원은 확인하기 전에 재고·할인·교환/환불 정책을 단정하면 안 되므로, "我帮你确认一下" 형태의 답이 많습니다.
+
+문장마다 다음을 검토해 주세요.
+1. 간체자 오류
+2. 병음 철자·성조 오류 (위 규칙 기준)
+3. 한국어 뜻과 중국어의 불일치
+4. 중국 본토 사람이 매장에서 실제로 쓰는 자연스러운 표현인지 — 부자연스러우면 더 자연스러운 표현을 제안
+5. 직원 문장이 무례하거나 딱딱하거나 지나치게 단정적인지
+
+출력: 문제가 있는 문장만 표로 적어 주세요: | ID | 문제 유형(1-5) | 현재 문장 | 수정 제안 | 이유 |. 마지막에 "나머지 모두 OK"라고 적어 주세요. 확실하지 않은 의견은 "불확실"로 표시해 주세요.
+
+마지막으로, 중국인 고객이 한국 백화점에서 가방·지갑·옷을 살 때 자주 하지만 위에 없는 말 10가지를 병음과 간단한 설명과 함께 적어 주세요.
+
+결과는 마크다운(.md) 파일로 만들어 주세요.`
 
 const PROMPT_EN = `You are a native Mandarin speaker raised in mainland China, a teacher of Chinese as a foreign language, and you have sales experience in a high-end department store (luxury bags, wallets, clothing).
 
@@ -85,16 +109,24 @@ Check every sentence for:
 
 Output: list ONLY the sentences with problems in a table: | ID | Issue type (1-5) | Current | Suggested | Reason |. Then write "All others OK". Mark uncertain comments as "uncertain".
 
-Finally: list 10 more things Chinese customers commonly say when buying bags, wallets or clothes in a Korean department store that are not covered above, with pinyin and a short explanation.`
+Finally: list 10 more things Chinese customers commonly say when buying bags, wallets or clothes in a Korean department store that are not covered above, with pinyin and a short explanation.
+
+Please deliver the result as a Markdown (.md) file.`
 
 const out: string[] = []
 out.push('# 콘텐츠 교차검증 요청 (외부 AI용)')
 out.push('')
 out.push(`- 생성일: ${new Date().toISOString().slice(0, 10)} · 상황 ${items.length}개`)
 out.push('- 이 문서는 `npm run export:review`로 앱 콘텐츠(content/)에서 자동 생성됩니다. 직접 고치지 말고 JSON을 고친 뒤 다시 생성하세요.')
-out.push('- 사용법: 아래 **프롬프트(중국어 또는 영어) 하나**와 **"검증 대상 문장" 전체**를 함께 복사해 붙여 넣으세요.')
+out.push('- 사용법: 아래 **프롬프트(한국어·중국어·영어 중) 하나**와 **"검증 대상 문장" 전체**를 함께 복사해 붙여 넣으세요.')
 out.push('')
 out.push('---')
+out.push('')
+out.push('## 프롬프트 — 한국어')
+out.push('')
+out.push('```')
+out.push(PROMPT_KO)
+out.push('```')
 out.push('')
 out.push('## 프롬프트 — 中文 (딥시크 추천)')
 out.push('')
