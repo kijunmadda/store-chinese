@@ -10,10 +10,12 @@ export interface Prefs {
   voiceURI: string
   /** 오늘의 학습에서 새로 배울 상황 수 */
   dailyNew: number
+  /** 하루 목표 판 수 */
+  dailyGoal: number
 }
 
 const KEY = 'prefs.v1'
-const DEFAULTS: Prefs = { showPinyin: true, rate: 0.85, voiceURI: '', dailyNew: 3 }
+const DEFAULTS: Prefs = { showPinyin: true, rate: 0.85, voiceURI: '', dailyNew: 3, dailyGoal: 2 }
 
 function load(): Prefs {
   try {

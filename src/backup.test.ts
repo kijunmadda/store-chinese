@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { backupFileName, daysSinceBackup, makeBackup, parseBackup } from './backup'
 import { emptyState } from './store'
 
-const prefs = { showPinyin: true, rate: 0.85, voiceURI: '', dailyNew: 3 }
+const prefs = { showPinyin: true, rate: 0.85, voiceURI: '', dailyNew: 3, dailyGoal: 2 }
 
 describe('백업 파일', () => {
   const state = emptyState()

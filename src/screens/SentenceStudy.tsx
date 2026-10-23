@@ -31,7 +31,7 @@ export default function SentenceStudy() {
         <BackHeader title="문장 학습" />
         <div className="card empty">
           <p>이 카테고리에는 아직 문장이 없어요.</p>
-          <Link to="/study/sentences" className="link">카테고리 목록으로</Link>
+          <Link to="/collection" className="link">문장 모음으로</Link>
         </div>
       </>
     )
@@ -75,7 +75,7 @@ export default function SentenceStudy() {
           ‹ 이전
         </button>
         {isLast ? (
-          <Link to="/study/sentences" className="btn-secondary strong">목록으로</Link>
+          <Link to="/collection" className="btn-secondary strong">문장 모음으로</Link>
         ) : (
           <button type="button" className="btn-secondary strong" onClick={() => go({ i: index + 1 })}>
             다음 ›

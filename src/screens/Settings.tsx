@@ -4,6 +4,7 @@ import InstallGuide from '../components/InstallGuide'
 import { contentErrors, contentStats } from '../content'
 import { setPrefs, usePrefs } from '../prefs'
 import { getChineseVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
+import { record } from '../store'
 
 const TEST_SENTENCE = '我帮你确认一下库存，请稍等。'
 const RATES = [
@@ -104,21 +105,30 @@ export default function Settings() {
           <input type="checkbox" checked={prefs.showPinyin} onChange={(e) => setPrefs({ showPinyin: e.target.checked })} />
         </label>
         <div className="field">
-          <span>오늘의 학습에서 새로 배울 상황</span>
-          <div className="segmented three" role="radiogroup" aria-label="하루 새 문장 수">
-            {[2, 3, 5].map((n) => (
-              <button key={n} type="button" role="radio" aria-checked={prefs.dailyNew === n} aria-selected={prefs.dailyNew === n} onClick={() => setPrefs({ dailyNew: n })}>
-                {n}개
+          <span>하루 목표</span>
+          <div className="segmented three" role="radiogroup" aria-label="하루 목표 판 수">
+            {[1, 2, 3].map((n) => (
+              <button key={n} type="button" role="radio" aria-checked={prefs.dailyGoal === n} aria-selected={prefs.dailyGoal === n} onClick={() => setPrefs({ dailyGoal: n })}>
+                {n}판 (약 {n * 3}분)
               </button>
             ))}
           </div>
-          <small className="note">처음에는 3개를 추천해요. 한 번에 너무 많이 배우면 오히려 기억에 덜 남아요.</small>
+          <small className="note">매일 조금씩이 한 번에 몰아서 하는 것보다 훨씬 오래 기억에 남아요.</small>
         </div>
       </section>
 
       <InstallGuide />
       <BackupSection />
 
+      <button
+        type="button"
+        className="text-link"
+        onClick={() => {
+          if (window.confirm('학습 기록을 모두 지울까요? 되돌릴 수 없어요.\n(필요하면 먼저 위에서 백업해 주세요)')) record.resetAll()
+        }}
+      >
+        학습 기록 초기화
+      </button>
 
       <section className="card" aria-label="콘텐츠 정보">
         <strong>콘텐츠 정보</strong>

@@ -25,6 +25,8 @@ export interface SentenceProgress {
 export interface DayLog {
   steps: string[]
   completed: boolean
+  /** 이날 끝낸 학습 판 수 */
+  lessons?: number
 }
 
 export interface StudyState {
@@ -226,6 +228,15 @@ export const record = {
   },
   step(step: string) {
     update((s) => logStep(s, step))
+  },
+  /** 한 판(레슨)을 끝까지 마침. 하루 목표 판 수를 채우면 그날은 완료 */
+  lessonDone(goal: number) {
+    update((s) => {
+      logStep(s, 'lesson')
+      const d = s.days[today()]
+      d.lessons = (d.lessons ?? 0) + 1
+      if (d.lessons >= goal) d.completed = true
+    })
   },
   /** 오늘의 학습을 끝까지 마침 */
   completeDay() {

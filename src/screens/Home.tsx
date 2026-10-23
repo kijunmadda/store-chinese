@@ -1,44 +1,72 @@
 import { Link } from 'react-router-dom'
 import { daysSinceBackup } from '../backup'
-import { sentences } from '../content'
 import { isMobile, isStandalone } from '../install'
-import { computeStats, studyLink } from '../stats'
+import { usePrefs } from '../prefs'
+import { computeStats } from '../stats'
+import { computeStreak, todayLessons } from '../streak'
 import { today, useStudyState } from '../store'
+
+/** 오늘 목표 진행 원 */
+function GoalRing({ done, goal }: { done: number; goal: number }) {
+  const r = 26
+  const c = 2 * Math.PI * r
+  const ratio = Math.min(done / goal, 1)
+  return (
+    <svg className="goal-ring" viewBox="0 0 64 64" role="img" aria-label={`오늘 목표 ${goal}판 중 ${Math.min(done, goal)}판`}>
+      <circle cx="32" cy="32" r={r} className="ring-bg" />
+      <circle cx="32" cy="32" r={r} className="ring-fg" strokeDasharray={c} strokeDashoffset={c * (1 - ratio)} transform="rotate(-90 32 32)" />
+      <text x="32" y="37" textAnchor="middle">{Math.min(done, goal)}/{goal}</text>
+    </svg>
+  )
+}
 
 export default function Home() {
   const state = useStudyState()
-  const stats = computeStats(state, today())
-  const todayDone = state.days[today()]?.completed
+  const { dailyGoal } = usePrefs()
+  const todayKey = today()
+  const stats = computeStats(state, todayKey)
+  const streak = computeStreak(state.days, todayKey)
+  const lessons = todayLessons(state.days, todayKey)
+  const goalMet = lessons >= dailyGoal
   const since = daysSinceBackup(state.lastBackupAt)
   const needBackup = stats.learned > 0 && (since === null || since >= 7)
-  const recent = Object.entries(state.progress)
-    .filter(([id, p]) => p.lastStudiedAt && sentences.get(id)?.kind === 'staff')
-    .sort((a, b) => (b[1].lastStudiedAt ?? '').localeCompare(a[1].lastStudiedAt ?? ''))
-    .slice(0, 3)
-    .map(([id]) => sentences.get(id)!)
 
   return (
     <>
-      <header className="screen-header">
-        <p className="eyebrow">매장 중국어</p>
-        <h1>{todayDone ? '오늘 학습 완료! 👏' : '오늘도 5분만 해요'}</h1>
-      </header>
+      <section className="home-top">
+        <div className={`streak ${streak.today ? 'lit' : ''}`}>
+          <span className="flame" aria-hidden="true">🔥</span>
+          <strong>{streak.count}</strong>
+          <span>일 연속</span>
+        </div>
+        <GoalRing done={lessons} goal={dailyGoal} />
+      </section>
 
-      <Link to="/today" className="btn-primary">
-        {todayDone ? '한 번 더 학습하기' : '오늘의 학습 시작'}
-        <small>복습 → 새 문장 3개 → 듣기 → 말하기 → 역할극</small>
+      <p className="home-message">
+        {goalMet
+          ? '오늘 목표 달성! 더 하고 싶으면 한 판 더 👍'
+          : streak.atRisk
+            ? '오늘 한 판 하면 연속 기록이 이어져요!'
+            : lessons > 0
+              ? `좋아요! 오늘 ${dailyGoal - lessons}판 남았어요.`
+              : '오늘도 3분만 해요.'}
+      </p>
+
+      <Link to="/lesson" className="btn-primary start">
+        {goalMet ? '한 판 더' : lessons > 0 ? '이어서 학습' : '오늘의 학습 시작'}
+        <small>약 3분 · 문제 6개 · 복습과 새 표현이 섞여 나와요</small>
       </Link>
 
-      <section className="card stats" aria-label="학습 현황">
-        <div><strong>{stats.studyDays}</strong><span>누적 학습일</span></div>
-        <div><strong>{stats.percent}%</strong><span>전체 진행률</span></div>
-        <Link to="/review"><strong>{stats.dueIds.length}</strong><span>복습 대기</span></Link>
-      </section>
+      <Link to="/rescue" className="card rescue">
+        <strong>🆘 위기 탈출 카드</strong>
+        <span>못 알아들었을 때 바로 꺼내 쓰는 문장</span>
+      </Link>
 
-      <section className="shortcut-grid" aria-label="바로가기">
-        <Link to="/study/listen" className="shortcut">🎧<span>고객 질문 듣기</span></Link>
-        <Link to="/study/roleplay" className="shortcut">💬<span>상황별 역할극</span></Link>
-      </section>
+      <Link to="/collection" className="card home-progress">
+        <span>배운 표현</span>
+        <strong>{stats.learned} / {stats.total}</strong>
+        <div className="progress-track"><div className="progress-bar" style={{ width: `${stats.percent}%` }} /></div>
+      </Link>
 
       {isMobile() && !isStandalone() && (
         <Link to="/settings" className="card backup-alert">
@@ -52,27 +80,6 @@ export default function Home() {
           <strong>💾 {since === null ? '아직 백업한 적이 없어요' : `마지막 백업 후 ${since}일 지났어요`}</strong>
           <span>휴대폰 브라우저 데이터가 지워지면 학습 기록이 사라져요. 설정에서 백업해 주세요.</span>
         </Link>
-      )}
-
-      <Link to="/rescue" className="card rescue">
-        <strong>위기 탈출 카드</strong>
-        <span>못 알아들었을 때 바로 꺼내 쓰는 문장</span>
-      </Link>
-
-      {recent.length > 0 && (
-        <section className="card">
-          <strong>최근 학습한 문장</strong>
-          <ul className="sentence-list">
-            {recent.map((s) => (
-              <li key={s.id}>
-                <Link to={studyLink(s.id)}>
-                  <span lang="zh-CN">{s.chinese}</span>
-                  <small>{s.kind === 'staff' ? s.korean : s.meaning}</small>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
       )}
     </>
   )

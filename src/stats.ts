@@ -47,7 +47,7 @@ export function computeStats(state: StudyState, todayKey: string): Stats {
 /** 문장 ID → 문장 학습 화면 주소 */
 export function studyLink(sentenceId: string): string {
   const s = sentences.get(sentenceId)
-  if (!s) return '/study/sentences'
+  if (!s) return '/collection'
   const item = items.find((it) => it.id === s.itemId)!
   const list = items.filter((it) => it.category === item.category && it.learningModes.includes('study'))
   return `/study/sentences/${item.category}?i=${list.indexOf(item)}&mode=learn`
