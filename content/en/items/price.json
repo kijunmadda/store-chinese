@@ -1,0 +1,364 @@
+[
+  {
+    "id": "R01",
+    "category": "price",
+    "scenario": "고객이 가격을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "How much is this?",
+      "hangul": "하우 머치 이즈 디스?",
+      "meaning": "이거 얼마예요?"
+    },
+    "variants": [
+      {
+        "id": "R01-V1",
+        "english": "How much does this cost?",
+        "hangul": "하우 머치 더즈 디스 코스트?",
+        "meaning": "이거 얼마 해요?"
+      },
+      {
+        "id": "R01-V2",
+        "english": "What's the price?",
+        "hangul": "왓츠 더 프라이스?",
+        "meaning": "가격이 얼마예요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "R01-A",
+        "english": "Let me show you the price.",
+        "hangul": "렛 미 쇼 유 더 프라이스.",
+        "korean": "가격 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "much",
+        "hangul": "머치",
+        "meaning": "많이 (how much = 얼마)"
+      },
+      {
+        "word": "cost",
+        "hangul": "코스트",
+        "meaning": "(값이) 들다"
+      },
+      {
+        "word": "price",
+        "hangul": "프라이스",
+        "meaning": "가격"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R02",
+    "category": "price",
+    "scenario": "가격을 말해 줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "R02-A",
+        "english": "This one is 3,500,000 won.",
+        "hangul": "디스 원 이즈 쓰리 밀리언 파이브 헌드레드 싸우전드 원.",
+        "korean": "이 제품은 350만 원이에요.",
+        "note": "실제 가격으로 바꿔 말하기 — 350만 = 3.5 million (three million five hundred thousand)"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "million",
+        "hangul": "밀리언",
+        "meaning": "백만"
+      },
+      {
+        "word": "thousand",
+        "hangul": "싸우전드",
+        "meaning": "천"
+      },
+      {
+        "word": "won",
+        "hangul": "원",
+        "meaning": "원 (한국 돈)"
+      }
+    ],
+    "pattern": "This one is ___ won.",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R03",
+    "category": "price",
+    "scenario": "고객이 할인을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Is there a discount?",
+      "hangul": "이즈 데어러 디스카운트?",
+      "meaning": "할인 있어요?"
+    },
+    "variants": [
+      {
+        "id": "R03-V1",
+        "english": "Is this on sale?",
+        "hangul": "이즈 디스 온 세일?",
+        "meaning": "이거 할인 중이에요?"
+      },
+      {
+        "id": "R03-V2",
+        "english": "Are there any promotions right now?",
+        "hangul": "아 데어 애니 프로모션즈 라잇 나우?",
+        "meaning": "지금 행사 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "R03-A",
+        "english": "Let me ask if there are any promotions right now.",
+        "hangul": "렛 미 애스크 이프 데어라 애니 프로모션즈 라잇 나우.",
+        "korean": "지금 행사가 있는지 여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "discount",
+        "hangul": "디스카운트",
+        "meaning": "할인"
+      },
+      {
+        "word": "sale",
+        "hangul": "세일",
+        "meaning": "할인 판매 (on sale = 할인 중)"
+      },
+      {
+        "word": "promotions",
+        "hangul": "프로모션즈",
+        "meaning": "행사, 프로모션"
+      },
+      {
+        "word": "ask",
+        "hangul": "애스크",
+        "meaning": "묻다, 물어보다"
+      }
+    ],
+    "pattern": "Let me ask ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R04",
+    "category": "price",
+    "scenario": "고객이 할인율을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "How much is the discount?",
+      "hangul": "하우 머치 이즈 더 디스카운트?",
+      "meaning": "할인이 얼마나 돼요?"
+    },
+    "responses": [
+      {
+        "id": "R04-A",
+        "english": "Let me check the discount for you.",
+        "hangul": "렛 미 첵 더 디스카운트 포 유.",
+        "korean": "할인율을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "discount",
+        "hangul": "디스카운트",
+        "meaning": "할인"
+      },
+      {
+        "word": "percent",
+        "hangul": "퍼센트",
+        "meaning": "퍼센트 (20 percent off = 20% 할인)"
+      },
+      {
+        "word": "off",
+        "hangul": "오프",
+        "meaning": "할인된 (20% off)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R05",
+    "category": "price",
+    "scenario": "고객이 가격을 깎아 달라고 할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Can you give me a discount?",
+      "hangul": "캔 유 기미 어 디스카운트?",
+      "meaning": "좀 깎아 주실 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "R05-V1",
+        "english": "Can you make it cheaper?",
+        "hangul": "캔 유 메이킷 치퍼?",
+        "meaning": "좀 싸게 안 돼요?"
+      },
+      {
+        "id": "R05-V2",
+        "english": "Can you do a better price?",
+        "hangul": "캔 유 두 어 베러 프라이스?",
+        "meaning": "가격 좀 더 잘해 주실 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "R05-A",
+        "english": "I'm sorry. Let me ask if there are any special offers.",
+        "hangul": "아임 쏘리. 렛 미 애스크 이프 데어라 애니 스페셜 오퍼즈.",
+        "korean": "죄송해요, 할인 혜택이 있는지 여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "cheaper",
+        "hangul": "치퍼",
+        "meaning": "더 싼"
+      },
+      {
+        "word": "better",
+        "hangul": "베러",
+        "meaning": "더 좋은"
+      },
+      {
+        "word": "special",
+        "hangul": "스페셜",
+        "meaning": "특별한"
+      },
+      {
+        "word": "offers",
+        "hangul": "오퍼즈",
+        "meaning": "혜택 (special offer = 특별 혜택)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R06",
+    "category": "price",
+    "scenario": "고객이 자기 나라와 한국 가격을 비교할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Is it cheaper here than back home?",
+      "hangul": "이짓 치퍼 히어 댄 백 홈?",
+      "meaning": "여기가 저희 나라보다 싸요?"
+    },
+    "responses": [
+      {
+        "id": "R06-A",
+        "english": "I'm not sure about prices in other countries.",
+        "hangul": "아임 낫 슈어 어바웃 프라이시즈 인 아더 컨트리즈.",
+        "korean": "다른 나라 가격은 잘 모르겠어요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "cheaper",
+        "hangul": "치퍼",
+        "meaning": "더 싼"
+      },
+      {
+        "word": "home",
+        "hangul": "홈",
+        "meaning": "집, 고국 (back home = 우리 나라에서)"
+      },
+      {
+        "word": "sure",
+        "hangul": "슈어",
+        "meaning": "확실한 (not sure = 잘 모르다)"
+      },
+      {
+        "word": "countries",
+        "hangul": "컨트리즈",
+        "meaning": "나라들"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "R07",
+    "category": "price",
+    "scenario": "고객이 여러 개 구매 혜택을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Is there a deal if I buy two?",
+      "hangul": "이즈 데어러 딜 이파이 바이 투?",
+      "meaning": "두 개 사면 혜택 있어요?"
+    },
+    "responses": [
+      {
+        "id": "R07-A",
+        "english": "Let me ask for you.",
+        "hangul": "렛 미 애스크 포 유.",
+        "korean": "여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "deal",
+        "hangul": "딜",
+        "meaning": "혜택, 좋은 조건"
+      },
+      {
+        "word": "buy",
+        "hangul": "바이",
+        "meaning": "사다"
+      },
+      {
+        "word": "two",
+        "hangul": "투",
+        "meaning": "둘, 두 개"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  }
+]

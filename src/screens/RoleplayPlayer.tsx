@@ -7,6 +7,7 @@ import type { RoleplayStep } from '../content/types'
 import { usePrefs } from '../prefs'
 import { record } from '../store'
 import { shuffle } from '../util'
+import { L } from '../langs'
 
 interface Bubble {
   key: string
@@ -134,7 +135,7 @@ export function RoleplayRun({ roleplayId, embedded = false, onFinish }: { rolepl
             <div className="options">
               {pending.options.map((o) => (
                 <button key={o.id} type="button" className="option" onClick={() => choose(o, pending.accept)}>
-                  <span lang="zh-CN" className="option-zh">{o.chinese}</span>
+                  <span lang={L.tag} className="option-zh">{o.chinese}</span>
                   {showPinyin && <small>{o.pinyin}</small>}
                 </button>
               ))}
@@ -144,7 +145,7 @@ export function RoleplayRun({ roleplayId, embedded = false, onFinish }: { rolepl
 
         {pending.kind === 'say' && (
           <>
-            <p className="block-title">고객에게 중국어로 직접 대답해 보세요</p>
+            <p className="block-title">고객에게 {L.name}로 직접 대답해 보세요</p>
             <p className="note">힌트: {(sentences.get(pending.accept[0]) as Extract<Sentence, { kind: 'staff' }>)?.korean}</p>
             <button
               type="button"
@@ -161,7 +162,7 @@ export function RoleplayRun({ roleplayId, embedded = false, onFinish }: { rolepl
 
         {pending.kind === 'staff' && (
           <>
-            <p className="block-title">직원 차례 — 중국어로 말해 보세요</p>
+            <p className="block-title">직원 차례 — {L.name}로 말해 보세요</p>
             <p className="prompt-ko">{(sentences.get(pending.ref) as Extract<Sentence, { kind: 'staff' }>)?.korean}</p>
             <button
               type="button"
@@ -210,7 +211,7 @@ export function RoleplayRun({ roleplayId, embedded = false, onFinish }: { rolepl
             {rp.reviewKeywords && (
               <div className="chips">
                 {rp.reviewKeywords.map((k) => (
-                  <span key={k} className="chip on" lang="zh-CN">{k}</span>
+                  <span key={k} className="chip on" lang={L.tag}>{k}</span>
                 ))}
               </div>
             )}

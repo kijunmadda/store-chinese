@@ -12,6 +12,7 @@ import { stopSpeech } from '../speech'
 import { computeStreak, todayLessons } from '../streak'
 import { getState, record, today, useStudyState, type Rating } from '../store'
 import { StudyCard } from './SentenceStudy'
+import { L } from '../langs'
 
 interface Feedback {
   correct: boolean
@@ -97,7 +98,7 @@ export default function Lesson() {
         {ex.kind === 'build' && <BuildEx ex={ex} answered={answered} locked={!!feedback} />}
         {ex.kind === 'speak' && (
           <>
-            <p className="ex-label">중국어로 말해 보세요</p>
+            <p className="ex-label">{L.name}로 말해 보세요</p>
             <SpeakCard
               entry={ex}
               onRated={(r: Rating) => {
@@ -162,8 +163,8 @@ function ListenEx({ ex, answered, locked, textFirst = false }: { ex: Extract<Exe
           <button key={o.key} type="button" className={`option ${optState(chosen, o.key, o.correct)}`} disabled={!!chosen} onClick={() => choose(o.key)}>
             {type === 'response' ? (
               <>
-                <span lang="zh-CN" className="option-zh">{o.label}</span>
-                {(showPinyin || chosen) && <small>{o.sub}</small>}
+                <span lang={L.tag} className="option-zh">{o.label}</span>
+                {(showPinyin || (!!chosen && L.hasPinyin)) && <small>{o.sub}</small>}
               </>
             ) : (
               o.label
@@ -185,13 +186,13 @@ function PickZhEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'pic
   }
   return (
     <>
-      <p className="ex-label">중국어로 뭐라고 할까요?</p>
+      <p className="ex-label">{L.name}로 뭐라고 할까요?</p>
       <p className="scenario"><span className="label">상황</span> {ex.item.scenario}</p>
       <p className="prompt-ko">{ex.line.korean}</p>
       <div className="options">
         {ex.options.map((o) => (
           <button key={o.id} type="button" className={`option ${optState(chosen, o.id, o.id === ex.line.id)}`} disabled={!!chosen} onClick={() => choose(o)}>
-            <span lang="zh-CN" className="option-zh">{o.chinese}</span>
+            <span lang={L.tag} className="option-zh">{o.chinese}</span>
             {showPinyin && <small>{o.pinyin}</small>}
           </button>
         ))}
@@ -218,14 +219,14 @@ function BuildEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'buil
       <div className={`build-answer ${checked === true ? 'right' : checked === false ? 'wrong' : ''}`} aria-label="만든 문장">
         {picked.length === 0 && <span className="build-hint">여기에 조각이 놓여요</span>}
         {picked.map((i) => (
-          <button key={i} type="button" className="tile" lang="zh-CN" disabled={frozen} onClick={() => setPicked((p) => p.filter((x) => x !== i))}>
+          <button key={i} type="button" className="tile" lang={L.tag} disabled={frozen} onClick={() => setPicked((p) => p.filter((x) => x !== i))}>
             {tiles[i].t}
           </button>
         ))}
       </div>
       <div className="build-bank" aria-label="조각">
         {tiles.map(({ t, i }) => (
-          <button key={i} type="button" className={`tile ${picked.includes(i) ? 'used' : ''}`} lang="zh-CN" disabled={frozen || picked.includes(i)} onClick={() => setPicked((p) => [...p, i])}>
+          <button key={i} type="button" className={`tile ${picked.includes(i) ? 'used' : ''}`} lang={L.tag} disabled={frozen || picked.includes(i)} onClick={() => setPicked((p) => [...p, i])}>
             {t}
           </button>
         ))}
@@ -257,19 +258,22 @@ function FillEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'fill'
       <p className="scenario">
         <span className="label">{ex.sentence.kind === 'customer' ? '🎧 고객' : '🗣 직원'}</span> {meaningOf(ex.sentence)}
       </p>
-      <p className="fill-sentence" lang="zh-CN">
-        {ex.tokens.map((t, i) =>
-          i === ex.blank ? (
-            <span key={i} className={`blank ${chosen ? (chosen === answer ? 'right' : 'wrong') : ''}`}>{chosen ?? '　'.repeat([...t].length)}</span>
-          ) : (
-            <span key={i}>{t}</span>
-          ),
-        )}
+      <p className="fill-sentence" lang={L.tag}>
+        {ex.tokens.map((t, i) => (
+          <span key={i}>
+            {i > 0 && L.joiner}
+            {i === ex.blank ? (
+              <span className={`blank ${chosen ? (chosen === answer ? 'right' : 'wrong') : ''}`}>{chosen ?? (L.hasPinyin ? '　'.repeat([...t].length) : ' '.repeat(Math.max(6, t.length)))}</span>
+            ) : (
+              t
+            )}
+          </span>
+        ))}
       </p>
       <div className="options row">
         {ex.options.map((o) => (
           <button key={o} type="button" className={`option tile-option ${optState(chosen, o, o === answer)}`} disabled={!!chosen} onClick={() => choose(o)}>
-            <span lang="zh-CN" className="option-zh">{o}</span>
+            <span lang={L.tag} className="option-zh">{o}</span>
             {showPinyin && <small>{pinyinOfToken(o)}</small>}
           </button>
         ))}
@@ -281,7 +285,7 @@ function FillEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'fill'
 /** 보기 단어의 병음 (빌드할 때 콘텐츠 병음에서 만든 표) */
 const pinyinOfToken = (word: string) => (wordPinyinJson as Record<string, string>)[word] ?? ''
 
-/** 듣고 맞추기: 소리를 듣고 같은 문장을 중국어 보기에서 고르기 */
+/** 듣고 맞추기: 소리를 듣고 같은 문장을 보기에서 고르기 */
 function MatchEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'match' }>; answered: Answered; locked: boolean }) {
   const { showPinyin } = usePrefs()
   const [chosen, setChosen] = useState<string | null>(null)
@@ -300,8 +304,8 @@ function MatchEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'matc
       <div className="options">
         {ex.options.map((o) => (
           <button key={o.id} type="button" className={`option ${optState(chosen, o.id, o.id === ex.id)}`} disabled={!!chosen} onClick={() => choose(o)}>
-            <span lang="zh-CN" className="option-zh">{o.chinese}</span>
-            {(showPinyin || chosen) && <small>{o.pinyin}</small>}
+            <span lang={L.tag} className="option-zh">{o.chinese}</span>
+            {(showPinyin || (!!chosen && L.hasPinyin)) && <small>{o.pinyin}</small>}
           </button>
         ))}
       </div>

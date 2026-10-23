@@ -2,7 +2,9 @@
 // - 이 기기 브라우저의 IndexedDB에 저장한다 (서버 없음).
 // - 기록 전체를 하나의 묶음으로 메모리에 두고, 바뀔 때마다 통째로 저장한다 (문장 수백 개 규모라 충분히 가볍다).
 // - IndexedDB를 쓸 수 없는 환경(사생활 보호 모드 등)에서는 메모리에만 두고 경고를 띄운다.
+// - 학습 언어마다 따로 저장한다 (중국어 'state', 영어 'state-en'). 백업 파일에는 두 언어가 함께 들어간다.
 import { useSyncExternalStore } from 'react'
+import { LANG_ID, type LangId } from './langs'
 
 export type Rating = 'again' | 'hard' | 'good'
 
@@ -72,7 +74,8 @@ export function today(offsetDays = 0): string {
 // ── IndexedDB ────────────────────────────────
 const DB_NAME = 'store-chinese'
 const STORE = 'kv'
-const KEY = 'state'
+const keyOf = (lang: LangId) => (lang === 'en' ? 'state-en' : 'state')
+const KEY = keyOf(LANG_ID)
 
 function openDb(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -255,10 +258,22 @@ export const record = {
   /** 백업 파일로 통째로 교체. 바로 전 상태는 되돌리기용으로 보관한다. */
   restore(next: StudyState) {
     undoSnapshot = structuredClone(state)
-    update((s) => {
-      const { app, schemaVersion, progress, days, recentListen, lastBackupAt } = next
-      Object.assign(s, emptyState(), { app, schemaVersion, progress, days, recentListen, lastBackupAt })
-    })
+    otherUndo = null
+    update((s) => Object.assign(s, emptyState(), pickState(next)))
+  },
+  /**
+   * 백업 파일로 두 언어 기록을 함께 교체. 백업에 없는 언어는 그대로 둔다.
+   * 지금 언어가 아닌 기록은 저장소에 바로 쓴다.
+   */
+  async restoreLangs(next: Partial<Record<LangId, StudyState>>) {
+    const other: LangId = LANG_ID === 'en' ? 'zh' : 'en'
+    const mine = next[LANG_ID]
+    const theirs = next[other]
+    const prevOther = theirs ? await readOther() : null
+    undoSnapshot = structuredClone(state)
+    otherUndo = theirs ? { value: prevOther } : null
+    if (mine) update((s) => Object.assign(s, emptyState(), pickState(mine)))
+    if (theirs) await writeOther({ ...emptyState(), ...pickState(theirs) })
   },
   /** 직전 복원 되돌리기 (이번에 앱을 연 동안만 가능) */
   undoRestore(): boolean {
@@ -266,6 +281,11 @@ export const record = {
     const prev = undoSnapshot
     undoSnapshot = null
     update((s) => Object.assign(s, prev))
+    if (otherUndo) {
+      const o = otherUndo.value
+      otherUndo = null
+      void writeOther(o)
+    }
     return true
   },
   backedUp() {
@@ -273,13 +293,59 @@ export const record = {
       s.lastBackupAt = new Date().toISOString()
     })
   },
+  /** 지금 언어의 기록만 지운다 */
   resetAll() {
     undoSnapshot = structuredClone(state)
+    otherUndo = null
     update((s) => Object.assign(s, emptyState()))
   },
 }
 
+const pickState = (next: StudyState) => {
+  const { app, schemaVersion, progress, days, recentListen, lastBackupAt } = next
+  return { app, schemaVersion, progress, days, recentListen, lastBackupAt }
+}
+
 let undoSnapshot: StudyState | null = null
+/** 다른 언어 기록의 되돌리기용 사본 (value가 null이면 원래 기록이 없었음) */
+let otherUndo: { value: StudyState | null } | null = null
+
+// ── 다른 언어의 기록 (백업·복원용) ─────────
+const otherKey = () => keyOf(LANG_ID === 'en' ? 'zh' : 'en')
+
+function readOther(): Promise<StudyState | null> {
+  if (!db) return Promise.resolve(null)
+  return new Promise((resolve) => {
+    try {
+      const req = db!.transaction(STORE).objectStore(STORE).get(otherKey())
+      req.onsuccess = () => resolve(req.result && typeof req.result === 'object' ? { ...emptyState(), ...(req.result as StudyState) } : null)
+      req.onerror = () => resolve(null)
+    } catch {
+      resolve(null)
+    }
+  })
+}
+
+function writeOther(value: StudyState | null): Promise<void> {
+  if (!db) return Promise.resolve()
+  return new Promise((resolve) => {
+    try {
+      const tx = db!.transaction(STORE, 'readwrite')
+      if (value) tx.objectStore(STORE).put(value, otherKey())
+      else tx.objectStore(STORE).delete(otherKey())
+      tx.oncomplete = () => resolve()
+      tx.onerror = () => resolve()
+    } catch {
+      resolve()
+    }
+  })
+}
+
+/** 백업용: 두 언어의 기록 (기록이 없는 언어는 null) */
+export async function allStates(): Promise<Record<LangId, StudyState | null>> {
+  const other = await readOther()
+  return LANG_ID === 'en' ? { zh: other, en: state } : { zh: state, en: other }
+}
 export const canUndo = () => undoSnapshot !== null
 
 // ── 조회 ──────────────────────────────────

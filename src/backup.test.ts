@@ -20,6 +20,23 @@ describe('백업 파일', () => {
     expect(r.summary).toEqual({ exportedAt: '2026-10-21T10:00:00.000Z', sentences: 1, days: 1 })
   })
 
+  it('영어 기록도 함께 담고 다시 읽음', () => {
+    const en = emptyState()
+    en.progress['G01-A'] = { seen: 1, box: 1, listen: { correct: 0, wrong: 0 }, speak: { again: 0, hard: 1, good: 0 }, markedForReview: false, usedInStore: 0 }
+    const r = parseBackup(JSON.stringify(makeBackup(state, prefs, new Date(), en)))
+    expect(r.ok).toBe(true)
+    if (!r.ok) return
+    expect(r.backup.english?.progress).toEqual(en.progress)
+    expect(r.backup.progress).toEqual(state.progress)
+    expect(r.summary.englishSentences).toBe(1)
+  })
+
+  it('영어 기록이 손상되면 거부', () => {
+    const r = parseBackup(JSON.stringify({ ...makeBackup(state, prefs), english: { progress: [], days: {} } }))
+    expect(r.ok).toBe(false)
+    if (!r.ok) expect(r.error).toContain('영어')
+  })
+
   it.each([
     ['JSON이 아님', 'hello', 'JSON 파일 형식이 아니에요'],
     ['다른 앱 파일', '{"app":"other","schemaVersion":1}', '이 앱의 백업 파일이 아니에요'],
@@ -34,7 +51,7 @@ describe('백업 파일', () => {
   })
 
   it('파일 이름과 경과일', () => {
-    expect(backupFileName(new Date(2026, 9, 21))).toBe('매장중국어_백업_2026-10-21.json')
+    expect(backupFileName(new Date(2026, 9, 21))).toBe('매장외국어_백업_2026-10-21.json')
     expect(daysSinceBackup(null)).toBeNull()
     expect(daysSinceBackup('2026-10-14T09:00:00Z', new Date('2026-10-21T10:00:00Z'))).toBe(7)
   })

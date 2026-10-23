@@ -1,0 +1,472 @@
+[
+  {
+    "id": "N01",
+    "category": "needs",
+    "scenario": "고객이 보고 싶은 상품 종류를 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'm looking for a bag.",
+      "hangul": "아임 루킹 포 어 백.",
+      "meaning": "가방을 찾고 있어요."
+    },
+    "variants": [
+      {
+        "id": "N01-V1",
+        "english": "I'd like to see some wallets.",
+        "hangul": "아이드 라익 투 씨 썸 월릿츠.",
+        "meaning": "지갑 좀 보고 싶어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N01-A",
+        "english": "Sure, this way, please.",
+        "hangul": "슈어, 디스 웨이, 플리즈.",
+        "korean": "네, 이쪽으로 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "looking",
+        "hangul": "루킹",
+        "meaning": "찾는 중 (look for = 찾다)"
+      },
+      {
+        "word": "bag",
+        "hangul": "백",
+        "meaning": "가방"
+      },
+      {
+        "word": "wallet",
+        "hangul": "월릿",
+        "meaning": "지갑"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N02",
+    "category": "needs",
+    "scenario": "고객이 선물을 찾는다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'm looking for a gift for a friend.",
+      "hangul": "아임 루킹 포 어 기프트 포 어 프렌드.",
+      "meaning": "친구에게 줄 선물을 찾고 있어요."
+    },
+    "variants": [
+      {
+        "id": "N02-V1",
+        "english": "I want to buy a gift for my mom.",
+        "hangul": "아이 워너 바이 어 기프트 포 마이 맘.",
+        "meaning": "엄마께 드릴 선물을 사고 싶어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N02-A",
+        "english": "Is it for a man or a woman?",
+        "hangul": "이짓 포 어 맨 오어 어 워먼?",
+        "korean": "남성분께 드리는 건가요, 여성분께 드리는 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "gift",
+        "hangul": "기프트",
+        "meaning": "선물"
+      },
+      {
+        "word": "friend",
+        "hangul": "프렌드",
+        "meaning": "친구"
+      },
+      {
+        "word": "man",
+        "hangul": "맨",
+        "meaning": "남성"
+      },
+      {
+        "word": "woman",
+        "hangul": "워먼",
+        "meaning": "여성"
+      }
+    ],
+    "pattern": "Is it for ___ or ___?",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N03",
+    "category": "needs",
+    "scenario": "본인용인지 선물용인지 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "N03-A",
+        "english": "Is it for yourself or a gift?",
+        "hangul": "이짓 포 유어셀프 오어 어 기프트?",
+        "korean": "본인이 쓰실 건가요, 선물하실 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "yourself",
+        "hangul": "유어셀프",
+        "meaning": "본인, 당신 자신"
+      },
+      {
+        "word": "gift",
+        "hangul": "기프트",
+        "meaning": "선물"
+      }
+    ],
+    "pattern": "Is it for ___ or ___?",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N04",
+    "category": "needs",
+    "scenario": "고객이 본인이 쓸 거라고 답할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "It's for me.",
+      "hangul": "잇츠 포 미.",
+      "meaning": "제가 쓸 거예요."
+    },
+    "variants": [
+      {
+        "id": "N04-V1",
+        "english": "It's for myself.",
+        "hangul": "잇츠 포 마이셀프.",
+        "meaning": "제가 쓸 거예요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N04-A",
+        "english": "Okay, let me show you a few styles.",
+        "hangul": "오케이, 렛 미 쇼 유 어 퓨 스타일즈.",
+        "korean": "네, 몇 가지 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "show",
+        "hangul": "쇼",
+        "meaning": "보여 주다"
+      },
+      {
+        "word": "few",
+        "hangul": "퓨",
+        "meaning": "몇몇 (a few = 몇 가지)"
+      },
+      {
+        "word": "styles",
+        "hangul": "스타일즈",
+        "meaning": "디자인, 스타일"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N05",
+    "category": "needs",
+    "scenario": "고객이 선물용이라고 답할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "It's a gift.",
+      "hangul": "잇츠 어 기프트.",
+      "meaning": "선물할 거예요."
+    },
+    "variants": [
+      {
+        "id": "N05-V1",
+        "english": "It's for a friend.",
+        "hangul": "잇츠 포 어 프렌드.",
+        "meaning": "친구 선물이에요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N05-A",
+        "english": "Okay, who is it for?",
+        "hangul": "오케이, 후 이짓 포?",
+        "korean": "네, 누구에게 드리는 건가요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "who",
+        "hangul": "후",
+        "meaning": "누구"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N06",
+    "category": "needs",
+    "scenario": "고객이 작은 가방을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'm looking for a smaller bag.",
+      "hangul": "아임 루킹 포 어 스몰러 백.",
+      "meaning": "좀 작은 가방을 찾고 있어요."
+    },
+    "variants": [
+      {
+        "id": "N06-V1",
+        "english": "Do you have a smaller one?",
+        "hangul": "두 유 해버 스몰러 원?",
+        "meaning": "좀 작은 거 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N06-A",
+        "english": "Sure, let me take a look.",
+        "hangul": "슈어, 렛 미 테이커 룩.",
+        "korean": "네, 찾아봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "smaller",
+        "hangul": "스몰러",
+        "meaning": "더 작은"
+      },
+      {
+        "word": "look",
+        "hangul": "룩",
+        "meaning": "보다 (take a look = 한번 보다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N07",
+    "category": "needs",
+    "scenario": "고객이 신상품을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Do you have any new arrivals?",
+      "hangul": "두 유 해브 애니 뉴 어라이벌즈?",
+      "meaning": "신상품 있어요?"
+    },
+    "variants": [
+      {
+        "id": "N07-V1",
+        "english": "Which one is the newest?",
+        "hangul": "위치 원 이즈 더 뉴이스트?",
+        "meaning": "어떤 게 제일 최신 제품이에요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N07-A",
+        "english": "Let me show you this season's new arrivals.",
+        "hangul": "렛 미 쇼 유 디스 시즌즈 뉴 어라이벌즈.",
+        "korean": "이번 시즌 신상품을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "new",
+        "hangul": "뉴",
+        "meaning": "새로운"
+      },
+      {
+        "word": "arrivals",
+        "hangul": "어라이벌즈",
+        "meaning": "새로 들어온 상품 (new arrivals = 신상품)"
+      },
+      {
+        "word": "season's",
+        "hangul": "시즌즈",
+        "meaning": "시즌의 (this season = 이번 시즌)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N08",
+    "category": "needs",
+    "scenario": "고객이 원하는 색을 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'd like it in black.",
+      "hangul": "아이드 라이킷 인 블랙.",
+      "meaning": "검은색으로 하고 싶어요."
+    },
+    "variants": [
+      {
+        "id": "N08-V1",
+        "english": "Do you have it in black?",
+        "hangul": "두 유 해빗 인 블랙?",
+        "meaning": "검은색 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "N08-A",
+        "english": "Sure, let me check if we have it in black.",
+        "hangul": "슈어, 렛 미 첵 이프 위 해빗 인 블랙.",
+        "korean": "네, 검은색이 있는지 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "black",
+        "hangul": "블랙",
+        "meaning": "검은색"
+      },
+      {
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N09",
+    "category": "needs",
+    "scenario": "고객이 출근용 가방을 찾을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Do you have a bag for work?",
+      "hangul": "두 유 해버 백 포 워크?",
+      "meaning": "출근용 가방 있어요?"
+    },
+    "variants": [
+      {
+        "id": "N09-V1",
+        "english": "I need a bag for the office.",
+        "hangul": "아이 니더 백 포 디 오피스.",
+        "meaning": "회사에 들고 다닐 가방이 필요해요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "N09-A",
+        "english": "Let me recommend a few.",
+        "hangul": "렛 미 레커멘드 어 퓨.",
+        "korean": "몇 가지 추천해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "work",
+        "hangul": "워크",
+        "meaning": "일, 직장 (for work = 출근용)"
+      },
+      {
+        "word": "office",
+        "hangul": "오피스",
+        "meaning": "사무실, 회사"
+      },
+      {
+        "word": "recommend",
+        "hangul": "레커멘드",
+        "meaning": "추천하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "N10",
+    "category": "needs",
+    "scenario": "원하는 가격대를 물어볼 때",
+    "difficulty": "intermediate",
+    "responses": [
+      {
+        "id": "N10-A",
+        "english": "What price range are you looking for?",
+        "hangul": "왓 프라이스 레인지 아 유 루킹 포?",
+        "korean": "어느 정도 가격대를 생각하세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "price",
+        "hangul": "프라이스",
+        "meaning": "가격"
+      },
+      {
+        "word": "range",
+        "hangul": "레인지",
+        "meaning": "범위 (price range = 가격대)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

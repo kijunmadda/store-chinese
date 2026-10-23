@@ -3,6 +3,7 @@ import type { ContentItem, StaffLine } from '../content/types'
 import { usePrefs } from '../prefs'
 import type { Rating } from '../store'
 import Zh from './Zh'
+import { L } from '../langs'
 
 const RATINGS: { value: Rating; label: string; hint: string }[] = [
   { value: 'again', label: '몰랐음', hint: '오늘 다시' },
@@ -33,7 +34,7 @@ export default function SpeakCard({ entry, onRated }: { entry: { item: ContentIt
       )}
 
       <section className="block staff">
-        <h2 className="block-title">🗣 중국어로 말해 보세요</h2>
+        <h2 className="block-title">🗣 {L.name}로 말해 보세요</h2>
         <p className="prompt-ko">{line.korean}</p>
         {!revealed ? (
           <button type="button" className="reveal" onClick={() => setRevealed(true)}>

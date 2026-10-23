@@ -1,0 +1,433 @@
+[
+  {
+    "id": "Y01",
+    "category": "payment",
+    "scenario": "고객이 카드 결제를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I pay by card?",
+      "hangul": "캐나이 페이 바이 카드?",
+      "meaning": "카드로 결제할 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "Y01-V1",
+        "english": "Do you take credit cards?",
+        "hangul": "두 유 테익 크레딧 카즈?",
+        "meaning": "신용카드 받으세요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y01-A",
+        "english": "Yes, this way, please.",
+        "hangul": "예스, 디스 웨이, 플리즈.",
+        "korean": "네, 이쪽으로 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "pay",
+        "hangul": "페이",
+        "meaning": "결제하다, 지불하다"
+      },
+      {
+        "word": "card",
+        "hangul": "카드",
+        "meaning": "카드"
+      },
+      {
+        "word": "credit",
+        "hangul": "크레딧",
+        "meaning": "신용 (credit card = 신용카드)"
+      },
+      {
+        "word": "take",
+        "hangul": "테익",
+        "meaning": "받다 (결제 수단을)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y02",
+    "category": "payment",
+    "scenario": "고객이 간편결제·해외 카드를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I use Apple Pay?",
+      "hangul": "캐나이 유즈 애플 페이?",
+      "meaning": "애플페이 쓸 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "Y02-V1",
+        "english": "Can I pay with my phone?",
+        "hangul": "캐나이 페이 위드 마이 폰?",
+        "meaning": "휴대폰으로 결제할 수 있어요?"
+      },
+      {
+        "id": "Y02-V2",
+        "english": "Do you accept American Express?",
+        "hangul": "두 유 억셉트 어메리칸 익스프레스?",
+        "meaning": "아메리칸 익스프레스 카드 돼요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y02-A",
+        "english": "Let me check for you.",
+        "hangul": "렛 미 첵 포 유.",
+        "korean": "확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "use",
+        "hangul": "유즈",
+        "meaning": "쓰다"
+      },
+      {
+        "word": "accept",
+        "hangul": "억셉트",
+        "meaning": "받다 (결제 수단을)"
+      },
+      {
+        "word": "phone",
+        "hangul": "폰",
+        "meaning": "휴대폰"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y03",
+    "category": "payment",
+    "scenario": "고객이 택스리펀을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I get a tax refund?",
+      "hangul": "캐나이 게러 택스 리펀드?",
+      "meaning": "택스리펀 받을 수 있어요?"
+    },
+    "responses": [
+      {
+        "id": "Y03-A",
+        "english": "Let me check if you can get a tax refund. May I see your passport?",
+        "hangul": "렛 미 첵 이퓨 캔 게러 택스 리펀드. 메이 아이 씨 유어 패스포트?",
+        "korean": "택스리펀이 되는지 확인해 드릴게요. 여권 좀 보여 주시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "tax",
+        "hangul": "택스",
+        "meaning": "세금"
+      },
+      {
+        "word": "refund",
+        "hangul": "리펀드",
+        "meaning": "환급, 환불 (tax refund = 택스리펀)"
+      },
+      {
+        "word": "passport",
+        "hangul": "패스포트",
+        "meaning": "여권"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y04",
+    "category": "payment",
+    "scenario": "결제 금액을 알려 줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y04-A",
+        "english": "Your total is 1,200,000 won.",
+        "hangul": "유어 토럴 이즈 원 밀리언 투 헌드레드 싸우전드 원.",
+        "korean": "모두 120만 원입니다.",
+        "note": "실제 금액으로 바꿔 말하기 — 120만 = 1.2 million (one million two hundred thousand)"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "total",
+        "hangul": "토럴",
+        "meaning": "합계"
+      },
+      {
+        "word": "won",
+        "hangul": "원",
+        "meaning": "원 (한국 돈)"
+      }
+    ],
+    "pattern": "Your total is ___ won.",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y05",
+    "category": "payment",
+    "scenario": "포장이 필요한지 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y05-A",
+        "english": "Would you like it wrapped?",
+        "hangul": "우쥬 라이킷 랩트?",
+        "korean": "포장해 드릴까요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wrapped",
+        "hangul": "랩트",
+        "meaning": "포장된 (wrap = 포장하다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y06",
+    "category": "payment",
+    "scenario": "고객이 선물 포장을 부탁할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Could you gift-wrap it?",
+      "hangul": "쿠쥬 기프트 랩 잇?",
+      "meaning": "선물 포장해 주실 수 있어요?"
+    },
+    "variants": [
+      {
+        "id": "Y06-V1",
+        "english": "Do you offer gift wrapping?",
+        "hangul": "두 유 오퍼 기프트 래핑?",
+        "meaning": "선물 포장 돼요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "Y06-A",
+        "english": "Let me check if we can gift-wrap it.",
+        "hangul": "렛 미 첵 이프 위 캔 기프트 랩 잇.",
+        "korean": "선물 포장이 되는지 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "gift-wrap",
+        "hangul": "기프트 랩",
+        "meaning": "선물 포장하다"
+      },
+      {
+        "word": "offer",
+        "hangul": "오퍼",
+        "meaning": "제공하다"
+      },
+      {
+        "word": "wrapping",
+        "hangul": "래핑",
+        "meaning": "포장"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y07",
+    "category": "payment",
+    "scenario": "카드 서명을 부탁할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y07-A",
+        "english": "Please sign here.",
+        "hangul": "플리즈 사인 히어.",
+        "korean": "여기에 서명해 주세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sign",
+        "hangul": "사인",
+        "meaning": "서명하다"
+      },
+      {
+        "word": "here",
+        "hangul": "히어",
+        "meaning": "여기"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y08",
+    "category": "payment",
+    "scenario": "영수증을 건넬 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "Y08-A",
+        "english": "Here's your receipt. Please keep it safe.",
+        "hangul": "히어즈 유어 리씻. 플리즈 킵 잇 세이프.",
+        "korean": "영수증입니다, 잘 보관하세요."
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Here's your card and receipt.",
+        "hangul": "히어즈 유어 카드 앤 리씻.",
+        "korean": "카드와 영수증입니다."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "receipt",
+        "hangul": "리씻",
+        "meaning": "영수증"
+      },
+      {
+        "word": "keep",
+        "hangul": "킵",
+        "meaning": "보관하다, 가지고 있다"
+      },
+      {
+        "word": "safe",
+        "hangul": "세이프",
+        "meaning": "안전한 (keep it safe = 잘 보관하다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y09",
+    "category": "payment",
+    "scenario": "고객이 쇼핑백을 달라고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I have a shopping bag?",
+      "hangul": "캐나이 해버 샤핑 백?",
+      "meaning": "쇼핑백 하나 주실 수 있어요?"
+    },
+    "responses": [
+      {
+        "id": "Y09-A",
+        "english": "Sure, let me put it in a bag for you.",
+        "hangul": "슈어, 렛 미 푸릿 이너 백 포 유.",
+        "korean": "네, 담아 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "shopping",
+        "hangul": "샤핑",
+        "meaning": "쇼핑 (shopping bag = 쇼핑백)"
+      },
+      {
+        "word": "put",
+        "hangul": "풋",
+        "meaning": "넣다, 두다"
+      },
+      {
+        "word": "bag",
+        "hangul": "백",
+        "meaning": "봉투, 가방"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "Y10",
+    "category": "payment",
+    "scenario": "포장을 원한다는 고객에게",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Yes, please. Thank you.",
+      "hangul": "예스, 플리즈. 쌩큐.",
+      "meaning": "네, 해 주세요. 감사합니다."
+    },
+    "responses": [
+      {
+        "id": "Y10-A",
+        "english": "Sure, I'll wrap it for you.",
+        "hangul": "슈어, 아일 랩 잇 포 유.",
+        "korean": "네, 포장해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wrap",
+        "hangul": "랩",
+        "meaning": "포장하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

@@ -1,0 +1,377 @@
+[
+  {
+    "id": "G01",
+    "category": "greeting",
+    "scenario": "고객이 매장에 들어왔을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G01-A",
+        "english": "Hello, welcome!",
+        "hangul": "헬로우, 웰컴!",
+        "korean": "안녕하세요, 어서 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "welcome",
+        "hangul": "웰컴",
+        "meaning": "어서 오세요, 환영합니다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G02",
+    "category": "greeting",
+    "scenario": "인사 후 편하게 둘러보도록 안내할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G02-A",
+        "english": "Hi, feel free to look around.",
+        "hangul": "하이, 필 프리 투 룩 어라운드.",
+        "korean": "안녕하세요, 편하게 둘러보세요."
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Please take your time.",
+        "hangul": "플리즈 테익 유어 타임.",
+        "korean": "천천히 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "free",
+        "hangul": "프리",
+        "meaning": "자유로운 (feel free = 편하게 ~하세요)"
+      },
+      {
+        "word": "around",
+        "hangul": "어라운드",
+        "meaning": "여기저기 (look around = 둘러보다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G03",
+    "category": "greeting",
+    "scenario": "고객이 혼자 둘러볼 때 도움을 제안",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G03-A",
+        "english": "Let me know if you need anything.",
+        "hangul": "렛 미 노우 이퓨 니드 애니씽.",
+        "korean": "필요하시면 언제든 말씀해 주세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "know",
+        "hangul": "노우",
+        "meaning": "알다 (let me know = 알려 주세요)"
+      },
+      {
+        "word": "need",
+        "hangul": "니드",
+        "meaning": "필요하다"
+      },
+      {
+        "word": "anything",
+        "hangul": "애니씽",
+        "meaning": "무엇이든"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G04",
+    "category": "greeting",
+    "scenario": "응대를 시작할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G04-A",
+        "english": "How can I help you?",
+        "hangul": "하우 캐나이 헬퓨?",
+        "korean": "무엇을 도와드릴까요?"
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Do you need any help?",
+        "hangul": "두 유 니드 애니 헬프?",
+        "korean": "도와드릴까요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "help",
+        "hangul": "헬프",
+        "meaning": "돕다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G05",
+    "category": "greeting",
+    "scenario": "고객이 진열 상품을 꺼내 보고 싶어 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I see this one?",
+      "hangul": "캐나이 씨 디스 원?",
+      "meaning": "이거 좀 볼 수 있을까요?"
+    },
+    "variants": [
+      {
+        "id": "G05-V1",
+        "english": "Could you take this out for me?",
+        "hangul": "쿠쥬 테익 디스 아웃 포 미?",
+        "meaning": "이거 꺼내 주실 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "G05-A",
+        "english": "Sure, let me take it out for you.",
+        "hangul": "슈어, 렛 미 테이킷 아웃 포 유.",
+        "korean": "네, 꺼내 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sure",
+        "hangul": "슈어",
+        "meaning": "네, 물론이죠"
+      },
+      {
+        "word": "take out",
+        "hangul": "테익 아웃",
+        "meaning": "꺼내다"
+      }
+    ],
+    "pattern": "Can I ___?",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G06",
+    "category": "greeting",
+    "scenario": "고객을 안내할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G06-A",
+        "english": "This way, please.",
+        "hangul": "디스 웨이, 플리즈.",
+        "korean": "이쪽으로 오세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "way",
+        "hangul": "웨이",
+        "meaning": "쪽, 방향"
+      },
+      {
+        "word": "please",
+        "hangul": "플리즈",
+        "meaning": "~해 주세요 (정중하게)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G07",
+    "category": "greeting",
+    "scenario": "고객의 요청을 이해했다고 답할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G07-A",
+        "english": "Okay, I understand.",
+        "hangul": "오케이, 아이 언더스탠드.",
+        "korean": "네, 알겠습니다."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "understand",
+        "hangul": "언더스탠드",
+        "meaning": "이해하다, 알다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G08",
+    "category": "greeting",
+    "scenario": "고객이 영어 가능 여부를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Do you speak English?",
+      "hangul": "두 유 스픽 잉글리시?",
+      "meaning": "영어 하세요?"
+    },
+    "responses": [
+      {
+        "id": "G08-A",
+        "english": "Yes, a little.",
+        "hangul": "예스, 어 리를.",
+        "korean": "네, 조금요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "speak",
+        "hangul": "스픽",
+        "meaning": "(언어를) 말하다"
+      },
+      {
+        "word": "little",
+        "hangul": "리를",
+        "meaning": "조금 (a little)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G09",
+    "category": "greeting",
+    "scenario": "고객이 혼자 둘러보겠다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'm just looking.",
+      "hangul": "아임 저스트 루킹.",
+      "meaning": "그냥 좀 둘러볼게요."
+    },
+    "variants": [
+      {
+        "id": "G09-V1",
+        "english": "Just looking, thanks.",
+        "hangul": "저스트 루킹, 쌩스.",
+        "meaning": "그냥 보는 거예요, 고마워요."
+      },
+      {
+        "id": "G09-V2",
+        "english": "I'm just browsing.",
+        "hangul": "아임 저스트 브라우징.",
+        "meaning": "그냥 구경하는 거예요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "G09-A",
+        "english": "Sure, take your time.",
+        "hangul": "슈어, 테익 유어 타임.",
+        "korean": "네, 천천히 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "just",
+        "hangul": "저스트",
+        "meaning": "그냥, 단지"
+      },
+      {
+        "word": "time",
+        "hangul": "타임",
+        "meaning": "시간 (take your time = 천천히 하세요)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "G10",
+    "category": "greeting",
+    "scenario": "고객을 배웅할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "G10-A",
+        "english": "Thank you. Please come again!",
+        "hangul": "쌩큐. 플리즈 컴 어게인!",
+        "korean": "감사합니다, 또 오세요!"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "come",
+        "hangul": "컴",
+        "meaning": "오다"
+      },
+      {
+        "word": "again",
+        "hangul": "어게인",
+        "meaning": "다시, 또"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

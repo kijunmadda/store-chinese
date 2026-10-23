@@ -9,6 +9,7 @@
     "build": "npm run check && npm run tokens && npm test && tsc -b && vite build",
     "preview": "vite preview --host",
     "export:review": "node scripts/export-review.ts",
+    "export:review:en": "node scripts/export-review-en.ts",
     "test": "vitest run",
     "check:pinyin": "node scripts/check-pinyin.ts",
     "tokens": "node scripts/make-tokens.ts"

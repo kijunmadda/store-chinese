@@ -6,6 +6,7 @@ import { categories, items } from '../content'
 import type { ContentItem } from '../content/types'
 import { setPrefs, usePrefs } from '../prefs'
 import { record, useStudyState } from '../store'
+import { L } from '../langs'
 
 export type Mode = 'learn' | 'recall'
 
@@ -44,9 +45,11 @@ export default function SentenceStudy() {
       <BackHeader
         title={category.name}
         right={
-          <button type="button" className={`chip ${showPinyin ? 'on' : ''}`} onClick={togglePinyin} aria-pressed={showPinyin}>
-            병음
-          </button>
+          L.hasPinyin && (
+            <button type="button" className={`chip ${showPinyin ? 'on' : ''}`} onClick={togglePinyin} aria-pressed={showPinyin}>
+              병음
+            </button>
+          )
         }
       />
 
@@ -174,7 +177,7 @@ export function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode:
             <Zh id={r.id} chinese={r.chinese} pinyin={r.pinyin} showPinyin={showPinyin} />
           ) : (
             <button type="button" className="reveal" onClick={() => setStaffOpen(true)}>
-              중국어로 떠올려 본 뒤 정답 보기
+              {L.name}로 떠올려 본 뒤 정답 보기
             </button>
           )}
           {r.note && <p className="caution">⚠ {r.note}</p>}
@@ -195,7 +198,7 @@ export function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode:
 
       {staffOpen && item.pattern && (
         <p className="pattern">
-          <span className="label">문장 틀</span> <span lang="zh-CN">{item.pattern}</span>
+          <span className="label">문장 틀</span> <span lang={L.tag}>{item.pattern}</span>
         </p>
       )}
 
@@ -205,7 +208,7 @@ export function StudyCard({ item, mode, showPinyin }: { item: ContentItem; mode:
           <dl className="keywords">
             {item.keywords.map((k) => (
               <div key={k.word}>
-                <dt lang="zh-CN">{k.word}</dt>
+                <dt lang={L.tag}>{k.word}</dt>
                 <dd>
                   <span className="kw-pinyin">{k.pinyin}</span> {k.meaning}
                 </dd>

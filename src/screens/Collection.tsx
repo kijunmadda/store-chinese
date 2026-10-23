@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { categories, items } from '../content'
 import { computeStats, studyLink } from '../stats'
 import { today, useStudyState } from '../store'
+import { L } from '../langs'
 
 /** 문장 모음 — 배운 표현을 찾아보는 곳. 학습은 홈의 '학습 시작'에서. */
 export default function Collection() {
@@ -48,7 +49,7 @@ export default function Collection() {
           return (
             <li key={it.id}>
               <Link to={studyLink(ids[0])}>
-                <span lang="zh-CN">{main ? main.chinese : it.customer!.chinese}</span>
+                <span lang={L.tag}>{main ? main.chinese : it.customer!.chinese}</span>
                 <small>
                   {it.customer && main ? `🎧 ${it.customer.chinese} → ` : ''}
                   {main ? main.korean : it.customer!.meaning}
@@ -66,7 +67,9 @@ export default function Collection() {
         <strong>더 연습하기</strong>
         <ul className="menu-list" style={{ marginTop: 10 }}>
           <li><Link to="/study/roleplay" className="menu-item"><span className="menu-icon">💬</span><span className="menu-text"><strong>대화 연습</strong><small>상황별 역할극 5개</small></span><span className="chevron">›</span></Link></li>
-          <li><Link to="/study/tones" className="menu-item"><span className="menu-icon">🎵</span><span className="menu-text"><strong>발음·성조·가격 듣기</strong><small>성조 구별, 금액 알아듣기</small></span><span className="chevron">›</span></Link></li>
+          {L.id === 'zh' && (
+            <li><Link to="/study/tones" className="menu-item"><span className="menu-icon">🎵</span><span className="menu-text"><strong>발음·성조·가격 듣기</strong><small>성조 구별, 금액 알아듣기</small></span><span className="chevron">›</span></Link></li>
+          )}
         </ul>
       </section>
     </>

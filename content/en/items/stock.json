@@ -1,0 +1,471 @@
+[
+  {
+    "id": "S01",
+    "category": "stock",
+    "scenario": "고객이 다른 색상을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Does this come in other colors?",
+      "hangul": "더즈 디스 컴 인 아더 컬러즈?",
+      "meaning": "이 제품 다른 색상도 있나요?"
+    },
+    "variants": [
+      {
+        "id": "S01-V1",
+        "english": "Do you have other colors?",
+        "hangul": "두 유 해브 아더 컬러즈?",
+        "meaning": "다른 색 있어요?"
+      },
+      {
+        "id": "S01-V2",
+        "english": "What other colors are there?",
+        "hangul": "왓 아더 컬러즈 아 데어?",
+        "meaning": "또 무슨 색이 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "S01-A",
+        "english": "Let me look it up for you.",
+        "hangul": "렛 미 루키럽 포 유.",
+        "korean": "확인해 드릴게요."
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Let me take a look.",
+        "hangul": "렛 미 테이커 룩.",
+        "korean": "봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "other",
+        "hangul": "아더",
+        "meaning": "다른"
+      },
+      {
+        "word": "colors",
+        "hangul": "컬러즈",
+        "meaning": "색상들"
+      },
+      {
+        "word": "look up",
+        "hangul": "룩 업",
+        "meaning": "(정보를) 찾아보다, 조회하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S02",
+    "category": "stock",
+    "scenario": "고객이 특정 색상의 재고를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Is the black one in stock?",
+      "hangul": "이즈 더 블랙 원 인 스탁?",
+      "meaning": "검은색 지금 재고 있나요?"
+    },
+    "variants": [
+      {
+        "id": "S02-V1",
+        "english": "Do you still have it in black?",
+        "hangul": "두 유 스틸 해빗 인 블랙?",
+        "meaning": "검은색 아직 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "S02-A",
+        "english": "Let me check our stock. One moment, please.",
+        "hangul": "렛 미 첵 아워 스탁. 원 모먼트, 플리즈.",
+        "korean": "재고 확인해 드릴게요, 잠시만 기다려 주세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "stock",
+        "hangul": "스탁",
+        "meaning": "재고 (in stock = 재고가 있는)"
+      },
+      {
+        "word": "still",
+        "hangul": "스틸",
+        "meaning": "아직"
+      },
+      {
+        "word": "moment",
+        "hangul": "모먼트",
+        "meaning": "잠깐 (one moment = 잠시만요)"
+      },
+      {
+        "word": "check",
+        "hangul": "첵",
+        "meaning": "확인하다"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S03",
+    "category": "stock",
+    "scenario": "고객이 다른 사이즈를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Do you have a smaller size?",
+      "hangul": "두 유 해버 스몰러 사이즈?",
+      "meaning": "한 사이즈 작은 것 있나요?"
+    },
+    "variants": [
+      {
+        "id": "S03-V1",
+        "english": "Do you have a bigger size?",
+        "hangul": "두 유 해버 비거 사이즈?",
+        "meaning": "한 사이즈 큰 것 있나요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "S03-A",
+        "english": "What size do you need? Let me find it for you.",
+        "hangul": "왓 사이즈 두 유 니드? 렛 미 파인딧 포 유.",
+        "korean": "어떤 사이즈가 필요하세요? 찾아 드릴게요."
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "What size do you usually wear?",
+        "hangul": "왓 사이즈 두 유 유주얼리 웨어?",
+        "korean": "평소 어떤 사이즈 입으세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "size",
+        "hangul": "사이즈",
+        "meaning": "사이즈"
+      },
+      {
+        "word": "need",
+        "hangul": "니드",
+        "meaning": "필요하다"
+      },
+      {
+        "word": "find",
+        "hangul": "파인드",
+        "meaning": "찾다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S04",
+    "category": "stock",
+    "scenario": "재고 확인 후 고객에게 돌아왔을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "S04-A",
+        "english": "Sorry to keep you waiting.",
+        "hangul": "쏘리 투 킵 유 웨이링.",
+        "korean": "오래 기다리시게 해서 죄송합니다."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "keep",
+        "hangul": "킵",
+        "meaning": "(계속) ~하게 하다"
+      },
+      {
+        "word": "waiting",
+        "hangul": "웨이링",
+        "meaning": "기다리는"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S05",
+    "category": "stock",
+    "scenario": "재고를 확인했고 상품이 있을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "S05-A",
+        "english": "Yes, we have it. Here's the color you wanted.",
+        "hangul": "예스, 위 해빗. 히어즈 더 컬러 유 원티드.",
+        "korean": "있습니다, 찾으시던 색상이에요.",
+        "note": "실제로 재고를 확인한 뒤에만 사용"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "color",
+        "hangul": "컬러",
+        "meaning": "색상"
+      },
+      {
+        "word": "wanted",
+        "hangul": "원티드",
+        "meaning": "원했던"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S06",
+    "category": "stock",
+    "scenario": "재고를 확인했고 상품이 없을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "S06-A",
+        "english": "I'm sorry, this color is out of stock right now.",
+        "hangul": "아임 쏘리, 디스 컬러 이즈 아우러브 스탁 라잇 나우.",
+        "korean": "죄송합니다, 이 색상은 지금 재고가 없습니다.",
+        "note": "실제로 재고를 확인한 뒤에만 사용"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "stock",
+        "hangul": "스탁",
+        "meaning": "재고 (out of stock = 품절)"
+      },
+      {
+        "word": "right now",
+        "hangul": "라잇 나우",
+        "meaning": "지금"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S07",
+    "category": "stock",
+    "scenario": "고객이 다른 매장 재고를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Do other stores have it?",
+      "hangul": "두 아더 스토어즈 해빗?",
+      "meaning": "다른 매장에는 있나요?"
+    },
+    "variants": [
+      {
+        "id": "S07-V1",
+        "english": "Is it available at another branch?",
+        "hangul": "이짓 어베일러블 앳 어나더 브랜치?",
+        "meaning": "다른 지점에는 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "S07-A",
+        "english": "Let me ask our other stores.",
+        "hangul": "렛 미 애스크 아워 아더 스토어즈.",
+        "korean": "다른 매장에 물어봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "stores",
+        "hangul": "스토어즈",
+        "meaning": "매장들"
+      },
+      {
+        "word": "available",
+        "hangul": "어베일러블",
+        "meaning": "구할 수 있는, 있는"
+      },
+      {
+        "word": "branch",
+        "hangul": "브랜치",
+        "meaning": "지점"
+      },
+      {
+        "word": "ask",
+        "hangul": "애스크",
+        "meaning": "묻다"
+      }
+    ],
+    "pattern": "Let me ask ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S08",
+    "category": "stock",
+    "scenario": "고객이 입고 시기를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "When will it come in?",
+      "hangul": "웬 위릿 컴 인?",
+      "meaning": "언제 입고되나요?"
+    },
+    "variants": [
+      {
+        "id": "S08-V1",
+        "english": "When will you have it?",
+        "hangul": "웬 윌 유 해빗?",
+        "meaning": "언제 물건 들어와요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "S08-A",
+        "english": "Let me check when it's arriving.",
+        "hangul": "렛 미 첵 웬 잇츠 어라이빙.",
+        "korean": "입고 일정을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "when",
+        "hangul": "웬",
+        "meaning": "언제"
+      },
+      {
+        "word": "arriving",
+        "hangul": "어라이빙",
+        "meaning": "도착하는 (입고되는)"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S09",
+    "category": "stock",
+    "scenario": "고객이 마지막 상품인지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Is this the last one?",
+      "hangul": "이즈 디스 더 래스트 원?",
+      "meaning": "이게 마지막 하나예요?"
+    },
+    "responses": [
+      {
+        "id": "S09-A",
+        "english": "Let me see if there are any more.",
+        "hangul": "렛 미 씨 이프 데어라 애니 모어.",
+        "korean": "더 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "last",
+        "hangul": "래스트",
+        "meaning": "마지막"
+      },
+      {
+        "word": "more",
+        "hangul": "모어",
+        "meaning": "더"
+      }
+    ],
+    "pattern": "Let me see if ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "S10",
+    "category": "stock",
+    "scenario": "고객이 상품을 따로 보관해 달라고 할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Can you hold it for me?",
+      "hangul": "캔 유 홀딧 포 미?",
+      "meaning": "따로 맡아 두실 수 있나요?"
+    },
+    "responses": [
+      {
+        "id": "S10-A",
+        "english": "Let me ask if that's possible.",
+        "hangul": "렛 미 애스크 이프 댓츠 파서블.",
+        "korean": "가능한지 여쭤봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "hold",
+        "hangul": "홀드",
+        "meaning": "(물건을 따로) 맡아 두다"
+      },
+      {
+        "word": "possible",
+        "hangul": "파서블",
+        "meaning": "가능한"
+      }
+    ],
+    "pattern": "Let me ask ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  }
+]

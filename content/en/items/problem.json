@@ -1,0 +1,410 @@
+[
+  {
+    "id": "P01",
+    "category": "problem",
+    "scenario": "고객의 말을 못 알아들었을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P01-A",
+        "english": "Sorry, could you say that again?",
+        "hangul": "쏘리, 쿠쥬 세이 댓 어게인?",
+        "korean": "죄송하지만 한 번 더 말씀해 주시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "say",
+        "hangul": "세이",
+        "meaning": "말하다"
+      },
+      {
+        "word": "again",
+        "hangul": "어게인",
+        "meaning": "다시"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P02",
+    "category": "problem",
+    "scenario": "고객이 너무 빨리 말할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P02-A",
+        "english": "Could you speak a little more slowly, please?",
+        "hangul": "쿠쥬 스픽 어 리를 모어 슬로울리, 플리즈?",
+        "korean": "죄송하지만 조금 천천히 말씀해 주시겠어요?"
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Could you speak slowly?",
+        "hangul": "쿠쥬 스픽 슬로울리?",
+        "korean": "천천히 말씀해 주실 수 있나요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "slowly",
+        "hangul": "슬로울리",
+        "meaning": "천천히"
+      },
+      {
+        "word": "speak",
+        "hangul": "스픽",
+        "meaning": "말하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P03",
+    "category": "problem",
+    "scenario": "영어 실력이 부족함을 알릴 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P03-A",
+        "english": "Sorry, my English isn't very good.",
+        "hangul": "쏘리, 마이 잉글리시 이즌트 베리 굿.",
+        "korean": "죄송해요, 제가 영어를 잘 못해요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "English",
+        "hangul": "잉글리시",
+        "meaning": "영어"
+      },
+      {
+        "word": "good",
+        "hangul": "굿",
+        "meaning": "좋은, 잘하는"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P04",
+    "category": "problem",
+    "scenario": "말로 이해가 어려워 글로 써 달라고 할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P04-A",
+        "english": "Could you write it down for me?",
+        "hangul": "쿠쥬 라이릿 다운 포 미?",
+        "korean": "써서 보여 주실 수 있나요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "write",
+        "hangul": "라잇",
+        "meaning": "쓰다 (write down = 적다)"
+      }
+    ],
+    "pattern": "Could you ___?",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P05",
+    "category": "problem",
+    "scenario": "번역 앱을 사용하려 할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P05-A",
+        "english": "Is it okay if I use a translation app?",
+        "hangul": "이짓 오케이 이파이 유즈 어 트랜슬레이션 앱?",
+        "korean": "번역 앱을 써도 될까요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "translation",
+        "hangul": "트랜슬레이션",
+        "meaning": "번역"
+      },
+      {
+        "word": "app",
+        "hangul": "앱",
+        "meaning": "앱"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P06",
+    "category": "problem",
+    "scenario": "영어 가능한 동료를 부를 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "P06-A",
+        "english": "One moment, please. I'll get a coworker who speaks English.",
+        "hangul": "원 모먼트, 플리즈. 아일 게러 코워커 후 스픽스 잉글리시.",
+        "korean": "잠시만요, 영어 하는 동료를 불러 올게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "coworker",
+        "hangul": "코워커",
+        "meaning": "동료"
+      },
+      {
+        "word": "get",
+        "hangul": "겟",
+        "meaning": "데려오다, 가져오다"
+      },
+      {
+        "word": "moment",
+        "hangul": "모먼트",
+        "meaning": "잠깐 (one moment = 잠시만요)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay",
+      "rescue"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P07",
+    "category": "problem",
+    "scenario": "고객이 반품·환불을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Can I return this?",
+      "hangul": "캐나이 리턴 디스?",
+      "meaning": "이거 반품할 수 있나요?"
+    },
+    "variants": [
+      {
+        "id": "P07-V1",
+        "english": "Can I get my money back?",
+        "hangul": "캐나이 겟 마이 머니 백?",
+        "meaning": "돈 돌려받을 수 있어요?"
+      },
+      {
+        "id": "P07-V2",
+        "english": "Can I get a refund?",
+        "hangul": "캐나이 게러 리펀드?",
+        "meaning": "환불받을 수 있나요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "P07-A",
+        "english": "Let me check the return policy for you.",
+        "hangul": "렛 미 첵 더 리턴 팔러시 포 유.",
+        "korean": "반품 규정을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "return",
+        "hangul": "리턴",
+        "meaning": "반품하다, 반품"
+      },
+      {
+        "word": "refund",
+        "hangul": "리펀드",
+        "meaning": "환불"
+      },
+      {
+        "word": "policy",
+        "hangul": "팔러시",
+        "meaning": "규정, 정책"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P08",
+    "category": "problem",
+    "scenario": "고객이 교환을 원할 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Can I exchange this?",
+      "hangul": "캐나이 익스체인지 디스?",
+      "meaning": "이거 교환되나요?"
+    },
+    "variants": [
+      {
+        "id": "P08-V1",
+        "english": "Can I swap it for another one?",
+        "hangul": "캐나이 스왑 잇 포 어나더 원?",
+        "meaning": "다른 것으로 바꿀 수 있나요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "P08-A",
+        "english": "Do you have your receipt with you?",
+        "hangul": "두 유 해브 유어 리씻 위듀?",
+        "korean": "혹시 영수증 가지고 계세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "exchange",
+        "hangul": "익스체인지",
+        "meaning": "교환하다"
+      },
+      {
+        "word": "swap",
+        "hangul": "스왑",
+        "meaning": "바꾸다"
+      },
+      {
+        "word": "receipt",
+        "hangul": "리씻",
+        "meaning": "영수증"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": true,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P09",
+    "category": "problem",
+    "scenario": "고객이 상품 하자를 알릴 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "There's a problem here.",
+      "hangul": "데어즈 어 프라블럼 히어.",
+      "meaning": "여기 좀 문제가 있어요."
+    },
+    "variants": [
+      {
+        "id": "P09-V1",
+        "english": "This part is broken.",
+        "hangul": "디스 파트 이즈 브로큰.",
+        "meaning": "이 부분이 망가졌어요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "P09-A",
+        "english": "I'm so sorry. Let me take a look.",
+        "hangul": "아임 쏘 쏘리. 렛 미 테이커 룩.",
+        "korean": "정말 죄송합니다, 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "problem",
+        "hangul": "프라블럼",
+        "meaning": "문제"
+      },
+      {
+        "word": "broken",
+        "hangul": "브로큰",
+        "meaning": "망가진, 고장 난"
+      },
+      {
+        "word": "part",
+        "hangul": "파트",
+        "meaning": "부분"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "P10",
+    "category": "problem",
+    "scenario": "고객에게 불편을 끼쳐 사과할 때",
+    "difficulty": "intermediate",
+    "responses": [
+      {
+        "id": "P10-A",
+        "english": "I'm very sorry for the inconvenience.",
+        "hangul": "아임 베리 쏘리 포 디 인컨비니언스.",
+        "korean": "불편을 드려서 정말 죄송합니다."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sorry",
+        "hangul": "쏘리",
+        "meaning": "죄송한"
+      },
+      {
+        "word": "inconvenience",
+        "hangul": "인컨비니언스",
+        "meaning": "불편"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

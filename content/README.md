@@ -44,3 +44,10 @@
 
 - `npm run check` — 형식 오류 검사 (오류가 있으면 배포되지 않음)
 - `npm run export:review` — 외부 AI 검증용 문서(`검증요청_콘텐츠.md`) 다시 만들기
+
+## 영어 콘텐츠 (`en/items/*.json`)
+
+- 상황 ID·카테고리·학습 방식은 중국어와 **같게** 맞춘다 (역할극을 함께 씀). `npm run check`가 중국어에 없는 ID를 경고한다.
+- 문장 칸: `english`(영어), `hangul`(한글 발음 — 실제 들리는 소리에 가깝게), `meaning`/`korean`(한국어 뜻)
+- 핵심 단어: `{ word, hangul, meaning }` — 빈칸 문제는 띄어쓰기 없는 낱말만 정답으로 쓴다
+- 검증 문서: `npm run export:review:en` (`-- --part=1`, `-- --part=2`로 나눠 만들기)

@@ -1,0 +1,548 @@
+[
+  {
+    "id": "C01",
+    "category": "clothing",
+    "scenario": "고객이 입어 봐도 되는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I try it on?",
+      "hangul": "캐나이 트라이 이론?",
+      "meaning": "입어 봐도 돼요?"
+    },
+    "variants": [
+      {
+        "id": "C01-V1",
+        "english": "Can I try this on?",
+        "hangul": "캐나이 트라이 디스 온?",
+        "meaning": "이거 입어 봐도 될까요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "C01-A",
+        "english": "Of course. The fitting room is this way.",
+        "hangul": "어브 코스. 더 피링 룸 이즈 디스 웨이.",
+        "korean": "물론이죠, 피팅룸은 이쪽이에요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "try",
+        "hangul": "트라이",
+        "meaning": "해 보다 (try on = 입어 보다)"
+      },
+      {
+        "word": "course",
+        "hangul": "코스",
+        "meaning": "(of course = 물론이죠)"
+      },
+      {
+        "word": "fitting",
+        "hangul": "피링",
+        "meaning": "입어 보기 (fitting room = 피팅룸)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C02",
+    "category": "clothing",
+    "scenario": "평소 사이즈를 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C02-A",
+        "english": "What size do you usually wear?",
+        "hangul": "왓 사이즈 두 유 유주얼리 웨어?",
+        "korean": "평소 어떤 사이즈 입으세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "size",
+        "hangul": "사이즈",
+        "meaning": "사이즈"
+      },
+      {
+        "word": "usually",
+        "hangul": "유주얼리",
+        "meaning": "보통, 평소에"
+      },
+      {
+        "word": "wear",
+        "hangul": "웨어",
+        "meaning": "입다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C03",
+    "category": "clothing",
+    "scenario": "고객이 평소 사이즈를 말할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I usually wear a medium.",
+      "hangul": "아이 유주얼리 웨어러 미디엄.",
+      "meaning": "저는 보통 M 사이즈 입어요."
+    },
+    "variants": [
+      {
+        "id": "C03-V1",
+        "english": "I'm a small.",
+        "hangul": "아임 어 스몰.",
+        "meaning": "저는 S 사이즈예요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C03-A",
+        "english": "Okay, let me find a medium for you.",
+        "hangul": "오케이, 렛 미 파인더 미디엄 포 유.",
+        "korean": "네, M 사이즈 찾아 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "medium",
+        "hangul": "미디엄",
+        "meaning": "M 사이즈"
+      },
+      {
+        "word": "small",
+        "hangul": "스몰",
+        "meaning": "S 사이즈, 작은"
+      },
+      {
+        "word": "find",
+        "hangul": "파인드",
+        "meaning": "찾다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C04",
+    "category": "clothing",
+    "scenario": "고객이 옷이 작다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "It's a little tight.",
+      "hangul": "잇츠 어 리를 타잇.",
+      "meaning": "좀 끼어요."
+    },
+    "variants": [
+      {
+        "id": "C04-V1",
+        "english": "It's a bit small.",
+        "hangul": "잇츠 어 빗 스몰.",
+        "meaning": "좀 작아요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C04-A",
+        "english": "Let me see if we have it in a size up.",
+        "hangul": "렛 미 씨 이프 위 해빗 이너 사이즈 업.",
+        "korean": "한 사이즈 큰 게 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "tight",
+        "hangul": "타잇",
+        "meaning": "꽉 끼는"
+      },
+      {
+        "word": "bit",
+        "hangul": "빗",
+        "meaning": "조금 (a bit)"
+      },
+      {
+        "word": "up",
+        "hangul": "업",
+        "meaning": "위로 (a size up = 한 사이즈 큰)"
+      }
+    ],
+    "pattern": "Let me see if ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C05",
+    "category": "clothing",
+    "scenario": "고객이 옷이 크다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "It's a little big.",
+      "hangul": "잇츠 어 리를 빅.",
+      "meaning": "좀 커요."
+    },
+    "variants": [
+      {
+        "id": "C05-V1",
+        "english": "It's a bit loose.",
+        "hangul": "잇츠 어 빗 루스.",
+        "meaning": "좀 헐렁해요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C05-A",
+        "english": "Let me see if we have it in a size down.",
+        "hangul": "렛 미 씨 이프 위 해빗 이너 사이즈 다운.",
+        "korean": "한 사이즈 작은 게 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "big",
+        "hangul": "빅",
+        "meaning": "큰"
+      },
+      {
+        "word": "loose",
+        "hangul": "루스",
+        "meaning": "헐렁한"
+      },
+      {
+        "word": "down",
+        "hangul": "다운",
+        "meaning": "아래로 (a size down = 한 사이즈 작은)"
+      }
+    ],
+    "pattern": "Let me see if ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C06",
+    "category": "clothing",
+    "scenario": "피팅 후 고객에게 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C06-A",
+        "english": "How does it feel?",
+        "hangul": "하우 더짓 필?",
+        "korean": "입어 보시니 어떠세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "feel",
+        "hangul": "필",
+        "meaning": "느낌이 들다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C07",
+    "category": "clothing",
+    "scenario": "옷이 잘 어울릴 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C07-A",
+        "english": "This looks great on you.",
+        "hangul": "디스 룩스 그레잇 온 유.",
+        "korean": "이 옷이 잘 어울리세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "looks",
+        "hangul": "룩스",
+        "meaning": "~해 보이다 (look good on = ~에게 어울리다)"
+      },
+      {
+        "word": "great",
+        "hangul": "그레잇",
+        "meaning": "아주 좋은"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C08",
+    "category": "clothing",
+    "scenario": "고객이 원단을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "What fabric is this?",
+      "hangul": "왓 패브릭 이즈 디스?",
+      "meaning": "이건 무슨 원단이에요?"
+    },
+    "responses": [
+      {
+        "id": "C08-A",
+        "english": "Let me show you the fabric label.",
+        "hangul": "렛 미 쇼 유 더 패브릭 레이블.",
+        "korean": "소재 라벨을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "fabric",
+        "hangul": "패브릭",
+        "meaning": "원단"
+      },
+      {
+        "word": "label",
+        "hangul": "레이블",
+        "meaning": "라벨"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C09",
+    "category": "clothing",
+    "scenario": "고객이 세탁 방법을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Can I machine wash it?",
+      "hangul": "캐나이 머신 워싯?",
+      "meaning": "세탁기에 빨아도 돼요?"
+    },
+    "responses": [
+      {
+        "id": "C09-A",
+        "english": "We recommend following the care label.",
+        "hangul": "위 레커멘드 팔로잉 더 케어 레이블.",
+        "korean": "세탁 라벨 안내대로 세탁하시길 권해 드려요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "machine",
+        "hangul": "머신",
+        "meaning": "기계 (machine wash = 세탁기로 빨다)"
+      },
+      {
+        "word": "wash",
+        "hangul": "워시",
+        "meaning": "빨다, 씻다"
+      },
+      {
+        "word": "following",
+        "hangul": "팔로잉",
+        "meaning": "따르는 것 (follow = 따르다)"
+      },
+      {
+        "word": "label",
+        "hangul": "레이블",
+        "meaning": "라벨 (care label = 세탁 라벨)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C10",
+    "category": "clothing",
+    "scenario": "고객이 거울 위치를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Where's the mirror?",
+      "hangul": "웨어즈 더 미러?",
+      "meaning": "거울 어디 있어요?"
+    },
+    "responses": [
+      {
+        "id": "C10-A",
+        "english": "The mirror is over here.",
+        "hangul": "더 미러 이즈 오버 히어.",
+        "korean": "거울은 이쪽에 있어요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "mirror",
+        "hangul": "미러",
+        "meaning": "거울"
+      },
+      {
+        "word": "here",
+        "hangul": "히어",
+        "meaning": "여기 (over here = 이쪽에)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C11",
+    "category": "clothing",
+    "scenario": "한 사이즈 큰 옷을 가져다줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C11-A",
+        "english": "Here's a size up. Please try it on.",
+        "hangul": "히어즈 어 사이즈 업. 플리즈 트라이 이론.",
+        "korean": "한 사이즈 큰 거예요, 다시 입어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "here's",
+        "hangul": "히어즈",
+        "meaning": "여기 ~이 있어요 (건넬 때)"
+      },
+      {
+        "word": "up",
+        "hangul": "업",
+        "meaning": "위로 (a size up = 한 사이즈 큰)"
+      }
+    ],
+    "pattern": "Here's ___. Please try it on.",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C12",
+    "category": "clothing",
+    "scenario": "한 사이즈 작은 옷을 가져다줄 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "C12-A",
+        "english": "Here's a size down. Please try it on.",
+        "hangul": "히어즈 어 사이즈 다운. 플리즈 트라이 이론.",
+        "korean": "한 사이즈 작은 거예요, 다시 입어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "down",
+        "hangul": "다운",
+        "meaning": "아래로 (a size down = 한 사이즈 작은)"
+      }
+    ],
+    "pattern": "Here's ___. Please try it on.",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "C13",
+    "category": "clothing",
+    "scenario": "다시 입어 본 고객이 잘 맞는다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "This one fits perfectly.",
+      "hangul": "디스 원 핏츠 퍼펙틀리.",
+      "meaning": "이번 건 딱 맞아요."
+    },
+    "variants": [
+      {
+        "id": "C13-V1",
+        "english": "This fits just right.",
+        "hangul": "디스 핏츠 저스트 라잇.",
+        "meaning": "이건 딱 맞아요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "C13-A",
+        "english": "It looks great on you.",
+        "hangul": "잇 룩스 그레잇 온 유.",
+        "korean": "잘 어울리세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "fits",
+        "hangul": "핏츠",
+        "meaning": "(크기가) 맞다"
+      },
+      {
+        "word": "perfectly",
+        "hangul": "퍼펙틀리",
+        "meaning": "완벽하게, 딱"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

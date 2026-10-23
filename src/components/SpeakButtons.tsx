@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { speak, SpeechError, stopSpeech } from '../speech'
+import { L } from '../langs'
 
 type State = 'idle' | 'playing' | 'playing-slow' | 'error'
 
@@ -42,7 +43,7 @@ export default function SpeakButtons({ text, id, rate }: { text: string; id?: st
       </div>
       {state === 'error' && (
         <p className="speak-error" role="status">
-          {error}. 글자와 병음으로 계속 학습할 수 있어요. <Link to="/settings">음성 설정 확인</Link>
+          {error}. 글자{L.hasPinyin ? '와 병음' : ''}으로 계속 학습할 수 있어요. <Link to="/settings">음성 설정 확인</Link>
         </p>
       )}
     </div>

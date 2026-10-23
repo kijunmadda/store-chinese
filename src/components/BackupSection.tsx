@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { backupFileName, daysSinceBackup, downloadFile, exportFile, makeBackup, parseBackup, type ParseResult } from '../backup'
-import { getPrefs, setPrefs } from '../prefs'
-import { canUndo, getState, record, useStudyState } from '../store'
+import { getStoredPrefs, restorePrefs } from '../prefs'
+import { allStates, canUndo, emptyState, record, useStudyState } from '../store'
 
 type Msg = { kind: 'ok' | 'error'; text: string } | null
 
@@ -15,9 +15,11 @@ export default function BackupSection() {
 
   const doExport = async (mode: 'share' | 'download') => {
     setMsg(null)
-    const json = JSON.stringify(makeBackup(getState(), getPrefs()), null, 2)
     const name = backupFileName()
     try {
+      // 두 언어 기록을 함께 담는다 (중국어 기록이 없으면 빈 기록)
+      const { zh, en } = await allStates()
+      const json = JSON.stringify(makeBackup(zh ?? emptyState(), getStoredPrefs(), new Date(), en), null, 2)
       const result = mode === 'download' ? (downloadFile(json, name), 'downloaded') : await exportFile(json, name)
       if (result === 'cancelled') return
       record.backedUp()
@@ -41,10 +43,11 @@ export default function BackupSection() {
     setPreview(result)
   }
 
-  const confirmRestore = () => {
+  const confirmRestore = async () => {
     if (!preview) return
-    record.restore(preview.backup)
-    if (preview.backup.prefs) setPrefs(preview.backup.prefs)
+    const { english, ...zh } = preview.backup
+    await record.restoreLangs({ zh, en: english })
+    if (preview.backup.prefs) restorePrefs(preview.backup.prefs)
     setPreview(null)
     setUndoable(true)
     setMsg({ kind: 'ok', text: '백업을 불러왔어요.' })
@@ -89,7 +92,13 @@ export default function BackupSection() {
           <p className="note">
             백업 날짜: {preview.summary.exportedAt ? new Date(preview.summary.exportedAt).toLocaleString('ko-KR') : '알 수 없음'}
             <br />
-            학습한 문장 {preview.summary.sentences}개 · 학습한 날 {preview.summary.days}일
+            중국어: 학습한 문장 {preview.summary.sentences}개 · 학습한 날 {preview.summary.days}일
+            {preview.summary.englishSentences !== undefined && (
+              <>
+                <br />
+                영어: 학습한 문장 {preview.summary.englishSentences}개
+              </>
+            )}
           </p>
           <p className="caution">⚠ 지금 이 휴대폰의 학습 기록은 백업 내용으로 바뀌어요.</p>
           <div className="pager">

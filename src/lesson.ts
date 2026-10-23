@@ -11,11 +11,27 @@
 import tokensJson from './generated/tokens.json'
 import { categories, items, sentences, type Sentence } from './content'
 import type { ContentItem, StaffLine } from './content/types'
+import { LANG_ID } from './langs'
 import { buildPool, buildQuestion, type ListenEntry, type Question } from './listen'
 import { emptyState, isDue, today, type StudyState } from './store'
 import { shuffle } from './util'
 
-const TOKENS = tokensJson as Record<string, string[]>
+const EN = LANG_ID === 'en'
+
+/** 영어 단어 조각: 띄어쓰기로 나누고 앞뒤 문장부호는 뗀다 ("you." → "you", 안쪽의 I'll·T-shirt·350,000은 그대로) */
+export const englishTokens = (text: string) =>
+  text.split(/\s+/).map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '')).filter(Boolean)
+
+// 단어 조각: 중국어는 빌드할 때 병음 단어 경계로 만든 표, 영어는 띄어쓰기로 바로 만든다
+const TOKENS: Record<string, string[]> = EN
+  ? Object.fromEntries([...sentences].map(([id, s]) => [id, englishTokens(s.chinese)]))
+  : (tokensJson as Record<string, string[]>)
+/** 낱말 하나로 쓸 수 있는 조각인가 (중국어: 한자 포함 / 영어: 글자 포함) */
+const isWordToken = (t: string) => (EN ? /\p{L}/u.test(t) : /\p{Script=Han}/u.test(t))
+/** 빈칸 보기로 쓸 수 있는 단어 (중국어: 한자로만 / 영어: 띄어쓰기 없는 낱말) */
+const isOptionWord = (w: string) => (EN ? /^[\p{L}'’-]+$/u.test(w) : /^\p{Script=Han}+$/u.test(w))
+/** 같은 단어인가 (영어는 대소문자 무시) */
+const same = (a: string, b: string) => (EN ? a.toLowerCase() === b.toLowerCase() : a === b)
 
 export const LESSON_SIZE = 6
 
@@ -36,17 +52,24 @@ export type Kind = GradedExercise['kind']
 export const RANK: Record<Kind, number> = { fill: 1, 'pick-zh': 1, read: 1, match: 2, build: 3, listen: 4, speak: 5 }
 
 const itemOf = (id: string) => items.find((it) => it.id === sentences.get(id)?.itemId)
-const norm = (s: string) => s.replace(/[^\p{Script=Han}A-Za-z]/gu, '')
+const norm = (s: string) => (EN ? s.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') : s.replace(/[^\p{Script=Han}A-Za-z]/gu, ''))
 const ALL_SENTENCES = new Set([...sentences.values()].map((s) => norm(s.chinese)))
-const PARTICLES = new Set(['吗', '的', '了', '呢', '吧', '啊', '呀'])
+// 빈칸으로 내지 않는 말: 중국어 어기조사, 영어 기능어(관사·대명사·전치사 등 — 정답이 여럿이 되기 쉬워서)
+const PARTICLES = new Set(EN
+  ? ['a', 'an', 'the', 'i', 'you', 'we', 'it', 'is', 'are', 'am', 'be', 'to', 'of', 'for', 'in', 'on', 'at', 'and', 'or', 'me', 'my', 'your', 'this', 'that', 'do', 'does', 'can', 'will', 'let', 'would', 'could', 'if', 'with', 'by', 'some', 'one', 'any', "i'm", "it's", "i'll", 'please']
+  : ['吗', '的', '了', '呢', '吧', '啊', '呀'])
+const isParticle = (t: string) => PARTICLES.has(EN ? t.toLowerCase() : t)
+// 영어 동사: 빈칸 정답이 동사면 동사가 아닌 오답만 고른다 ("Do you ___ English?"에 like가 들어가면 말이 되어 버리므로)
+const VERBS = new Set(['like', 'see', 'find', 'try', 'check', 'show', 'use', 'take', 'have', 'get', 'ask', 'need', 'want', 'know', 'think', 'feel', 'wear', 'keep', 'put', 'make', 'say', 'speak', 'pay', 'buy', 'count', 'compare', 'hold', 'open', 'return', 'exchange', 'swap', 'sign', 'wrap', 'follow', 'help', 'look', 'carry', 'come', 'fit', 'accept', 'offer', 'write', 'recommend', 'understand', 'sell', 'sells', 'goes', 'matches', 'depends', 'fits', 'comes', 'looks', 'cost', 'gift-wrap'])
+const isVerb = (w: string) => VERBS.has(w.toLowerCase())
 
 const staffLines = () =>
   items.filter((it) => it.learningModes.includes('speak')).flatMap((it) => (it.responses ?? []).map((line) => ({ line, item: it })))
 
-/** 단어 조각 문제가 가능한 문장: 직원 문장, 조각 3~9개 */
+/** 단어 조각 문제가 가능한 문장: 직원 문장, 조각 3~9개 (영어는 단어가 잘게 나뉘어 3~10개) */
 export const canBuild = (id: string) => {
   const t = TOKENS[id]
-  return sentences.get(id)?.kind === 'staff' && !!t && t.length >= 3 && t.length <= 9
+  return sentences.get(id)?.kind === 'staff' && !!t && t.length >= 3 && t.length <= (EN ? 10 : 9)
 }
 
 // ── 문제 만들기 ─────────────────────────────
@@ -57,26 +80,37 @@ function fill(id: string, rand: () => number, key: string): GradedExercise | nul
   const item = itemOf(id)
   const tokens = TOKENS[id]
   if (!s || !item || !tokens || tokens.length < 2) return null
-  const keywords = new Set((item.keywords ?? []).map((k) => k.word))
+  const keywordList = (item.keywords ?? []).map((k) => k.word)
+  const isKeyword = (w: string) => keywordList.some((k) => same(k, w))
   const candidates = tokens
     .map((t, i) => ({ t, i }))
-    .filter(({ t }) => /\p{Script=Han}/u.test(t) && !PARTICLES.has(t))
+    .filter(({ t }) => isWordToken(t) && !isParticle(t))
   if (candidates.length === 0) return null
-  const preferred = candidates.filter(({ t }) => keywords.has(t))
+  const preferred = candidates.filter(({ t }) => isKeyword(t))
   const pickFrom = preferred.length ? preferred : [...candidates].sort((a, b) => b.t.length - a.t.length).slice(0, 3)
   const { t: answer, i: blank } = pickFrom[Math.floor(rand() * pickFrom.length)]
 
   const makesOtherSentence = (w: string) => {
     const filled = tokens.map((t, i) => (i === blank ? w : t)).join('')
-    return ALL_SENTENCES.has(filled)
+    return ALL_SENTENCES.has(norm(filled))
   }
   // 오답 보기는 '다른 상황의 핵심 단어'(颜色·库存·护照 같은 내용어)에서 고른다.
   // 아무 단어나 쓰면 帮↔给처럼 문법적으로 말이 되는 오답이 섞여 정답이 둘처럼 보일 수 있어서.
   const otherKeywords = items.filter((it) => it.id !== item.id).flatMap((it) => (it.keywords ?? []).map((k) => k.word))
-  const pool = shuffle(otherKeywords, rand).filter(
-    (w, i, a) => a.indexOf(w) === i && w !== answer && !tokens.includes(w) && !keywords.has(w) && /^\p{Script=Han}+$/u.test(w) && !PARTICLES.has(w) && !makesOtherSentence(w),
-  )
-  const sameLen = pool.filter((w) => [...w].length === [...answer].length)
+  // 영어는 문장 첫 단어가 빈칸이면 보기도 대문자로 시작 (대문자만 보고 맞히지 않게)
+  const shape = (w: string) => (EN && blank === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : w)
+  const pool = shuffle(otherKeywords, rand)
+    .map(shape)
+    .filter(
+      (w, i, a) =>
+        a.findIndex((x) => same(x, w)) === i && !same(w, answer) && !tokens.some((t) => same(t, w)) && !isKeyword(w) && isOptionWord(w) && !isParticle(w) && !makesOtherSentence(w) &&
+        !(EN && isVerb(answer) && isVerb(w)) &&
+        // 영어: 정답과 같은 말의 변형(color↔colors, wrap↔wrapped)은 오답으로 쓰지 않는다
+        !(EN && (w.toLowerCase().startsWith(answer.toLowerCase().slice(0, 4)) || answer.toLowerCase().startsWith(w.toLowerCase().slice(0, 4)))),
+    )
+  // 비슷한 길이를 먼저 (중국어: 같은 글자 수 / 영어: 글자 수 차이 2 이하)
+  const close = (w: string) => (EN ? Math.abs(w.length - answer.length) <= 2 : [...w].length === [...answer].length)
+  const sameLen = pool.filter(close)
   const distractors = [...sameLen, ...pool.filter((w) => !sameLen.includes(w))].slice(0, 2)
   if (distractors.length < 2) return null
   return { kind: 'fill', key, id, sentence: s, item, tokens, blank, options: shuffle([answer, ...distractors], rand) }
@@ -126,8 +160,11 @@ function build(id: string, rand: () => number, key: string): GradedExercise | nu
   if (!s || s.kind !== 'staff' || !item || !canBuild(id)) return null
   const answer = TOKENS[id]
   // 헷갈리게 할 조각 2개: 다른 문장에서, 정답에 없는 것
+  // 영어는 헷갈리게 할 조각을 소문자로 (대문자 조각이 둘이면 첫 단어가 헷갈림 — 단 I는 그대로)
+  const lower = (t: string) => (EN && t !== 'I' ? t.toLowerCase() : t)
   const extra = shuffle(Object.entries(TOKENS).filter(([k]) => k !== id).flatMap(([, t]) => t), rand)
-    .filter((t, i, a) => !answer.includes(t) && a.indexOf(t) === i && /\p{Script=Han}/u.test(t))
+    .map(lower)
+    .filter((t, i, a) => !answer.some((x) => same(x, t)) && a.indexOf(t) === i && isWordToken(t))
     .slice(0, 2)
   return { kind: 'build', key, id, line: s, item, answer, tiles: shuffle([...answer, ...extra], rand) }
 }

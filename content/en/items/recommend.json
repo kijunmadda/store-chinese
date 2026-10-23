@@ -1,0 +1,434 @@
+[
+  {
+    "id": "M01",
+    "category": "recommend",
+    "scenario": "좋아하는 색을 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M01-A",
+        "english": "What color do you like?",
+        "hangul": "왓 컬러 두 유 라익?",
+        "korean": "어떤 색을 좋아하세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "color",
+        "hangul": "컬러",
+        "meaning": "색"
+      },
+      {
+        "word": "like",
+        "hangul": "라익",
+        "meaning": "좋아하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M02",
+    "category": "recommend",
+    "scenario": "평소 스타일을 물을 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M02-A",
+        "english": "What style do you usually like?",
+        "hangul": "왓 스타일 두 유 유주얼리 라익?",
+        "korean": "평소 어떤 스타일을 좋아하세요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "style",
+        "hangul": "스타일",
+        "meaning": "스타일"
+      },
+      {
+        "word": "usually",
+        "hangul": "유주얼리",
+        "meaning": "보통, 평소에"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M03",
+    "category": "recommend",
+    "scenario": "고객이 비슷한 디자인을 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Do you have anything similar?",
+      "hangul": "두 유 해브 애니씽 시밀러?",
+      "meaning": "비슷한 거 있어요?"
+    },
+    "variants": [
+      {
+        "id": "M03-V1",
+        "english": "Do you have something like this?",
+        "hangul": "두 유 해브 썸씽 라익 디스?",
+        "meaning": "이런 거 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M03-A",
+        "english": "Let me show you some similar styles.",
+        "hangul": "렛 미 쇼 유 썸 시밀러 스타일즈.",
+        "korean": "비슷한 디자인을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "similar",
+        "hangul": "시밀러",
+        "meaning": "비슷한"
+      },
+      {
+        "word": "something",
+        "hangul": "썸씽",
+        "meaning": "어떤 것"
+      },
+      {
+        "word": "styles",
+        "hangul": "스타일즈",
+        "meaning": "디자인, 스타일"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M04",
+    "category": "recommend",
+    "scenario": "고객이 어느 쪽이 나은지 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Which one is better?",
+      "hangul": "위치 원 이즈 베러?",
+      "meaning": "어느 게 더 좋아요?"
+    },
+    "variants": [
+      {
+        "id": "M04-V1",
+        "english": "Which one do you think is better?",
+        "hangul": "위치 원 두 유 씽크 이즈 베러?",
+        "meaning": "어느 게 더 좋은 것 같아요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M04-A",
+        "english": "It depends on how you'll use it.",
+        "hangul": "잇 디펜즈 온 하우 유일 유짓.",
+        "korean": "어떻게 쓰실지에 따라 달라요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "better",
+        "hangul": "베러",
+        "meaning": "더 좋은"
+      },
+      {
+        "word": "think",
+        "hangul": "씽크",
+        "meaning": "생각하다"
+      },
+      {
+        "word": "depends",
+        "hangul": "디펜즈",
+        "meaning": "(depend on = ~에 달려 있다)"
+      },
+      {
+        "word": "use",
+        "hangul": "유즈",
+        "meaning": "쓰다, 사용하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M05",
+    "category": "recommend",
+    "scenario": "고객이 인기 상품을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Which one sells the best?",
+      "hangul": "위치 원 셀즈 더 베스트?",
+      "meaning": "어떤 게 제일 잘 팔려요?"
+    },
+    "variants": [
+      {
+        "id": "M05-V1",
+        "english": "Which one is the most popular?",
+        "hangul": "위치 원 이즈 더 모스트 파퓰러?",
+        "meaning": "어떤 게 제일 인기 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "M05-A",
+        "english": "This one is very popular.",
+        "hangul": "디스 원 이즈 베리 파퓰러.",
+        "korean": "이 제품이 인기가 많아요.",
+        "note": "실제로 인기 있는 상품을 가리키며 사용"
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "Let me show you a few so you can compare.",
+        "hangul": "렛 미 쇼 유 어 퓨 쏘 유 캔 컴페어.",
+        "korean": "몇 가지 보여 드릴 테니 비교해 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sells",
+        "hangul": "셀즈",
+        "meaning": "팔리다 (sell = 팔다)"
+      },
+      {
+        "word": "popular",
+        "hangul": "파퓰러",
+        "meaning": "인기 있는"
+      },
+      {
+        "word": "compare",
+        "hangul": "컴페어",
+        "meaning": "비교하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M06",
+    "category": "recommend",
+    "scenario": "고객이 두 제품의 차이를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "What's the difference between these two?",
+      "hangul": "왓츠 더 디퍼런스 비트윈 디즈 투?",
+      "meaning": "이 두 개는 뭐가 달라요?"
+    },
+    "responses": [
+      {
+        "id": "M06-A",
+        "english": "Let me compare them for you.",
+        "hangul": "렛 미 컴페어 뎀 포 유.",
+        "korean": "비교해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "difference",
+        "hangul": "디퍼런스",
+        "meaning": "차이"
+      },
+      {
+        "word": "between",
+        "hangul": "비트윈",
+        "meaning": "~ 사이에"
+      },
+      {
+        "word": "compare",
+        "hangul": "컴페어",
+        "meaning": "비교하다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M07",
+    "category": "recommend",
+    "scenario": "고객이 더 생각해 보겠다고 할 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "I'll think about it.",
+      "hangul": "아일 씽커바우릿.",
+      "meaning": "좀 더 생각해 볼게요."
+    },
+    "variants": [
+      {
+        "id": "M07-V1",
+        "english": "I'll look around a bit more.",
+        "hangul": "아일 룩 어라운더 빗 모어.",
+        "meaning": "좀 더 둘러볼게요."
+      }
+    ],
+    "responses": [
+      {
+        "id": "M07-A",
+        "english": "Sure, no rush. Take your time.",
+        "hangul": "슈어, 노 러시. 테익 유어 타임.",
+        "korean": "네, 서두르지 마시고 천천히 생각해 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "think",
+        "hangul": "씽크",
+        "meaning": "생각하다 (think about = ~을 생각해 보다)"
+      },
+      {
+        "word": "rush",
+        "hangul": "러시",
+        "meaning": "서두름 (no rush = 서두르지 않으셔도 돼요)"
+      },
+      {
+        "word": "time",
+        "hangul": "타임",
+        "meaning": "시간 (take your time = 천천히 하세요)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M08",
+    "category": "recommend",
+    "scenario": "색상의 장점을 말할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M08-A",
+        "english": "This color goes with everything.",
+        "hangul": "디스 컬러 고우즈 위드 에브리씽.",
+        "korean": "이 색은 어디에나 잘 어울려요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "goes",
+        "hangul": "고우즈",
+        "meaning": "(go with = ~와 어울리다)"
+      },
+      {
+        "word": "everything",
+        "hangul": "에브리씽",
+        "meaning": "모든 것"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M09",
+    "category": "recommend",
+    "scenario": "다른 제품을 권할 때",
+    "difficulty": "beginner",
+    "responses": [
+      {
+        "id": "M09-A",
+        "english": "Would you like to try this one?",
+        "hangul": "우쥬 라익 투 트라이 디스 원?",
+        "korean": "이 제품도 한번 해 보시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "would",
+        "hangul": "우드",
+        "meaning": "(would you like to = ~하시겠어요?)"
+      },
+      {
+        "word": "try",
+        "hangul": "트라이",
+        "meaning": "해 보다"
+      }
+    ],
+    "pattern": "Would you like to ___?",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "M10",
+    "category": "recommend",
+    "scenario": "함께 살 상품을 권할 때",
+    "difficulty": "intermediate",
+    "responses": [
+      {
+        "id": "M10-A",
+        "english": "Would you like to see a wallet that matches this bag?",
+        "hangul": "우쥬 라익 투 씨 어 월릿 댓 매치즈 디스 백?",
+        "korean": "이 가방과 어울리는 지갑도 보시겠어요?"
+      }
+    ],
+    "keywords": [
+      {
+        "word": "matches",
+        "hangul": "매치즈",
+        "meaning": "어울리다, 짝이 맞다"
+      },
+      {
+        "word": "wallet",
+        "hangul": "월릿",
+        "meaning": "지갑"
+      }
+    ],
+    "pattern": "Would you like to ___?",
+    "learningModes": [
+      "study",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]

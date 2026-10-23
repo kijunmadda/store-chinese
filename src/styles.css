@@ -442,3 +442,6 @@ button { font: inherit; color: inherit; }
 .fill-sentence .blank.wrong { border-color: var(--accent); }
 .options.row { flex-direction: row; flex-wrap: wrap; justify-content: center; }
 .options.row .tile-option { flex: 1 1 28%; align-items: center; text-align: center; }
+.lang-switch { margin-bottom: 14px; }
+/* 영어: 중국어 글꼴 대신 기본 글꼴, 띄어쓰기 기준 줄바꿈 */
+:lang(en).zh-text, .fill-sentence:lang(en), .tile:lang(en), .option-zh:lang(en) { font-family: var(--font); overflow-wrap: normal; line-break: auto; }

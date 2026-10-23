@@ -13,13 +13,15 @@ const MODES = ['study', 'listen', 'speak', 'roleplay', 'rescue']
 const HAN = /\p{Script=Han}/u
 // 병음에 쓰일 수 있는 글자: 로마자, 성조 기호 붙은 모음, ü, 공백, 문장부호, 생략부호
 const PINYIN_CHARS = /^[a-zA-ZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüÜĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙ\s,.!?'’\-…:;"()]+$/
+const LATIN = /[A-Za-z]/
+const HANGUL = /[가-힣]/
 
 type Obj = Record<string, unknown>
 
 const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v)
 const isStr = (v: unknown): v is string => typeof v === 'string' && v.trim().length > 0
 
-export function validateContent(categories: unknown, items: unknown, roleplays: unknown): Issue[] {
+export function validateContent(categories: unknown, items: unknown, roleplays: unknown, lang: 'zh' | 'en' = 'zh'): Issue[] {
   const issues: Issue[] = []
   const err = (where: string, message: string) => issues.push({ level: 'error', where, message })
   const warn = (where: string, message: string) => issues.push({ level: 'warning', where, message })
@@ -44,9 +46,17 @@ export function validateContent(categories: unknown, items: unknown, roleplays: 
 
   const checkLine = (line: unknown, where: string, meaningKey: 'meaning' | 'korean') => {
     if (!isObj(line)) return err(where, '문장 정보가 없습니다')
-    if (!isStr(line.chinese)) err(where, '중국어(chinese)가 비어 있습니다')
+    if (lang === 'en') {
+      // 영어: english → chinese, hangul → pinyin 칸으로 바꿔서 검사 (src/content/english.ts)
+      if (!isStr(line.chinese)) err(where, '영어(english)가 비어 있습니다')
+      else if (!LATIN.test(line.chinese) || HAN.test(line.chinese) || HANGUL.test(line.chinese)) err(where, `영어 문장이 이상합니다: "${line.chinese}"`)
+      if (!isStr(line.pinyin)) err(where, '한글 발음(hangul)이 비어 있습니다')
+      else if (!HANGUL.test(line.pinyin)) err(where, `한글 발음에 한글이 없습니다: "${line.pinyin}"`)
+    } else if (!isStr(line.chinese)) err(where, '중국어(chinese)가 비어 있습니다')
     else if (!HAN.test(line.chinese)) err(where, `중국어에 한자가 없습니다: "${line.chinese}"`)
-    if (!isStr(line.pinyin)) err(where, '병음(pinyin)이 비어 있습니다')
+    if (lang === 'en') {
+      /* 위에서 검사함 */
+    } else if (!isStr(line.pinyin)) err(where, '병음(pinyin)이 비어 있습니다')
     else {
       if (HAN.test(line.pinyin)) err(where, `병음에 한자가 섞여 있습니다: "${line.pinyin}"`)
       else if (!PINYIN_CHARS.test(line.pinyin)) warn(where, `병음에 예상치 못한 글자가 있습니다: "${line.pinyin}"`)
@@ -103,7 +113,7 @@ export function validateContent(categories: unknown, items: unknown, roleplays: 
     if (Array.isArray(item.keywords))
       item.keywords.forEach((k, j) => {
         if (!isObj(k) || !isStr(k.word) || !isStr(k.pinyin) || !isStr(k.meaning))
-          err(`${at} 핵심 단어 #${j + 1}`, 'word, pinyin, meaning이 모두 필요합니다')
+          err(`${at} 핵심 단어 #${j + 1}`, lang === 'en' ? 'word, hangul, meaning이 모두 필요합니다' : 'word, pinyin, meaning이 모두 필요합니다')
       })
   })
 

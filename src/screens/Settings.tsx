@@ -3,10 +3,10 @@ import BackupSection from '../components/BackupSection'
 import InstallGuide from '../components/InstallGuide'
 import { contentErrors, contentStats } from '../content'
 import { setPrefs, usePrefs } from '../prefs'
-import { getChineseVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
+import { getVoices, speak, SpeechError, ttsSupported, voiceListAvailable } from '../speech'
 import { record } from '../store'
+import { L } from '../langs'
 
-const TEST_SENTENCE = '我帮你确认一下库存，请稍等。'
 const RATES = [
   { value: 0.7, label: '느리게' },
   { value: 0.85, label: '조금 느리게' },
@@ -19,13 +19,13 @@ export default function Settings() {
   const [test, setTest] = useState<{ state: 'idle' | 'playing' | 'ok' | 'error'; message?: string }>({ state: 'idle' })
 
   useEffect(() => {
-    getChineseVoices(3000).then(setVoices)
+    getVoices(3000).then(setVoices)
   }, [])
 
   const runTest = async () => {
     setTest({ state: 'playing' })
     try {
-      const result = await speak(TEST_SENTENCE)
+      const result = await speak(L.testSentence)
       setTest(result === 'ended' ? { state: 'ok' } : { state: 'idle' })
     } catch (e) {
       setTest({ state: 'error', message: e instanceof SpeechError ? e.message : '재생하지 못했어요' })
@@ -41,16 +41,16 @@ export default function Settings() {
       </header>
 
       <section className="card settings-group" aria-labelledby="voice-title">
-        <h2 id="voice-title">중국어 음성</h2>
+        <h2 id="voice-title">{L.name} 음성</h2>
 
         {!ttsSupported ? (
           <p className="caution">이 브라우저는 음성 재생을 지원하지 않아요. 크롬이나 사파리로 열어 주세요.</p>
         ) : voices === null ? (
-          <p className="note">기기의 중국어 음성을 찾는 중…</p>
+          <p className="note">기기의 {L.name} 음성을 찾는 중…</p>
         ) : noVoice && !voiceListAvailable() ? (
           <>
             <p className="note">
-              이 브라우저는 음성 목록을 알려 주지 않아요. 아래 <strong>테스트 재생</strong>으로 중국어가 들리는지 확인해 주세요.
+              이 브라우저는 음성 목록을 알려 주지 않아요. 아래 <strong>테스트 재생</strong>으로 {L.name}가 들리는지 확인해 주세요.
             </p>
             {test.state === 'error' && <VoiceHelp />}
           </>
@@ -85,13 +85,13 @@ export default function Settings() {
 
         <div className="field">
           <span>음성 테스트</span>
-          <p className="test-sentence" lang="zh-CN">{TEST_SENTENCE}</p>
+          <p className="test-sentence" lang={L.tag}>{L.testSentence}</p>
           <button type="button" className="btn-secondary strong" onClick={runTest} disabled={test.state === 'playing' || !ttsSupported}>
             {test.state === 'playing' ? '재생 중…' : '🔊 테스트 재생'}
           </button>
           {test.state === 'ok' && (
             <p className="note">
-              중국어로 들렸다면 정상이에요. 소리가 안 났다면 무음 모드와 음량을, 한국어·영어 발음처럼 들렸다면 아래 안내대로 중국어 음성을 설치해 주세요.
+              {L.name}로 들렸다면 정상이에요. 소리가 안 났다면 무음 모드와 음량을, 한국어 발음처럼 들렸다면 아래 안내대로 {L.name} 음성을 설치해 주세요.
             </p>
           )}
           {test.state === 'error' && <p className="caution">⚠ {test.message}</p>}
@@ -100,10 +100,12 @@ export default function Settings() {
 
       <section className="card settings-group" aria-labelledby="view-title">
         <h2 id="view-title">화면</h2>
-        <label className="switch-row">
-          <span>병음 표시</span>
-          <input type="checkbox" checked={prefs.showPinyin} onChange={(e) => setPrefs({ showPinyin: e.target.checked })} />
-        </label>
+        {L.hasPinyin && (
+          <label className="switch-row">
+            <span>병음 표시</span>
+            <input type="checkbox" checked={prefs.showPinyin} onChange={(e) => setPrefs({ showPinyin: e.target.checked })} />
+          </label>
+        )}
         <div className="field">
           <span>하루 목표</span>
           <div className="segmented three" role="radiogroup" aria-label="하루 목표 판 수">
@@ -124,10 +126,10 @@ export default function Settings() {
         type="button"
         className="text-link"
         onClick={() => {
-          if (window.confirm('학습 기록을 모두 지울까요? 되돌릴 수 없어요.\n(필요하면 먼저 위에서 백업해 주세요)')) record.resetAll()
+          if (window.confirm(`${L.name} 학습 기록을 모두 지울까요? 되돌릴 수 없어요.\n(필요하면 먼저 위에서 백업해 주세요)`)) record.resetAll()
         }}
       >
-        학습 기록 초기화
+        {L.name} 학습 기록 초기화
       </button>
 
       <section className="card" aria-label="콘텐츠 정보">
@@ -150,18 +152,18 @@ function VoiceHelp() {
   const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
   return (
     <div className="voice-help">
-      <p className="caution">⚠ 이 기기에서 중국어 음성을 찾지 못했어요. 글자와 병음으로는 계속 학습할 수 있어요.</p>
+      <p className="caution">⚠ 이 기기에서 {L.name} 음성을 찾지 못했어요. 글자{L.hasPinyin ? '와 병음' : ''}으로는 계속 학습할 수 있어요.</p>
       {isIOS ? (
         <ol>
           <li>설정 → 손쉬운 사용 → 읽기 및 말하기 → 음성</li>
-          <li>중국어(중국 본토) 선택 → 음성 하나 내려받기</li>
+          <li>{L.id === 'en' ? '영어(미국)' : '중국어(중국 본토)'} 선택 → 음성 하나 내려받기</li>
           <li>사파리를 완전히 닫았다가 다시 열기</li>
         </ol>
       ) : (
         <ol>
           <li>설정 → 일반 → 글자 읽어주기(TTS) 출력</li>
-          <li>기본 엔진: 삼성 TTS 엔진 → 옆의 톱니바퀴(설정) → 언어 설치 → 중국어 내려받기</li>
-          <li>(삼성 엔진에 중국어가 없으면) 기본 엔진을 Google 음성 엔진으로 바꾸고 → 음성 데이터 설치 → 중국어(중국)</li>
+          <li>기본 엔진: 삼성 TTS 엔진 → 옆의 톱니바퀴(설정) → 언어 설치 → {L.name} 내려받기</li>
+          <li>(삼성 엔진에 {L.name}가 없으면) 기본 엔진을 Google 음성 엔진으로 바꾸고 → 음성 데이터 설치 → {L.id === 'en' ? '영어(미국)' : '중국어(중국)'}</li>
           <li>삼성 인터넷을 완전히 닫았다가 다시 열기</li>
         </ol>
       )}

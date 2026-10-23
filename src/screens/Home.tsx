@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { daysSinceBackup } from '../backup'
+import { contentStats } from '../content'
+import { LANG_ID, LANGS, switchLang, type LangId } from '../langs'
 import { isMobile, isStandalone } from '../install'
 import { usePrefs } from '../prefs'
 import { computeStats } from '../stats'
@@ -33,6 +35,14 @@ export default function Home() {
 
   return (
     <>
+      <div className="segmented lang-switch" role="radiogroup" aria-label="학습 언어">
+        {(Object.keys(LANGS) as LangId[]).map((id) => (
+          <button key={id} type="button" role="radio" aria-checked={LANG_ID === id} aria-selected={LANG_ID === id} onClick={() => switchLang(id)}>
+            {LANGS[id].name}
+          </button>
+        ))}
+      </div>
+
       <section className="home-top">
         <div className={`streak ${streak.today ? 'lit' : ''}`}>
           <span className="flame" aria-hidden="true">🔥</span>
@@ -52,10 +62,20 @@ export default function Home() {
               : '오늘도 3분만 해요.'}
       </p>
 
-      <Link to="/lesson" className="btn-primary start">
-        {goalMet ? '한 판 더' : lessons > 0 ? '이어서 학습' : '오늘의 학습 시작'}
-        <small>약 3분 · 문제 6개 · 복습과 새 표현이 섞여 나와요</small>
-      </Link>
+      {contentStats.items === 0 ? (
+        <div className="card empty">
+          <p>
+            <strong>{LANGS[LANG_ID].name} 문장을 준비하고 있어요.</strong>
+            <br />
+            검증이 끝난 문장부터 여기에 나와요.{contentStats.pending > 0 && ` (검토 중 ${contentStats.pending}개)`}
+          </p>
+        </div>
+      ) : (
+        <Link to="/lesson" className="btn-primary start">
+          {goalMet ? '한 판 더' : lessons > 0 ? '이어서 학습' : '오늘의 학습 시작'}
+          <small>약 3분 · 문제 6개 · 복습과 새 표현이 섞여 나와요</small>
+        </Link>
+      )}
 
       <Link to="/rescue" className="card rescue">
         <strong>🆘 위기 탈출 카드</strong>

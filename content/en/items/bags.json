@@ -1,0 +1,554 @@
+[
+  {
+    "id": "B01",
+    "category": "bags",
+    "scenario": "고객이 가방 메는 방법을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "How do you wear this bag?",
+      "hangul": "하우 두 유 웨어 디스 백?",
+      "meaning": "이 가방은 어떻게 메요?"
+    },
+    "responses": [
+      {
+        "id": "B01-A",
+        "english": "You can carry it by hand or on one shoulder.",
+        "hangul": "유 캔 캐리 잇 바이 핸드 오어 온 원 숄더.",
+        "korean": "손에 드셔도 되고, 한쪽 어깨에 메셔도 돼요.",
+        "note": "실제 상품에 맞게 바꿔 말하기"
+      }
+    ],
+    "alternatives": [
+      {
+        "english": "You can wear it crossbody or carry it by hand.",
+        "hangul": "유 캔 웨어릿 크로스바디 오어 캐리 잇 바이 핸드.",
+        "korean": "크로스로 메셔도 되고, 손에 드셔도 돼요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wear",
+        "hangul": "웨어",
+        "meaning": "(몸에) 메다, 입다, 착용하다"
+      },
+      {
+        "word": "carry",
+        "hangul": "캐리",
+        "meaning": "들다, 들고 다니다"
+      },
+      {
+        "word": "hand",
+        "hangul": "핸드",
+        "meaning": "손 (by hand = 손으로)"
+      },
+      {
+        "word": "shoulder",
+        "hangul": "숄더",
+        "meaning": "어깨"
+      },
+      {
+        "word": "crossbody",
+        "hangul": "크로스바디",
+        "meaning": "크로스로 메는"
+      }
+    ],
+    "pattern": "You can ___ or ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B02",
+    "category": "bags",
+    "scenario": "고객이 크로스로 멜 수 있는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Can I wear it crossbody?",
+      "hangul": "캐나이 웨어릿 크로스바디?",
+      "meaning": "크로스로 멜 수 있나요?"
+    },
+    "responses": [
+      {
+        "id": "B02-A",
+        "english": "Let me check if it comes with a crossbody strap.",
+        "hangul": "렛 미 첵 이프 잇 컴즈 위더 크로스바디 스트랩.",
+        "korean": "크로스로 메는 끈이 있는지 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "crossbody",
+        "hangul": "크로스바디",
+        "meaning": "크로스로 메는"
+      },
+      {
+        "word": "strap",
+        "hangul": "스트랩",
+        "meaning": "가방 끈"
+      },
+      {
+        "word": "comes",
+        "hangul": "컴즈",
+        "meaning": "(come with = ~이 딸려 있다)"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B03",
+    "category": "bags",
+    "scenario": "고객이 수납 용량을 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "How much can it hold?",
+      "hangul": "하우 머치 캔 잇 홀드?",
+      "meaning": "얼마나 들어가요?"
+    },
+    "variants": [
+      {
+        "id": "B03-V1",
+        "english": "Is it roomy inside?",
+        "hangul": "이짓 루미 인사이드?",
+        "meaning": "안이 넓어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B03-A",
+        "english": "Let me open it and show you the inside.",
+        "hangul": "렛 미 오프닛 앤 쇼 유 디 인사이드.",
+        "korean": "열어서 안을 보여 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "hold",
+        "hangul": "홀드",
+        "meaning": "담다, 들어가다"
+      },
+      {
+        "word": "open",
+        "hangul": "오픈",
+        "meaning": "열다"
+      },
+      {
+        "word": "inside",
+        "hangul": "인사이드",
+        "meaning": "안쪽"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B04",
+    "category": "bags",
+    "scenario": "고객이 휴대폰이 들어가는지 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Will my phone fit in it?",
+      "hangul": "윌 마이 폰 핏 이닛?",
+      "meaning": "제 휴대폰 들어가요?"
+    },
+    "variants": [
+      {
+        "id": "B04-V1",
+        "english": "Can I put my phone in it?",
+        "hangul": "캐나이 풋 마이 폰 이닛?",
+        "meaning": "휴대폰 넣을 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B04-A",
+        "english": "You can try it with your own phone.",
+        "hangul": "유 캔 트라이 잇 위드 유어 오운 폰.",
+        "korean": "갖고 계신 휴대폰으로 한번 넣어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "phone",
+        "hangul": "폰",
+        "meaning": "휴대폰"
+      },
+      {
+        "word": "fit",
+        "hangul": "핏",
+        "meaning": "(크기가) 맞다, 들어가다"
+      },
+      {
+        "word": "try",
+        "hangul": "트라이",
+        "meaning": "해 보다"
+      },
+      {
+        "word": "own",
+        "hangul": "오운",
+        "meaning": "자기 자신의"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B05",
+    "category": "bags",
+    "scenario": "고객이 가죽 소재를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "What kind of leather is this?",
+      "hangul": "왓 카인더브 레더 이즈 디스?",
+      "meaning": "이건 무슨 가죽이에요?"
+    },
+    "variants": [
+      {
+        "id": "B05-V1",
+        "english": "Is it real leather?",
+        "hangul": "이짓 리얼 레더?",
+        "meaning": "진짜 가죽이에요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B05-A",
+        "english": "Let me check the material details for you.",
+        "hangul": "렛 미 첵 더 머티리얼 디테일즈 포 유.",
+        "korean": "소재 안내를 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "leather",
+        "hangul": "레더",
+        "meaning": "가죽"
+      },
+      {
+        "word": "real",
+        "hangul": "리얼",
+        "meaning": "진짜의"
+      },
+      {
+        "word": "material",
+        "hangul": "머티리얼",
+        "meaning": "소재"
+      },
+      {
+        "word": "details",
+        "hangul": "디테일즈",
+        "meaning": "자세한 내용, 안내"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B06",
+    "category": "bags",
+    "scenario": "고객이 무게를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Is it heavy?",
+      "hangul": "이짓 헤비?",
+      "meaning": "무거워요?"
+    },
+    "variants": [
+      {
+        "id": "B06-V1",
+        "english": "Is this bag heavy?",
+        "hangul": "이즈 디스 백 헤비?",
+        "meaning": "이 가방 무거워요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B06-A",
+        "english": "Feel free to pick it up.",
+        "hangul": "필 프리 투 피키럽.",
+        "korean": "직접 들어 보세요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "heavy",
+        "hangul": "헤비",
+        "meaning": "무거운"
+      },
+      {
+        "word": "pick",
+        "hangul": "픽",
+        "meaning": "(pick up = 들어 올리다)"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B07",
+    "category": "bags",
+    "scenario": "고객이 지갑 카드 칸 수를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "How many card slots does it have?",
+      "hangul": "하우 매니 카드 슬랏츠 더짓 해브?",
+      "meaning": "카드 칸이 몇 개예요?"
+    },
+    "responses": [
+      {
+        "id": "B07-A",
+        "english": "Let me count them for you.",
+        "hangul": "렛 미 카운 뎀 포 유.",
+        "korean": "세어 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "card",
+        "hangul": "카드",
+        "meaning": "카드"
+      },
+      {
+        "word": "slots",
+        "hangul": "슬랏츠",
+        "meaning": "칸 (card slot = 카드 칸)"
+      },
+      {
+        "word": "count",
+        "hangul": "카운트",
+        "meaning": "세다"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B08",
+    "category": "bags",
+    "scenario": "고객이 스트랩 조절·분리를 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "Is the strap adjustable?",
+      "hangul": "이즈 더 스트랩 어저스터블?",
+      "meaning": "스트랩 길이 조절돼요?"
+    },
+    "variants": [
+      {
+        "id": "B08-V1",
+        "english": "Can I take the strap off?",
+        "hangul": "캐나이 테익 더 스트랩 오프?",
+        "meaning": "스트랩 뗄 수 있어요?"
+      }
+    ],
+    "responses": [
+      {
+        "id": "B08-A",
+        "english": "Let me check for you.",
+        "hangul": "렛 미 첵 포 유.",
+        "korean": "확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "strap",
+        "hangul": "스트랩",
+        "meaning": "가방 끈"
+      },
+      {
+        "word": "adjustable",
+        "hangul": "어저스터블",
+        "meaning": "조절할 수 있는"
+      },
+      {
+        "word": "off",
+        "hangul": "오프",
+        "meaning": "떨어져 (take off = 떼다)"
+      }
+    ],
+    "pattern": "Let me check ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B09",
+    "category": "bags",
+    "scenario": "고객이 더 큰 사이즈를 찾을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Do you have a bigger one?",
+      "hangul": "두 유 해버 비거 원?",
+      "meaning": "좀 더 큰 거 있어요?"
+    },
+    "responses": [
+      {
+        "id": "B09-A",
+        "english": "Let me see if we have a larger size.",
+        "hangul": "렛 미 씨 이프 위 해버 라저 사이즈.",
+        "korean": "큰 사이즈가 있는지 봐 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "bigger",
+        "hangul": "비거",
+        "meaning": "더 큰"
+      },
+      {
+        "word": "larger",
+        "hangul": "라저",
+        "meaning": "더 큰 (사이즈를 말할 때)"
+      },
+      {
+        "word": "size",
+        "hangul": "사이즈",
+        "meaning": "사이즈, 크기"
+      }
+    ],
+    "pattern": "Let me see if ___.",
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B10",
+    "category": "bags",
+    "scenario": "고객이 관리 방법을 물을 때",
+    "difficulty": "intermediate",
+    "customer": {
+      "english": "How do I take care of this bag?",
+      "hangul": "하우 두 아이 테익 케어러브 디스 백?",
+      "meaning": "이 가방은 어떻게 관리해요?"
+    },
+    "responses": [
+      {
+        "id": "B10-A",
+        "english": "Let me check the brand's care guide.",
+        "hangul": "렛 미 첵 더 브랜즈 케어 가이드.",
+        "korean": "브랜드의 관리 안내를 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "care",
+        "hangul": "케어",
+        "meaning": "관리 (take care of = 관리하다)"
+      },
+      {
+        "word": "brand's",
+        "hangul": "브랜즈",
+        "meaning": "브랜드의"
+      },
+      {
+        "word": "guide",
+        "hangul": "가이드",
+        "meaning": "안내"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  },
+  {
+    "id": "B11",
+    "category": "bags",
+    "scenario": "고객이 방수 여부를 물을 때",
+    "difficulty": "beginner",
+    "customer": {
+      "english": "Is it waterproof?",
+      "hangul": "이짓 워러프루프?",
+      "meaning": "방수돼요?"
+    },
+    "responses": [
+      {
+        "id": "B11-A",
+        "english": "Let me check the product information.",
+        "hangul": "렛 미 첵 더 프라덕트 인포메이션.",
+        "korean": "제품 설명을 확인해 드릴게요."
+      }
+    ],
+    "keywords": [
+      {
+        "word": "waterproof",
+        "hangul": "워러프루프",
+        "meaning": "방수의"
+      },
+      {
+        "word": "product",
+        "hangul": "프라덕트",
+        "meaning": "제품"
+      },
+      {
+        "word": "information",
+        "hangul": "인포메이션",
+        "meaning": "정보, 안내"
+      }
+    ],
+    "learningModes": [
+      "study",
+      "listen",
+      "speak",
+      "roleplay"
+    ],
+    "policyDependent": false,
+    "verificationStatus": "draft"
+  }
+]
