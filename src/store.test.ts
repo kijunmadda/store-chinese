@@ -17,10 +17,21 @@ describe('간격 반복 일정', () => {
     expect(g.nextReviewAt).toBe('2026-10-24')
   })
 
-  it('계속 맞히면 간격이 3→7→14→30일로 늘고 30일에서 멈춤', () => {
+  it('같은 날 여러 번 맞혀도 단계는 한 번만 오름', () => {
+    const p = fresh()
+    schedule(p, 'good', day)
+    schedule(p, 'good', day)
+    schedule(p, 'good', day)
+    expect(p.box).toBe(2)
+    schedule(p, 'good', '2026-10-24')
+    expect(p.box).toBe(3)
+  })
+
+  it('(다른 날마다) 계속 맞히면 간격이 3→7→14→30일로 늘고 30일에서 멈춤', () => {
     const p = fresh()
     const gaps: number[] = []
     for (let i = 0; i < 6; i++) {
+      p.promotedAt = undefined
       schedule(p, 'good', day)
       gaps.push((new Date(p.nextReviewAt!).getTime() - new Date(day).getTime()) / 86400000)
     }

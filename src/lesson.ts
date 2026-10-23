@@ -74,10 +74,22 @@ export function exerciseFor(id: string, state: StudyState, pool: ListenEntry[], 
   const s = sentences.get(id)
   if (!s) return null
   if (s.kind === 'customer') return listen(id, pool, state, rand, key)
-  const box = state.progress[id]?.box ?? 0
-  if (box <= 1) return (rand() < 0.5 ? build(id, rand, key) : null) ?? pickZh(id, rand, key)
-  if (box <= 3) return (rand() < 0.6 ? build(id, rand, key) : null) ?? speak(id, key)
-  return speak(id, key)
+  const p = state.progress[id]
+  // 소개를 본 적 없는 문장은 가장 쉬운 단계부터
+  const box = p && p.seen > 0 ? p.box : 0
+  // 직접 말하기는 '이미 익힌 문장'에만: 조각 배열을 서로 다른 날 두 번 이상 맞혀 상자 3 이상이 된 문장
+  if (box <= 2) return (rand() < 0.5 ? build(id, rand, key) : null) ?? pickZh(id, rand, key)
+  if (box === 3) return (rand() < 0.6 ? build(id, rand, key) : null) ?? speak(id, key)
+  return (rand() < 0.7 ? speak(id, key) : null) ?? build(id, rand, key) ?? speak(id, key)
+}
+
+/**
+ * 문제 결과 → 복습 평가. 보기 고르기는 쉬운 문제라 맞혀도 단계를 올리지 않는다(헷갈림 취급).
+ * 조각 배열을 맞혀야 단계가 오르고, 그래야 나중에 직접 말하기가 나온다.
+ */
+export function ratingFor(kind: GradedExercise['kind'], correct: boolean): 'again' | 'hard' | 'good' {
+  if (!correct) return 'again'
+  return kind === 'pick-zh' ? 'hard' : 'good'
 }
 
 const idsOf = (it: ContentItem) => [...(it.customer ? [it.id] : []), ...(it.responses ?? []).map((r) => r.id)]

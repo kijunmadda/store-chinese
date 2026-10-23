@@ -15,6 +15,8 @@ export interface SentenceProgress {
   /** 다음 복습 날짜 (YYYY-MM-DD) */
   nextReviewAt?: string
   lastRating?: Rating
+  /** 마지막으로 단계가 오른 날 — 단계는 하루에 한 번만 오른다 */
+  promotedAt?: string
   listen: { correct: number; wrong: number }
   speak: { again: number; hard: number; good: number }
   /** 사용자가 직접 '복습에 추가'를 누른 문장 */
@@ -165,7 +167,11 @@ export function schedule(p: SentenceProgress, rating: Rating, on = today()) {
     p.box = Math.max(1, p.box)
     p.nextReviewAt = after(1)
   } else {
-    p.box = Math.min(5, Math.max(2, p.box + 1))
+    // 같은 날 여러 번 맞혀도 단계는 한 번만 오른다 (다른 날 다시 떠올려야 기억이 단단해짐)
+    if (p.promotedAt !== on) {
+      p.box = Math.min(5, Math.max(2, p.box + 1))
+      p.promotedAt = on
+    }
     p.nextReviewAt = after(INTERVAL_DAYS[p.box])
   }
   p.lastRating = rating

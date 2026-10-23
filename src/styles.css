@@ -426,3 +426,10 @@ button { font: inherit; color: inherit; }
 .home-progress .progress-track { grid-column: 1 / -1; }
 .sentence-list .mastery { font-size: 11px; color: var(--ok); letter-spacing: 2px; font-weight: 400; }
 .sentence-list.card { padding: 4px 16px; }
+
+/* 한글 발음 (보조) */
+.zh-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start; margin-top: 10px; }
+.zh-actions .speak { margin-top: 0; }
+.hangul-btn span { font-size: 14px; }
+.zh-hangul { margin: 4px 0 0; font-size: 16px; color: var(--muted); letter-spacing: 0.02em; }
+.zh-md .zh-hangul { font-size: 14px; }

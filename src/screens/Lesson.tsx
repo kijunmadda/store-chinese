@@ -4,7 +4,7 @@ import SpeakButtons from '../components/SpeakButtons'
 import SpeakCard from '../components/SpeakCard'
 import Zh from '../components/Zh'
 import type { StaffLine } from '../content/types'
-import { buildLesson, retryOf, type Exercise, type GradedExercise } from '../lesson'
+import { buildLesson, ratingFor, retryOf, type Exercise, type GradedExercise } from '../lesson'
 import { getPrefs, usePrefs } from '../prefs'
 import { stopSpeech } from '../speech'
 import { computeStreak, todayLessons } from '../streak'
@@ -42,7 +42,7 @@ export default function Lesson() {
   /** 채점된 문제의 결과 기록 + 틀리면 판 끝에 한 번 더 */
   const answered = (g: GradedExercise, correct: boolean, fb?: Feedback['answer'], showBar = true) => {
     if (g.kind === 'listen') record.listened(g.id, correct)
-    else if (g.kind !== 'speak') record.spoke(g.id, correct ? 'good' : 'again')
+    else if (g.kind !== 'speak') record.spoke(g.id, ratingFor(g.kind, correct))
     setStats((s) => ({ right: s.right + (correct ? 1 : 0), total: s.total + 1 }))
     if (!correct && !g.key.endsWith('-retry') && !retried.current.has(g.key)) {
       retried.current.add(g.key)
@@ -143,7 +143,7 @@ function ListenEx({ ex, answered, locked }: { ex: Extract<Exercise, { kind: 'lis
       <div className="listen-box">
         <SpeakButtons text={entry.chinese} id={entry.id} />
         {showText || chosen ? (
-          <Zh chinese={entry.chinese} pinyin={entry.pinyin} showPinyin={showPinyin || !!chosen} speakable={false} />
+          <Zh chinese={entry.chinese} pinyin={entry.pinyin} showPinyin={showPinyin || !!chosen} speakable={false} hangul={!!chosen} />
         ) : (
           <button type="button" className="text-link" onClick={() => setShowText(true)}>소리가 안 나요 · 글자로 보기</button>
         )}

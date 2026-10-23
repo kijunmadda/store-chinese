@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import tokens from './generated/tokens.json'
 import { sentences } from './content'
-import { buildLesson, canBuild, exerciseFor, retryOf, type GradedExercise } from './lesson'
+import { buildLesson, canBuild, exerciseFor, ratingFor, retryOf, type GradedExercise } from './lesson'
 import { buildPool } from './listen'
 import { items } from './content'
 import { emptyState, today, type SentenceProgress } from './store'
@@ -56,7 +56,20 @@ describe('문제 유형 단계', () => {
       return new Set(Array.from({ length: 40 }, (_, s) => exerciseFor("S02-A", st, pool, () => (s + 0.5) / 40)?.kind))
     }
     expect([...kinds(0)].sort()).toEqual(['build', 'pick-zh'])
-    expect(kinds(5)).toEqual(new Set(['speak']))
+    expect([...kinds(2)].sort()).toEqual(['build', 'pick-zh'])
+    expect([...kinds(3)].sort()).toEqual(['build', 'speak'])
+    expect(kinds(5).has('speak')).toBe(true)
+    expect(kinds(5).has('pick-zh')).toBe(false)
+  })
+  it('소개를 본 적 없는 문장은 상자 단계가 높아도 말하기 금지', () => {
+    const st = emptyState()
+    st.progress['S02-A'] = prog({ box: 5, seen: 0 })
+    for (let s = 0; s < 40; s++) expect(exerciseFor('S02-A', st, pool, () => (s + 0.5) / 40)?.kind).not.toBe('speak')
+  })
+  it('보기 고르기는 맞혀도 단계를 올리지 않음', () => {
+    expect(ratingFor('pick-zh', true)).toBe('hard')
+    expect(ratingFor('build', true)).toBe('good')
+    expect(ratingFor('build', false)).toBe('again')
   })
   it('한국어 보고 중국어 고르기: 오답은 다른 카테고리', () => {
     for (let s = 1; s <= 20; s++) {
