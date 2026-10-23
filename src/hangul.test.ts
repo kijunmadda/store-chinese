@@ -5,9 +5,9 @@ import { pinyinToHangul, syllableToHangul } from './hangul'
 
 describe('병음 → 한글 발음', () => {
   it.each([
-    ['ni', '니'], ['hao', '하오'], ['xie', '씨에'], ['zhe', '저'], ['shi', '스'], ['zi', '쯔'], ['si', '쓰'], ['ri', '르'],
-    ['qian', '치엔'], ['jian', '지엔'], ['xiao', '씨아오'], ['liu', '리우'], ['guo', '꿔'], ['huan', '환'], ['kuai', '콰이'],
-    ['gui', '꾸이'], ['hui', '후이'], ['dui', '뚜이'], ['duo', '뚜어'], ['zhuang', '주앙'], ['ju', '쥐'], ['qu', '취'], ['xue', '쒸에'], ['quan', '취엔'],
+    ['ni', '니'], ['hao', '하오'], ['xie', '시에'], ['zhe', '저'], ['shi', '스'], ['zi', '쯔'], ['si', '쓰'], ['ri', '르'],
+    ['qian', '치엔'], ['jian', '지엔'], ['xiao', '시아오'], ['liu', '리우'], ['guo', '꿔'], ['huan', '환'], ['kuai', '콰이'],
+    ['gui', '꾸이'], ['hui', '후이'], ['dui', '뚜이'], ['duo', '뚸'], ['shuo', '숴'], ['shua', '솨'], ['chuan', '촨'], ['zuo', '쭤'], ['zhuang', '좡'], ['ju', '쥐'], ['qu', '취'], ['xue', '쉬에'], ['quan', '취엔'],
     ['lü', '뤼'], ['nü', '뉘'], ['you', '요우'], ['yi', '이'], ['wo', '워'], ['yu', '위'], ['er', '얼'], ['men', '먼'], ['deng', '떵'],
     ['zhong', '종'], ['bu', '뿌'], ['ge', '꺼'], ['ren', '런'], ['ci', '츠'], ['chi', '츠'],
   ])('%s → %s', (py, hangul) => {
@@ -16,7 +16,11 @@ describe('병음 → 한글 발음', () => {
 
   it('성조 숫자와 단어 띄어쓰기', () => {
     expect(pinyinToHangul([['Nǐ'], ['hǎo']])).toBe('니³ 하오³')
-    expect(pinyinToHangul([['Xiè', 'xie']])).toBe('씨에⁴씨에')
+    expect(pinyinToHangul([['Xiè', 'xie']])).toBe('시에⁴시에')
+    // 경성은 예사소리: 的 더, 子 즈
+    expect(pinyinToHangul([['hǎo'], ['de']])).toBe('하오³ 더')
+    expect(pinyinToHangul([['jìng', 'zi']])).toBe('징⁴즈')
+    expect(pinyinToHangul([['dà']])).toBe('따⁴')
     expect(pinyinToHangul([['M'], ['mǎ']])).toBe('M 마³')
     expect(pinyinToHangul([['lǜ']])).toBe('뤼⁴')
     expect(pinyinToHangul([['nǚ', 'shì']])).toBe('뉘³스⁴')

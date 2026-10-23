@@ -19,10 +19,11 @@ export function splitTone(syllable: string): { plain: string; tone: number } {
   return { plain, tone }
 }
 
-// 첫소리 (중국어 b·d·g·z는 힘을 빼고 내는 소리라 된소리에 가깝게)
+// 첫소리 (중국어 b·d·g·z는 힘을 빼고 내는 소리라 된소리에 가깝게. 단 경성 음절은 예사소리 — 아래 LAX)
+// x는 ㅅ (ㅆ은 실제보다 세게 들림 — 2026-10-23 교차검증 GPT·딥시크 의견)
 const INITIAL: Record<string, string> = {
   b: 'ㅃ', p: 'ㅍ', m: 'ㅁ', f: 'ㅍ', d: 'ㄸ', t: 'ㅌ', n: 'ㄴ', l: 'ㄹ',
-  g: 'ㄲ', k: 'ㅋ', h: 'ㅎ', j: 'ㅈ', q: 'ㅊ', x: 'ㅆ',
+  g: 'ㄲ', k: 'ㅋ', h: 'ㅎ', j: 'ㅈ', q: 'ㅊ', x: 'ㅅ',
   zh: 'ㅈ', ch: 'ㅊ', sh: 'ㅅ', r: 'ㄹ', z: 'ㅉ', c: 'ㅊ', s: 'ㅆ',
 }
 
@@ -35,8 +36,9 @@ const FINAL: Record<string, string> = {
   ü: '위', üe: '위에', üan: '위엔', ün: '윈',
 }
 
-// g·k·h 뒤의 u- 계열은 한 글자로 합쳐 읽는 게 자연스러움 (国 궈, 欢 환, 快 콰이)
-const GKH_MERGED: Record<string, string> = { ua: '와', uo: '워', uai: '와이', uan: '완', uang: '왕' }
+// u- 계열(ua·uo·uai·uan·uang)은 한 음절로 합쳐 적는다 (国 꿔, 欢 환, 说 숴, 刷 솨, 穿 촨, 多 뚸)
+// — 2026-10-23 교차검증: 제미나이·GPT 공통 의견 (두 음절로 나누면 리듬이 어긋남)
+const U_MERGED: Record<string, string> = { ua: '와', uo: '워', uai: '와이', uan: '완', uang: '왕' }
 
 // 첫소리 없이 y·w로 시작하는 음절
 const STANDALONE: Record<string, string> = {
@@ -65,23 +67,30 @@ function addRieul(hangul: string): string {
 }
 
 /** 병음 한 음절 → 한글. 알 수 없는 음절이면 null */
-export function syllableToHangul(plain: string): string | null {
+export function syllableToHangul(plain: string, tone = 1): string | null {
   if (STANDALONE[plain]) return STANDALONE[plain]
   // 儿화: 哪儿 nǎr → 날, 一点儿 yìdiǎnr → 디엔+ㄹ
   if (plain.length > 2 && plain.endsWith('r') && plain !== 'er') {
-    const base = syllableToHangul(plain.slice(0, -1))
+    const base = syllableToHangul(plain.slice(0, -1), tone)
     return base ? addRieul(base) : null
   }
   const ini = INITIALS.find((i) => plain.startsWith(i))
   if (!ini) return null
   let fin = plain.slice(ini.length)
   // z·c·s / zh·ch·sh·r 뒤의 i는 '으'
-  if (fin === 'i' && ['z', 'c', 's', 'zh', 'ch', 'sh', 'r'].includes(ini)) return withInitial('으', INITIAL[ini])
+  if (fin === 'i' && ['z', 'c', 's', 'zh', 'ch', 'sh', 'r'].includes(ini)) return withInitial('으', initialFor(ini, tone))
   // j·q·x 뒤의 u는 ü
   if (['j', 'q', 'x'].includes(ini) && fin.startsWith('u')) fin = 'ü' + fin.slice(1)
-  if (['g', 'k', 'h'].includes(ini) && GKH_MERGED[fin]) return withInitial(GKH_MERGED[fin], INITIAL[ini])
+  if (U_MERGED[fin]) return withInitial(U_MERGED[fin], initialFor(ini, tone))
   const f = FINAL[fin]
-  return f ? withInitial(f, INITIAL[ini]) : null
+  return f ? withInitial(f, initialFor(ini, tone)) : null
+}
+
+// 경성(약하게 내는 소리)은 된소리 대신 예사소리: 的 더, 子 즈 — 2026-10-23 교차검증 3개 AI 공통 의견
+const LAX: Record<string, string> = { ㅃ: 'ㅂ', ㄸ: 'ㄷ', ㄲ: 'ㄱ', ㅉ: 'ㅈ', ㅆ: 'ㅅ' }
+function initialFor(ini: string, tone: number): string {
+  const c = INITIAL[ini]
+  return tone === 0 ? (LAX[c] ?? c) : c
 }
 
 const SUP = ['', '¹', '²', '³', '⁴']
@@ -100,7 +109,7 @@ export function pinyinToHangul(words: string[][]): string | null {
         continue
       }
       const { plain, tone } = splitTone(syl)
-      const h = syllableToHangul(plain)
+      const h = syllableToHangul(plain, tone)
       if (!h) return null
       w += h + SUP[tone]
     }

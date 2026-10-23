@@ -27,8 +27,9 @@ export default function Zh({ chinese, pinyin, showPinyin, id, rate, size = 'lg',
       <p className="zh-text" lang="zh-CN">{chinese}</p>
       {showPinyin && <p className="zh-pinyin" lang="zh-Latn-pinyin">{pinyin}</p>}
       {reading && open && (
-        <p className="zh-hangul" title="참고용 — 정확한 소리는 듣기로 확인하세요. 숫자는 성조(1~4성)">
+        <p className="zh-hangul">
           {reading}
+          <small>참고용 · 숫자는 성조 · zh·ch·sh, f 같은 소리는 한글로 정확히 못 적어요 — 🔊로 확인하세요</small>
         </p>
       )}
       {(speakable || reading) && (

@@ -433,3 +433,4 @@ button { font: inherit; color: inherit; }
 .hangul-btn span { font-size: 14px; }
 .zh-hangul { margin: 4px 0 0; font-size: 16px; color: var(--muted); letter-spacing: 0.02em; }
 .zh-md .zh-hangul { font-size: 14px; }
+.zh-hangul small { display: block; margin-top: 2px; font-size: 12px; opacity: 0.8; }
