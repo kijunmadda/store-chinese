@@ -54,7 +54,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y02",
@@ -112,7 +112,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y03",
@@ -156,7 +156,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y04",
@@ -191,7 +191,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y05",
@@ -219,7 +219,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y06",
@@ -272,7 +272,7 @@
       "roleplay"
     ],
     "policyDependent": true,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y07",
@@ -305,7 +305,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y08",
@@ -345,7 +345,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y09",
@@ -389,7 +389,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "Y10",
@@ -423,6 +423,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   }
 ]

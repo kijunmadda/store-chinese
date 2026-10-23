@@ -30,7 +30,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M02",
@@ -63,7 +63,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M03",
@@ -115,7 +115,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M04",
@@ -172,7 +172,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M05",
@@ -232,7 +232,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M06",
@@ -276,7 +276,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M07",
@@ -328,7 +328,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M08",
@@ -361,7 +361,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M09",
@@ -395,7 +395,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "M10",
@@ -429,6 +429,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   }
 ]

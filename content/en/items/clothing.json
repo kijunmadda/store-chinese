@@ -49,7 +49,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C02",
@@ -87,7 +87,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C03",
@@ -139,7 +139,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C04",
@@ -192,7 +192,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C05",
@@ -245,7 +245,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C06",
@@ -273,7 +273,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C07",
@@ -306,7 +306,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C08",
@@ -345,7 +345,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C09",
@@ -399,7 +399,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C10",
@@ -438,7 +438,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C11",
@@ -472,7 +472,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C12",
@@ -501,7 +501,7 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   },
   {
     "id": "C13",
@@ -548,6 +548,6 @@
       "roleplay"
     ],
     "policyDependent": false,
-    "verificationStatus": "reviewed"
+    "verificationStatus": "verified"
   }
 ]
